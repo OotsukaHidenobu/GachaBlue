@@ -6,6 +6,20 @@
 </head>
 <body>
     <h1>おいらはビィ。こいつはガチャピン。</h1>
-    <button id="button-text">ガチャを引く</button>
+    <div id="btn-first">
+        <button id="btn-text">ガチャを引く</button>
+    </div>
+    <div id="btn-thereafter">
+        <button id="restart">引きなおす</button>
+        <button id="formation">編成</button>
+    </div>
+
+    <script>
+    document.querySelector("#btn-thereafter").style.display="none";
+    document.querySelector("#btn-text").addEventListener("click",(e)=>{
+        document.querySelector("#btn-first").style.display="none";
+        document.querySelector("#btn-thereafter").style.display="block";
+    });
+    </script>
 </body>
 </html>
