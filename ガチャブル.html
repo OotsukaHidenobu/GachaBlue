@@ -5,6 +5,8 @@
     <title>ガチャブル</title>
 </head>
 <body>
+    <script src="./Music/Music.js"></script>
+
     <h1>おいらはビィ。こいつはガチャピン。</h1>
     <div id="btn-first">
         <button id="btn-text">ガチャを引く</button>
@@ -21,5 +23,10 @@
         document.querySelector("#btn-thereafter").style.display="block";
     });
     </script>
+    <input type="button" onclick="PlayBGM()" value="クリック">
+
+    <audio id="BGM" preload="auto">
+        <source src="./Music/bgm_maoudamashii_fantasy14.mp3" type="audio/mp3">
+    </audio>
 </body>
 </html>
