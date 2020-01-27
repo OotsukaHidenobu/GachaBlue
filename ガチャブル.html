@@ -5,16 +5,16 @@
     <title>ガチャブル</title>
 </head>
 <body>
-    <script src="./Music/Music.js"></script>
+    <script src="./Music/BGM.js"></script>
     <script src="./Music/Se.js"></script>
 
     <h1>おいらはビィ。こいつはガチャピン。</h1>
     <div id="btn-first">
-       <p><input type="button" value="ガチャを引く"onclick="Se(1)" id="btn-text"></p>
+        <p><input type="button" value="ガチャを引く" onclick="Se(1)" id="btn-text"></p>
     </div>
     <div id="btn-thereafter">
-        <p><input type="button" value="引きなおす"onclick="Se(1)" id="restart"></p>
-       <p><input type="button" value="編成"onclick="Se(2)" id="formation"></p>
+        <p><input type="button" value="引きなおす" onclick="Se(1)" id="restart"></p>
+        <p><input type="button" value="編成" onclick="Se(2)" id="formation"></p>
     </div>
 
     <script>
@@ -24,8 +24,23 @@
         document.querySelector("#btn-thereafter").style.display="block";
     });
     </script>
-    <input type="button" onclick="PlayBGM()" value="クリック">
-
+    <div id="BGMPlay">
+        <input type="button" onclick="PlayBGM()" value="クリック"id="pB">
+    </div>
+    <div id="BGMStop">
+        <input type="button" onclick="StopBGM()" value="♪"id="sB">
+    </div>
+    <script>
+        document.querySelector("#BGMStop").style.display = "none";
+        document.querySelector("#pB").addEventListener("click",(e)=>{
+            document.querySelector("#BGMPlay").style.display="none";
+            document.querySelector("#BGMStop").style.display="block";
+        });
+        document.querySelector("#sB").addEventListener("click", (e) => {
+            document.querySelector("#BGMStop").style.display = "none";
+            document.querySelector("#BGMPlay").style.display = "block";
+        });
+    </script>
     <audio id="BGM" preload="auto">
         <source src="./Music/bgm_maoudamashii_fantasy14.mp3" type="audio/mp3">
     </audio>
