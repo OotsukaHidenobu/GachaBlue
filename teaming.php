@@ -1,7 +1,5 @@
 <?php
 require_once('common.php');
-// idの最大値を取得（=問題数）
-$data = getDB1('select max(id) as maxid from Question');
 // 出題する問題を決定
 $i = rand(1, $data['maxid']);
 // 問題文を取得
@@ -310,6 +308,13 @@ $data = getDB1('select Image from Characters where id=1');
             }
             else {
                 alert("4人編成してください");
+                <?php
+// ①
+$samural_alert = "こちらは侍エンジニア塾でございます。";
+// ②
+$alert = "<script type='text/javascript'>alert('". $samural_alert. "');</script>";
+// ③
+echo $alert;
             }
         });
     </script>
