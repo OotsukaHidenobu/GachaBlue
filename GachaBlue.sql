@@ -15,7 +15,7 @@ PRIMARY KEY(ID)
 );
 
 insert into Characters(ID,Name,Rarity,Image,Hp,Power) value(1,"ジータ","SSR","jeeta.png",1000,300);
-insert into Characters(ID,Name,Rarity,Image,Hp,Power) value(2,"ルリア","SSR","ruria.png",750,100);
+insert into Characters(ID,Name,Rarity,Image,Hp,Power) value(2,"ルリア","SR","ruria.png",750,100);
 insert into Characters(ID,Name,Rarity,Image,Hp,Power) value(3,"ビィ","SSR","b.png",700,110);
 insert into Characters(ID,Name,Rarity,Image,Hp,Power) value(4,"カタリナ","SSR","katarina.png",1100,260);
 insert into Characters(ID,Name,Rarity,Image,Hp,Power) value(5,"ラカム","SSR","rakamu.png",1000,320);
