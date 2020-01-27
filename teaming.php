@@ -36,52 +36,36 @@ $data = getDB1('select question from Question where id=?', [$i]);
 
     }
 
-    h1 {
-        text-align: center;
-    }
-
     #button-div {
         text-align: center;
     }
 
     .columns {
-        /* margin: 0 auto; */
+        margin: 0 auto;
         /* clear: left; */
-        margin-bottom: 30px;
-        text-align: center;
 
     }
 
     .center {
-        text-align: center;
-        /* margin: 0 auto; */
+        margin: 0 auto;
     }
 
     img {
         display: inline-block;
         background: #ffff00;
-        width: 10em;
-        cursor: move;
-        /* margin: 0 auto; */
+        width: 12em;
+        margin: 0 auto;
 
     }
 
-    /* .img {
-        margin: 5px;
-    } */
 
-    .team {
-        margin: 80px;
-        clear: left;
-    }
-
-    .team-img {
-        top: 50%;
+    .img {
+        width: 150px;
+        margin-top: 30px;
     }
 
     .column {
-        margin: 10px;
-        /* height: 150px;
+        height: 150px;
         width: 150px;
         float: left;
         border: 2px solid #666666;
@@ -96,31 +80,14 @@ $data = getDB1('select question from Question where id=?', [$i]);
         -ms-box-shadow: inset 0 0 3px #000;
         box-shadow: inset 0 0 3px #000;
         text-align: center;
-        cursor: move; */
+        cursor: move;
     }
 
-    .columm {
-        height: 150px;
-        width: 250px;
-        /* float: left; */
-        border: 2px solid #666666;
-        background-color: #ccc;
-        margin-bottom: 30px;
-        margin-right: 20px;
-        -webkit-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 3px #000;
-        -ms-box-shadow: inset 0 0 3px #000;
-        box-shadow: inset 0 0 3px #000;
-    }
-
-    /* .column.over {
+    .column.over {
         border: 2px dashed #000;
-    } */
+    }
 
-    /* .column header {
+    .column header {
         color: #fff;
         text-shadow: #000 0 1px;
         box-shadow: 5px;
@@ -141,74 +108,64 @@ $data = getDB1('select question from Question where id=?', [$i]);
         -ms-border-top-right-radius: 10px;
         -moz-border-radius-topright: 10px;
         border-top-right-radius: 10px;
-    } */
+    }
 </style>
 
 <body>
-    <h1>編成画面</h1>
-    <div class="columns team">
-        <span class="columm">
-            <a class="column" draggable="true">
-                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
-            </a>
-        </span>
-
-        <span class="columm">
-            <a class="column" draggable="true">
-                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
-            </a>
-        </span>
-        <span class="columm">
-            <a class="column" draggable="true">
-                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
-            </a>
-        </span>
-        <span class="columm">
-            <a class="column" draggable="true">
-                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
-            </a>
-        </span>
+    <div class="columns">
+        <div class="column" draggable="true">
+            <header>A</header>
+        </div>
+        <div class="column" draggable="true">
+            <header>B</header>
+        </div>
+        <div class="column" draggable="true">
+            <header>C</header>
+        </div>
+        <div class="column" draggable="true">
+            <header>D</header>
+        </div>
     </div>
 
     <div class="columns">
-        <a class="column" draggable="true">
+        <div class="column" draggable="true">
             <img class="img" src="assets/katarina.jpg" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/オイゲン/unnamed00AX3T5G.png" id="ball">
-        </a>
+        </div>
+        <div class="column" draggable="true">
+            <img class="img" src="assets/katarina.jpg" id="ball">
+        </div>
+        <div class="column" draggable="true">
+            <img class="img" src="assets/katarina.jpg" id="ball">
+        </div>
 
     </div>
 
     <div class="columns">
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/アポロ/unnamedA7JOSI2A.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/ビィ/unnamed2OTKPCCB.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/モニカ/unnamed3W9Q327M.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
+        <div class="column" draggable="true">
             <img class="img" src="assets/katarina.jpg" id="ball">
-        </a>
+        </div>
+        <div class="column" draggable="true">
+            <img class="img" src="assets/katarina.jpg" id="ball">
+        </div>
+        <div class="column" draggable="true">
+            <img class="img" src="assets/katarina.jpg" id="ball">
+        </div>
+        <div class="column" draggable="true">
+            <img class="img" src="assets/katarina.jpg" id="ball">
+        </div>
 
     </div>
 
     <div class="columns">
-        <a class="column" draggable="true">
+        <div class="column" draggable="true">
             <img class="img" src="assets/katarina.jpg" id="ball">
-        </a>
-        <a class="column" draggable="true">
+        </div>
+        <div class="column" draggable="true">
             <img class="img" src="assets/katarina.jpg" id="ball">
-        </a>
-        <a class="column" draggable="true">
+        </div>
+        <div class="column" draggable="true">
             <img class="img" src="assets/katarina.jpg" id="ball">
-        </a>
+        </div>
 
     </div>
 
@@ -283,19 +240,6 @@ $data = getDB1('select question from Question where id=?', [$i]);
             col.addEventListener('dragleave', handleDragLeave, false);
             col.addEventListener('drop', handleDrop, false);
             col.addEventListener('dragend', handleDragEnd, false);
-        });
-
-        document.querySelector("#button").addEventListener("click", (e) => {
-            let answer = document.querySelector("#text-answer");
-            if (answer.value == "") {
-                alert("入力してください");
-                answer.focus();
-                answer.style.backgroundColor = "Pink";
-                e.preventDefault();
-            }
-            else {
-                document.querySelector("#btn-answer").innerHTML = "...送信中";
-            }
         });
     </script>
 </body>
