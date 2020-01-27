@@ -1,12 +1,12 @@
-<!-- <?php
+<?php
 require_once('common.php');
 // idの最大値を取得（=問題数）
 $data = getDB1('select max(id) as maxid from Question');
 // 出題する問題を決定
 $i = rand(1, $data['maxid']);
 // 問題文を取得
-$data = getDB1('select question from Question where id=?', [$i]);
-?> -->
+$data = getDB1('select Image from Characters where id=1');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -36,36 +36,53 @@ $data = getDB1('select question from Question where id=?', [$i]);
 
     }
 
-    #button-div {
+    h1 {
         text-align: center;
     }
 
+    #button-div {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
     .columns {
-        margin: 0 auto;
+        /* margin: 0 auto; */
         /* clear: left; */
+        margin-bottom: 30px;
+        text-align: center;
 
     }
 
     .center {
-        margin: 0 auto;
+        text-align: center;
+        /* margin: 0 auto; */
     }
 
     img {
         display: inline-block;
         background: #ffff00;
-        width: 12em;
-        margin: 0 auto;
+        width: 10em;
+        cursor: move;
+        /* margin: 0 auto; */
 
     }
 
+    /* .img {
+        margin: 5px;
+    } */
 
-    .img {
-        width: 150px;
-        margin-top: 30px;
+    .team {
+        margin: 80px;
+        clear: left;
+    }
+
+    .team-img {
+        top: 50%;
     }
 
     .column {
-        height: 150px;
+        margin: 10px;
+        /* height: 150px;
         width: 150px;
         float: left;
         border: 2px solid #666666;
@@ -80,14 +97,31 @@ $data = getDB1('select question from Question where id=?', [$i]);
         -ms-box-shadow: inset 0 0 3px #000;
         box-shadow: inset 0 0 3px #000;
         text-align: center;
-        cursor: move;
+        cursor: move; */
     }
 
-    .column.over {
+    .columm {
+        height: 150px;
+        width: 250px;
+        /* float: left; */
+        border: 2px solid #666666;
+        background-color: #ccc;
+        margin-bottom: 30px;
+        margin-right: 20px;
+        -webkit-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 3px #000;
+        -ms-box-shadow: inset 0 0 3px #000;
+        box-shadow: inset 0 0 3px #000;
+    }
+
+    /* .column.over {
         border: 2px dashed #000;
-    }
+    } */
 
-    .column header {
+    /* .column header {
         color: #fff;
         text-shadow: #000 0 1px;
         box-shadow: 5px;
@@ -108,64 +142,74 @@ $data = getDB1('select question from Question where id=?', [$i]);
         -ms-border-top-right-radius: 10px;
         -moz-border-radius-topright: 10px;
         border-top-right-radius: 10px;
-    }
+    } */
 </style>
 
 <body>
-    <div class="columns">
-        <div class="column" draggable="true">
-            <header>A</header>
-        </div>
-        <div class="column" draggable="true">
-            <header>B</header>
-        </div>
-        <div class="column" draggable="true">
-            <header>C</header>
-        </div>
-        <div class="column" draggable="true">
-            <header>D</header>
-        </div>
+    <h1>編成画面</h1>
+    <div class="columns team">
+        <span class="columm">
+            <a class="column" draggable="true">
+                <img class="img team-img" src="ガチャブル画像/Empty/?= $data['Image'] ?" id="ball">
+            </a>
+        </span>
+
+        <span class="columm">
+            <a class="column" draggable="true">
+                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
+            </a>
+        </span>
+        <span class="columm">
+            <a class="column" draggable="true">
+                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
+            </a>
+        </span>
+        <span class="columm">
+            <a class="column" draggable="true">
+                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
+            </a>
+        </span>
     </div>
 
     <div class="columns">
-        <div class="column" draggable="true">
+        <a class="column" draggable="true">
             <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
-        <div class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
-        <div class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
-
-    </div>
-
-    <div class="columns">
-        <div class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
-        <div class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
-        <div class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
-        <div class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="ガチャブル画像/オイゲン/unnamed00AX3T5G.png" id="ball">
+        </a>
 
     </div>
 
     <div class="columns">
-        <div class="column" draggable="true">
+        <a class="column" draggable="true">
+            <img class="img" src="ガチャブル画像/アポロ/unnamedA7JOSI2A.png" id="ball">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="ガチャブル画像/ビィ/unnamed2OTKPCCB.png" id="ball">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="ガチャブル画像/モニカ/unnamed3W9Q327M.png" id="ball">
+        </a>
+        <a class="column" draggable="true">
             <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
-        <div class="column" draggable="true">
+        </a>
+
+    </div>
+
+    <div class="columns">
+        <a class="column" draggable="true">
             <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
-        <div class="column" draggable="true">
+        </a>
+        <a class="column" draggable="true">
             <img class="img" src="assets/katarina.jpg" id="ball">
-        </div>
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="assets/katarina.jpg" id="ball">
+        </a>
 
     </div>
 
@@ -240,6 +284,33 @@ $data = getDB1('select question from Question where id=?', [$i]);
             col.addEventListener('dragleave', handleDragLeave, false);
             col.addEventListener('drop', handleDrop, false);
             col.addEventListener('dragend', handleDragEnd, false);
+        });
+
+        var a = 0;
+        var b = 0;
+
+        document.querySelector("#button").addEventListener("click", (e) => {
+            a = 0;
+            b = 0;
+            const answer = document.querySelectorAll(".team img.img");
+            answer.forEach(function (param) {
+                if (param.src == "file:///D:/GitClone/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
+
+                    a++;
+
+                }
+                else {
+
+                    b++;
+
+                }
+            })
+            if (b == 4) {
+                location.href = `Buttle.html`;
+            }
+            else {
+                alert("4人編成してください");
+            }
         });
     </script>
 </body>

@@ -42,6 +42,7 @@ $data = getDB1('select question from Question where id=?', [$i]);
 
     #button-div {
         text-align: center;
+        margin-bottom: 40px;
     }
 
     .columns {
@@ -285,16 +286,30 @@ $data = getDB1('select question from Question where id=?', [$i]);
             col.addEventListener('dragend', handleDragEnd, false);
         });
 
+        var a = 0;
+        var b = 0;
+
         document.querySelector("#button").addEventListener("click", (e) => {
-            let answer = document.querySelector("#text-answer");
-            if (answer.value == "") {
-                alert("入力してください");
-                answer.focus();
-                answer.style.backgroundColor = "Pink";
-                e.preventDefault();
+            a = 0;
+            b = 0;
+            const answer = document.querySelectorAll(".team img.img");
+            answer.forEach(function (param) {
+                if (param.src == "file:///D:/GitClone/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
+
+                    a++;
+
+                }
+                else {
+
+                    b++;
+
+                }
+            })
+            if (b == 4) {
+                location.href = `Buttle.html`;
             }
             else {
-                document.querySelector("#btn-answer").innerHTML = "...送信中";
+                alert("4人編成してください");
             }
         });
     </script>
