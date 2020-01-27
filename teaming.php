@@ -287,10 +287,8 @@ $data = getDB1('select Image from Characters where id=1');
         var a = 0;
         var b = 0;
 
-        document.querySelector("#button").addEventListener("click", (e) => {
-            a = 0;
-            b = 0;
             const answer = document.querySelectorAll(".team img.img");
+            const button = document.querySelector("#button");
             answer.forEach(function (param) {
                 if (param.src == "file:///D:/GitClone/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
 
@@ -307,15 +305,11 @@ $data = getDB1('select Image from Characters where id=1');
                 location.href = `Buttle.html`;
             }
             else {
-                alert("4人編成してください");
-                <?php
-// ①
-$samural_alert = "こちらは侍エンジニア塾でございます。";
-// ②
-$alert = "<script type='text/javascript'>alert('". $samural_alert. "');</script>";
-// ③
-echo $alert;
+                button.prop('disabled', true);
             }
+
+            button.addEventListener("click", (e) => {
+
         });
     </script>
 </body>
