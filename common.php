@@ -1,6 +1,6 @@
 <?php
 function getDB1($sql, $param=[]){
-	$dsn  = 'mysql:dbname=GachaBlueDB;host=localhost';
+	$dsn  = 'mysql:dbname=db1366;host=localhost';
 	$user = 'my1366';
 	$pw   = 'aalqawwj';
 	$dbh = new PDO($dsn, $user, $pw);
