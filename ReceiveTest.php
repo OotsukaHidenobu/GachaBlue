@@ -5,7 +5,7 @@ require_once('common.php');
 // 問題文を取得
 $data = getDB1('select Image from Characters where id=1');
 
-$comment = $_GET["comment"];
+$comment = $_GET["id"];
 echo $comment;
 ?>
 <!DOCTYPE html>
