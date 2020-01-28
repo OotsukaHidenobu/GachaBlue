@@ -1,11 +1,12 @@
 <?php
 require_once('common.php');
 // 出題する問題を決定
-//$i = ('');
+$i = rand(1, $data['maxid']);
 // 問題文を取得
-$data = getDB1('select Image from Characters where id=5');
+$data = getDB1('select Image from Characters where id=1');
 
-$warning = "4キャラ全員編成してください"
+$comment = $_GET[‘id’];
+echo $comment;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -173,13 +174,13 @@ $warning = "4キャラ全員編成してください"
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data['Image'] ?>" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/オイゲン/unnamed00AX3T5G.png" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
 
     </div>
@@ -189,26 +190,26 @@ $warning = "4キャラ全員編成してください"
             <img class="img" src="ガチャブル画像/アポロ/unnamedA7JOSI2A.png" id="ball">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/ビィ/unnamed2OTKPCCB.png" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="ガチャブル画像/モニカ/unnamed3W9Q327M.png" id="ball">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
 
     </div>
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
 
     </div>
@@ -291,31 +292,41 @@ $warning = "4キャラ全員編成してください"
 
 
 
-            button.addEventListener("click", (e) => {
-                var answer = document.querySelectorAll(".team .img");
+
+
+
+        button.addEventListener("click", (e) => {
+            var answer = document.querySelectorAll(".team .img");
             var button = document.querySelector("#button");
             a = 0;
             b = 0;
             answer.forEach(function (param) {
-                if (param.src == "http://hp1366.neecbox.net/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
+                console.log(param.src);
+                if (param.src == "file:///D:/GitClone/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
 
                     a++;
                     console.log("aaa");
-
                 }
                 else {
 
                     b++;
                     console.log("bbb");
+
                 }
             })
             if (b == 4) {
-                location.href = `ReceiveTest.php?=id` + encodeURIComponent(1) + '&id=' + encodeURIComponent(4) + '&id=' + encodeURIComponent(433);
+                location.href = `Buttle.html?=` + encodeURIComponent(1) + '=' + encodeURIComponent(4);
+
             }
             else {
-                alert("<?php echo $warning; ?>");
+
+                alert("dame");
             }
         });
+        var query = location.search;
+        var value = query.split('=');
+
+        console.log(decodeURIComponent(value[3]));
     </script>
 </body>
 
