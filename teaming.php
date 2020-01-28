@@ -4,6 +4,8 @@ require_once('common.php');
 $i = rand(1, $data['maxid']);
 // 問題文を取得
 $data = getDB1('select Image from Characters where id=1');
+
+$warning = "4キャラ全員編成してください"
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -287,7 +289,10 @@ $data = getDB1('select Image from Characters where id=1');
         var a = 0;
         var b = 0;
 
-            const answer = document.querySelectorAll(".team img.img");
+
+
+            button.addEventListener("click", (e) => {
+                const answer = document.querySelectorAll(".team img.img");
             const button = document.querySelector("#button");
             answer.forEach(function (param) {
                 if (param.src == "file:///D:/GitClone/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
@@ -305,11 +310,8 @@ $data = getDB1('select Image from Characters where id=1');
                 location.href = `Buttle.html`;
             }
             else {
-                button.prop('disabled', true);
+                alert("<?php echo $warning; ?>");
             }
-
-            button.addEventListener("click", (e) => {
-
         });
     </script>
 </body>
