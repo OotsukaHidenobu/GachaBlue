@@ -147,7 +147,6 @@ $warning = "4キャラ全員編成してください"
 
 <body>
     <h1>編成画面</h1>
-    <?= $data['Image'] ?>
     <div class="columns team">
         <span class="columm">
             <a class="column" draggable="true">
@@ -174,7 +173,7 @@ $warning = "4キャラ全員編成してください"
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="assets/<?= $data['Image'] ?>" id="ball">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
