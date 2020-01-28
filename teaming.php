@@ -1,7 +1,7 @@
 <?php
 require_once('common.php');
 // 出題する問題を決定
-$i = rand(1, $data['maxid']);
+// $i = rand(1, $data['maxid']);
 // 問題文を取得
 $data = getDB1('select Image from Characters where id=1');
 
@@ -298,12 +298,13 @@ $warning = "4キャラ全員編成してください"
                 if (param.src == "file:///D:/GitClone/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
 
                     a++;
+                    console.log("aaa");
 
                 }
                 else {
 
                     b++;
-
+                    console.log("bbb");
                 }
             })
             if (b == 4) {
