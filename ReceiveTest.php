@@ -6,7 +6,7 @@ require_once('common.php');
 $data = getDB1('select Image from Characters where id=1');
 
 $comment = $_GET["id"];
-echo $comment;
+echo $comment[1];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
