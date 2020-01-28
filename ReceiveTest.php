@@ -1,7 +1,7 @@
 <?php
 require_once('common.php');
 // 出題する問題を決定
-$i = rand(1, $data['maxid']);
+//$i = rand(1, $data['maxid']);
 // 問題文を取得
 $data = getDB1('select Image from Characters where id=1');
 
