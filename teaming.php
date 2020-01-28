@@ -147,6 +147,7 @@ $warning = "4キャラ全員編成してください"
 
 <body>
     <h1>編成画面</h1>
+    <?= $data['Image'] ?>
     <div class="columns team">
         <span class="columm">
             <a class="column" draggable="true">
