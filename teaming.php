@@ -193,42 +193,42 @@ $warning = "4キャラ全員編成してください"
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $data1['id'] ?>">
+            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data2['Image'] ?>" id="ball">
+            <img class="img" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data3['Image'] ?>" id="ball">
-        </a>
-
-    </div>
-
-    <div class="columns">
-        <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data4['Image'] ?>" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data5['Image'] ?>" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data6['Image'] ?>" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball" name="13">
+            <img class="img" src="assets/<?= $data3['Image'] ?>" id="ball" name="<?= $id3 ?>">
         </a>
 
     </div>
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball" name="11">
+            <img class="img" src="assets/<?= $data4['Image'] ?>" id="ball" name="<?= $id4 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball" name="2">
+            <img class="img" src="assets/<?= $data5['Image'] ?>" id="ball" name="<?= $id5 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball" name="5">
+            <img class="img" src="assets/<?= $data6['Image'] ?>" id="ball" name="<?= $id6 ?>">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img"src="assets/<?= $data7['Image'] ?>" id="ball" name="<?= $id7 ?>">
+        </a>
+
+    </div>
+
+    <div class="columns">
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data8['Image'] ?>" id="ball" name="<?= $id8 ?>">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data9['Image'] ?>" id="ball" name="<?= $id9 ?>">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data10['Image'] ?>" id="ball" name="<?= $id10 ?>">
         </a>
 
     </div>
@@ -323,7 +323,6 @@ $warning = "4キャラ全員編成してください"
                 if (answer[i].src == "http://hp1366.neecbox.net/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
 
                     a++;
-                    console.log("aaa");
 
                 }
                 else {
@@ -332,7 +331,6 @@ $warning = "4キャラ全員編成してください"
                     id3 = answer[2].name;
                     id4 = answer[3].name;
                     b++;
-                    console.log("param.name");
                 }
             }
             // answer.forEach(function (param) {
