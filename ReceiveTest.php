@@ -193,7 +193,7 @@ $data10 = getDB1('select Image from Characters where id=?',[$id10]);
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $data1['id'] ?>">
+            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
