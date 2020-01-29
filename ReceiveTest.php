@@ -329,7 +329,7 @@ $data10 = getDB1('select Image from Characters where id=?',[$id10]);
                 else {
 
                     b++;
-                    console.log("param.name");
+                    console.log(param.name);
 
                 }
             })
