@@ -215,20 +215,20 @@ $warning = "4キャラ全員編成してください"
             <img class="img" src="assets/<?= $data6['Image'] ?>" id="ball">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball" name="13">
         </a>
 
     </div>
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball" name="11">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball" name="2">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball" name="5">
         </a>
 
     </div>
@@ -308,7 +308,10 @@ $warning = "4キャラ全員編成してください"
 
         var a = 0;
         var b = 0;
-
+        var id1 = 0;
+        var id2 = 0;
+        var id3 = 0;
+        var id4 = 0;
 
 
             button.addEventListener("click", (e) => {
@@ -324,7 +327,10 @@ $warning = "4キャラ全員編成してください"
 
                 }
                 else {
-
+                    id1 = answer[0].name;
+                    id2 = answer[1].name;
+                    id3 = answer[2].name;
+                    id4 = answer[3].name;
                     b++;
                     console.log("param.name");
                 }
@@ -343,7 +349,7 @@ $warning = "4キャラ全員編成してください"
             //     }
             // })
             if (b == 4) {
-                location.href = `ReceiveTest.php?id1=` + encodeURIComponent('11') +"&id2="+ encodeURIComponent('15');
+                location.href = `ReceiveTest.php?id1=` + encodeURIComponent('id1') +"&id2="+ encodeURIComponent('id2')+"&id3="+ encodeURIComponent('id3')+"&id4="+ encodeURIComponent('id4');
             }
             else {
                 alert("<?php echo $warning; ?>");
