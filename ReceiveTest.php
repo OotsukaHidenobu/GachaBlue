@@ -3,10 +3,11 @@ require_once('common.php');
 // 出題する問題を決定
 //$i = rand(1, $data['maxid']);
 // 問題文を取得
-$data = getDB1('select Image from Characters where id=1');
+$id1 = $_GET["id1"];
+$id2 = $_GET["id2"];
+//$data = getDB1('select question from Question where id=?', [$i]);
+$data1 = getDB1('select Image from Characters where id=?',[$id1]);
 
-$comment = $_GET["id"];
-echo $comment[1];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -174,7 +175,7 @@ echo $comment[1];
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
+            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">

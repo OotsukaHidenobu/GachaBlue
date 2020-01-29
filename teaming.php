@@ -310,7 +310,7 @@ $warning = "4キャラ全員編成してください"
                 }
             })
             if (b == 4) {
-                location.href = `ReceiveTest.php?id=` + encodeURIComponent('あいうえお') +"&id="+ encodeURIComponent('さし周世');
+                location.href = `ReceiveTest.php?id1=` + encodeURIComponent('4') +"&id2="+ encodeURIComponent('6');
             }
             else {
                 alert("<?php echo $warning; ?>");
