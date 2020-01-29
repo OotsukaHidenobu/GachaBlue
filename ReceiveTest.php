@@ -175,7 +175,7 @@ $data1 = getDB1('select Image from Characters where id=?',[$id1]);
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?php getDB1('select Image from Characters where id=?',[$id1]); ?>" id="ball">
+            <img class="img" src="assets/<?php getDB1('select Image from Characters where id=15'); ?>" id="ball">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
