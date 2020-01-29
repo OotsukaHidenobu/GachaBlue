@@ -316,7 +316,7 @@ $warning = "4キャラ全員編成してください"
             var button = document.querySelector("#button");
             a = 0;
             b = 0;
-            answer.forEach(function (param) {
+            for(var i=0; i<answer.length; i++){
                 if (param.src == "http://hp1366.neecbox.net/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
 
                     a++;
@@ -328,7 +328,20 @@ $warning = "4キャラ全員編成してください"
                     b++;
                     console.log("param.name");
                 }
-            })
+            }
+            // answer.forEach(function (param) {
+            //     if (param.src == "http://hp1366.neecbox.net/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
+
+            //         a++;
+            //         console.log("aaa");
+
+            //     }
+            //     else {
+
+            //         b++;
+            //         console.log("param.name");
+            //     }
+            // })
             if (b == 4) {
                 location.href = `ReceiveTest.php?id1=` + encodeURIComponent('11') +"&id2="+ encodeURIComponent('15');
             }
