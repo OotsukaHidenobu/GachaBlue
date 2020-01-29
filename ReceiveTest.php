@@ -321,7 +321,7 @@ $data10 = getDB1('select Image from Characters where id=?',[$id10]);
             b = 0;
             answer.forEach(function (param) {
                 console.log(param.src);
-                if (param.src == "file:///D:/GitClone/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
+                if (param.src == "http://hp1366.neecbox.net/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
 
                     a++;
                     console.log("aaa");
