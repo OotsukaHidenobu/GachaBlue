@@ -5,8 +5,26 @@ require_once('common.php');
 // 問題文を取得
 $id1 = $_GET["id1"];
 $id2 = $_GET["id2"];
-//$data = getDB1('select question from Question where id=?', [$i]);
+$id3 = $_GET["id3"];
+$id4 = $_GET["id4"];
+$id5 = $_GET["id5"];
+$id6 = $_GET["id6"];
+$id7 = $_GET["id7"];
+$id8 = $_GET["id8"];
+$id9 = $_GET["id9"];
+$id10 = $_GET["id10"];
+
 $data1 = getDB1('select Image from Characters where id=?',[$id1]);
+$data2 = getDB1('select Image from Characters where id=?',[$id2]);
+$data3 = getDB1('select Image from Characters where id=?',[$id3]);
+$data4 = getDB1('select Image from Characters where id=?',[$id4]);
+$data5 = getDB1('select Image from Characters where id=?',[$id5]);
+$data6 = getDB1('select Image from Characters where id=?',[$id6]);
+$data7 = getDB1('select Image from Characters where id=?',[$id7]);
+$data8 = getDB1('select Image from Characters where id=?',[$id8]);
+$data9 = getDB1('select Image from Characters where id=?',[$id9]);
+$data10 = getDB1('select Image from Characters where id=?',[$id10]);
+
 
 ?>
 <!DOCTYPE html>
@@ -175,7 +193,7 @@ $data1 = getDB1('select Image from Characters where id=?',[$id1]);
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?php getDB1('select Image from Characters where id=15'); ?>" id="ball">
+            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $data1['id'] ?>">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
@@ -311,7 +329,7 @@ $data1 = getDB1('select Image from Characters where id=?',[$id1]);
                 else {
 
                     b++;
-                    console.log("bbb");
+                    console.log("param.name");
 
                 }
             })

@@ -3,7 +3,27 @@ require_once('common.php');
 // 出題する問題を決定
 //$i = ('');
 // 問題文を取得
-$data = getDB1('select Image from Characters where id=5');
+$id1 = $_GET["id1"];
+$id2 = $_GET["id2"];
+$id3 = $_GET["id3"];
+$id4 = $_GET["id4"];
+$id5 = $_GET["id5"];
+$id6 = $_GET["id6"];
+$id7 = $_GET["id7"];
+$id8 = $_GET["id8"];
+$id9 = $_GET["id9"];
+$id10 = $_GET["id10"];
+
+$data1 = getDB1('select Image from Characters where id=?',[$id1]);
+$data2 = getDB1('select Image from Characters where id=?',[$id2]);
+$data3 = getDB1('select Image from Characters where id=?',[$id3]);
+$data4 = getDB1('select Image from Characters where id=?',[$id4]);
+$data5 = getDB1('select Image from Characters where id=?',[$id5]);
+$data6 = getDB1('select Image from Characters where id=?',[$id6]);
+$data7 = getDB1('select Image from Characters where id=?',[$id7]);
+$data8 = getDB1('select Image from Characters where id=?',[$id8]);
+$data9 = getDB1('select Image from Characters where id=?',[$id9]);
+$data10 = getDB1('select Image from Characters where id=?',[$id10]);
 
 $warning = "4キャラ全員編成してください"
 ?>
@@ -173,42 +193,42 @@ $warning = "4キャラ全員編成してください"
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data['Image'] ?>" id="ball">
+            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $data1['id'] ?>">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data2['Image'] ?>" id="ball">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data3['Image'] ?>" id="ball">
+        </a>
+
+    </div>
+
+    <div class="columns">
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data4['Image'] ?>" id="ball">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data5['Image'] ?>" id="ball">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data6['Image'] ?>" id="ball">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
+        </a>
+
+    </div>
+
+    <div class="columns">
+        <a class="column" draggable="true">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/オイゲン/unnamed00AX3T5G.png" id="ball">
-        </a>
-
-    </div>
-
-    <div class="columns">
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/アポロ/unnamedA7JOSI2A.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/ビィ/unnamed2OTKPCCB.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/モニカ/unnamed3W9Q327M.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
-        </a>
-
-    </div>
-
-    <div class="columns">
-        <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
         </a>
 
     </div>
@@ -306,7 +326,7 @@ $warning = "4キャラ全員編成してください"
                 else {
 
                     b++;
-                    console.log("bbb");
+                    console.log("param.name");
                 }
             })
             if (b == 4) {
