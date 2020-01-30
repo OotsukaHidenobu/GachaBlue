@@ -57,6 +57,7 @@ $warning = "4キャラ全員編成してください"
     }
 
     h1 {
+        position: absolute;
         text-align: center;
     }
 
