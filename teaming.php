@@ -167,6 +167,7 @@ $warning = "4キャラ全員編成してください"
     background-image: url(assets/SkillIcon.png);
 }
     .audio_button {
+    position: relative;
     width: 80px;
     height: 80px;
     margin-left:20px;
@@ -177,7 +178,7 @@ $warning = "4キャラ全員編成してください"
 </style>
 
 <body>
-<div style="float: left;" class="audio_wrap">
+<div class="audio_wrap">
   <div class="audio_button"></div>
   <audio id="audio" src="./Music/bgm_maoudamashii_fantasy14.mp3" loop>
     <!-- あなたのブラウザーは <code>audio</code> 要素をサポートしていません。 -->
