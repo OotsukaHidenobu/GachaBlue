@@ -70,8 +70,8 @@ $warning = "4キャラ全員編成してください"
         /* clear: left; */
         margin-bottom: 30px;
         text-align: center;
-        overflow: auto;
   white-space: pre;
+
     }
 
     .center {
@@ -103,7 +103,6 @@ $warning = "4キャラ全員編成してください"
 
     .column {
         margin: 10px;
-
         /* height: 150px;
         width: 150px;
         float: left;
