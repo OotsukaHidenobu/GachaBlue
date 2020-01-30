@@ -169,6 +169,8 @@ $warning = "4キャラ全員編成してください"
     .audio_button {
     width: 80px;
     height: 80px;
+    margin-left:20px;
+    margin-top:20px;
     background: url(assets/mizeraburu_mist.png) no-repeat center center;
     background-size: contain;
 }
