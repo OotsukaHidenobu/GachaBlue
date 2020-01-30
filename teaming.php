@@ -136,45 +136,6 @@ $warning = "4キャラ全員編成してください"
         -ms-box-shadow: inset 0 0 3px #000;
         box-shadow: inset 0 0 3px #000;
     }
-    .soundButton{
-        background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    padding: 0;
-    appearance: none;
-    }
-
-    #Audio-Control{
-    overflow: hidden;
-    }
-
-#Audio-Control button{
-    border: 1px solid #ccc;
-    width: 40px;
-    float: left;
-    padding: 5px 0;
-    -webkit-transition: all 0.6s ease;
-    -moz-transition: all 0.6s ease;
-    -o-transition: all 0.6s ease;
-    transition: all 0.6s ease;
-    }
-
-    #Audio-Control button.on {
-    border-left: none;
-}
-
-#Audio-Control button.off {
-    border-right: none;
-}
-
-#Audio-Control button.active {
-    background: #ccc;
-}
-
-#Audio-Control button:not(.active):hover {
-    background: rgba(204, 204, 204, 0.3);
-}
 
     /* .column.over {
         border: 2px dashed #000;
@@ -202,15 +163,24 @@ $warning = "4キャラ全員編成してください"
         -moz-border-radius-topright: 10px;
         border-top-right-radius: 10px;
     } */
+    .play .audio_button {
+    background-image: url(assets/SkillIcon.png);
+}
+    .audio_button {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background: url(assets/mizeraburu_mist.png) no-repeat center center;
+    background-size: contain;
+}
 </style>
 
 <body>
-<div id="Audio-Control">
-    <audio id="bgm" preload autoplay loop muted>
-        <source src="./Music/bgm_maoudamashii_fantasy14.mp3" type="audio/mpeg">
-    </audio>
-    <button class="soundButton" onclick="enableMute()" class="off active" type="button">OFF</button>
-    <button class="soundButton" onclick="disableMute()" class="on" type="button">ON</button>
+<div class="audio_wrap">
+  <div class="audio_button"></div>
+  <audio id="audio" src="./Music/bgm_maoudamashii_fantasy14.mp3" loop>
+    <!-- あなたのブラウザーは <code>audio</code> 要素をサポートしていません。 -->
+  </audio>
 </div>
     <h1>編成画面</h1>
     <div class="columns team">
@@ -400,23 +370,23 @@ $warning = "4キャラ全員編成してください"
             }
         });
 
-//音声処理
-        var el = document.getElementById("bgm");
+        $(function () {
+  var audioBtn = $('.audio_button'),
+  audioWrap = $('.audio_wrap'),
+  audio = document.getElementById('audio');
 
-function enableMute() {
-    el.muted = true;
-}
-
-function disableMute() {
-    el.muted = false;
-}
-
-$(function(){
-    $('#Audio-Control button').click(function(){
-        $('#Audio-Control button').toggleClass('active');
-    });
+  audioBtn.on('click', function () {
+    if( audioWrap.hasClass('play') ) {
+      audio.pause();
+      audioWrap.removeClass('play');
+    } else {
+      audio.play();
+      audioWrap.addClass('play');
+    }
+  });
 });
     </script>
 </body>
 
+<script src="script/jquery-3.1.1.min.js"></script>
 </html>
