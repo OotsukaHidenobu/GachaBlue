@@ -254,7 +254,7 @@ $warning = "4キャラ全員編成してください"
         <button id="button">戦闘開始</button>
     </div>
 
-
+    <script src="script/jquery-3.1.1.min.js"></script>
 
     <script>
         var dragSrcEl = null;
@@ -388,5 +388,5 @@ $warning = "4キャラ全員編成してください"
     </script>
 </body>
 
-<script src="script/jquery-3.1.1.min.js"></script>
+
 </html>
