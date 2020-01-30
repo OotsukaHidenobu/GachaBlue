@@ -167,6 +167,7 @@ $warning = "4キャラ全員編成してください"
     background-image: url(assets/SkillIcon.png);
 }
     .audio_button {
+    clear: left;
     width: 80px;
     height: 80px;
     margin-left:20px;
