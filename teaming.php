@@ -70,7 +70,8 @@ $warning = "4キャラ全員編成してください"
         /* clear: left; */
         margin-bottom: 30px;
         text-align: center;
-
+        overflow: scroll;
+  white-space:nowrap;
     }
 
     .center {
