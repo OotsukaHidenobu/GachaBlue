@@ -102,6 +102,7 @@ $warning = "4キャラ全員編成してください"
 
     .column {
         margin: 10px;
+        display: inline-block;
         /* height: 150px;
         width: 150px;
         float: left;
