@@ -136,6 +136,45 @@ $warning = "4キャラ全員編成してください"
         -ms-box-shadow: inset 0 0 3px #000;
         box-shadow: inset 0 0 3px #000;
     }
+    .soundButton{
+        background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    }
+
+    #Audio-Control{
+    overflow: hidden;
+    }
+
+#Audio-Control button{
+    border: 1px solid #ccc;
+    width: 40px;
+    float: left;
+    padding: 5px 0;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    }
+
+    #Audio-Control button.on {
+    border-left: none;
+}
+
+#Audio-Control button.off {
+    border-right: none;
+}
+
+#Audio-Control button.active {
+    background: #ccc;
+}
+
+#Audio-Control button:not(.active):hover {
+    background: rgba(204, 204, 204, 0.3);
+}
 
     /* .column.over {
         border: 2px dashed #000;
@@ -166,6 +205,13 @@ $warning = "4キャラ全員編成してください"
 </style>
 
 <body>
+<div id="Audio-Control">
+    <audio id="bgm" preload autoplay loop muted>
+        <source src="./Music/bgm_maoudamashii_fantasy14.mp3" type="audio/mpeg">
+    </audio>
+    <button class="soundButton" onclick="enableMute()" class="off active" type="button">OFF</button>
+    <button class="soundButton" onclick="disableMute()" class="on" type="button">ON</button>
+</div>
     <h1>編成画面</h1>
     <div class="columns team">
         <span class="columm">
@@ -353,6 +399,23 @@ $warning = "4キャラ全員編成してください"
                 alert("<?php echo $warning; ?>");
             }
         });
+
+//音声処理
+        var el = document.getElementById("bgm");
+
+function enableMute() {
+    el.muted = true;
+}
+
+function disableMute() {
+    el.muted = false;
+}
+
+$(function(){
+    $('#Audio-Control button').click(function(){
+        $('#Audio-Control button').toggleClass('active');
+    });
+});
     </script>
 </body>
 
