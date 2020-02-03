@@ -145,7 +145,6 @@
         };
 
         const gachaResult = answer[i].src;
-        console.log(gachaResult);
 
         switch (gachaResult) {
           case "http://hp1366.neecbox.net/GachaBlue/assets/jeeta.png":
@@ -197,17 +196,16 @@
             id = 16;
             break;
         };
-        if (answer[1] && gr == 3) {
-          console.log(id);
-          //id1 = n2;
-        } else if (answer[1]) {
-          //id1 = n3;
-
+        if (answer[i] == answer[0]) {
+          id1 = id;
+        } else if (answer[i] == answer[0]) {
+          id2 = id;
         }
 
       }
 
-
+      console.log(id1);
+      console.log(id2);
 
     });
 
