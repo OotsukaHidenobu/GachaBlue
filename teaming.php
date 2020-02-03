@@ -215,6 +215,11 @@ $warning = "4キャラ全員編成してください"
 	height:120%;
 	background-color:rgba(0,0,0,0.75);
 }
+$("#modal-open").click(
+	function(){
+		//[id:modal-open]をクリックしたら起こる処理
+	}
+);
 </style>
 
 <body>
@@ -231,7 +236,7 @@ $warning = "4キャラ全員編成してください"
     <div id="modal-content">
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
-</div>
+    </div>
 
     <div class="columns team">
         <span class="columm">
@@ -435,11 +440,6 @@ $warning = "4キャラ全員編成してください"
     }
   });
 });
-$("#modal-open").click(
-	function(){
-		//[id:modal-open]をクリックしたら起こる処理
-	}
-);
 //キーボード操作などにより、オーバーレイが多重起動するのを防止する
 $(this).blur() ;	//ボタンからフォーカスを外す
 if($("#modal-overlay")[0]) return false ;		//新しくモーダルウィンドウを起動しない [下とどちらか選択]
