@@ -178,7 +178,7 @@ $warning = "4キャラ全員編成してください"
     background: url(ガチャブル画像/♪.png) no-repeat center center;
     background-size: contain;
 }
-#modal-content{
+.modal-content{
 	width:50%;
 	margin:1.5em auto 0;
 	padding:10px 20px;
