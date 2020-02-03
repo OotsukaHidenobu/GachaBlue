@@ -56,7 +56,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
             <h1 id="Char1HP" class="CharHP"><?= $hp1['Hp'] ?></h1>
             <input type="hidden" name="Char1Attack" value="<?= $power1['Power'] ?>" id="Char1Attack" class="CharAttack">
             <input type="hidden" name="Char1Defence" value="100" id="Char1Defence" class="CharDefence">
-            <img src="assets/jeeta-dot.png">
+            <img src="assets/<?= $image1['PImageower'] ?>">
             <img src="assets/mizeraburu_mist.png"onclick="Char1Skill(0,0,0,25,25)">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -64,9 +64,9 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         <div id="CharactersImage2" class="CharactersImage">
             <h1 id="Char2HPBar" class="CharHPBar">HP:</h1>
             <h1 id="Char2HP" class="CharHP"><?= $hp2['Hp'] ?></h1>
-            <input type="hidden" name="Char2Attack" value="300" id="Char2Attack" class="CharAttack">
+            <input type="hidden" name="Char2Attack" value="<?= $power2['Power'] ?>" id="Char2Attack" class="CharAttack">
             <input type="hidden" name="Char2Defence" value="100" id="Char2Defence" class="CharDefence">
-            <img src="assets/jeeta-dot.png">
+            <img src="assets/<?= $image2['PImageower'] ?>">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -74,9 +74,9 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         <div id="CharactersImage3" class="CharactersImage">
             <h1 id="Char3HPBar" class="CharHPBar">HP:</h1>
             <h1 id="Char3HP" class="CharHP"><?= $hp3['Hp'] ?></h1>
-            <input type="hidden" name="Char3Attack" value="300" id="Char3Attack" class="CharAttack">
+            <input type="hidden" name="Char3Attack" value="<?= $power3['Power'] ?>" id="Char3Attack" class="CharAttack">
             <input type="hidden" name="Char3Defence" value="100" id="Char3Defence" class="CharDefence">
-            <img src="assets/jeeta-dot.png">
+            <img src="assets/<?= $image3['PImageower'] ?>">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -84,9 +84,9 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         <div id="CharactersImage4" class="CharactersImage">
             <h1 id="Char4HPBar" class="CharHPBar">HP:</h1>
             <h1 id="Char4HP" class="CharHP"><?= $hp4['Hp'] ?></h1>
-            <input type="hidden" name="Char4Attack" value="300" id="Char4Attack" class="CharAttack">
+            <input type="hidden" name="Char4Attack" value="<?= $power4['Power'] ?>" id="Char4Attack" class="CharAttack">
             <input type="hidden" name="Char4Defence" value="100" id="Char4Defence" class="CharDefence">
-            <img src="assets/jeeta-dot.png">
+            <img src="assets/<?= $image4['PImageower'] ?>">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -129,7 +129,6 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         
 
         function hp_down() {
-		console.log(Char1Attack);
             var Char1Power = parseFloat(Char1Attack.value) + Math.round(parseFloat(Char1Attack.value / 100) * (Math.random() * 2 - 1));
             var Char2Power = parseFloat(Char2Attack.value) + Math.round(parseFloat(Char2Attack.value / 100) * (Math.random() * 2 - 1));
             var Char3Power = parseFloat(Char3Attack.value) + Math.round(parseFloat(Char3Attack.value / 100) * (Math.random() * 2 - 1));
