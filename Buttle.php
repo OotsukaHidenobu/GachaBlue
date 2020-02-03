@@ -371,8 +371,8 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
             border-radius: 4px;
             border-bottom: 4px solid #d37800;
             position: absolute;
-			top: 40px;
-            left: 670px;
+			top: 100px;
+            left: 720px;
         }
 
         #texture {
