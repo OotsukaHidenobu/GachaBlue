@@ -267,7 +267,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
 
         .CharHPBar {
             position: absolute;
-            left: 150px;
+            left: 400px;
         }
 
         #Char1HP {
