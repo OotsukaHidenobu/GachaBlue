@@ -242,13 +242,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 CharactersImage4.style.opacity = 0.6;
             }
 
-			var a;
-			for(int i = 0; i < $image1.length; i++){
-				a += $image1[i];
-				console.log(a);
-			}
-			
-
             enemyHP.innerHTML -= allPower;
             console.log(allPower);
             if (enemyHP.innerHTML <= 0) {
@@ -290,9 +283,36 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				case 3:
 					Char1Skill(800,0,0,0,20);
 					break;
+				case 4:
+					Char1SkillAll(0,30,0,0,0);
+					break;
+				case 5:
+					Char1Skill(0,0,0,25,25);
+					break;
+				case 6:
+					Char1Skill(800,0,0,0,20);
+					break;
+				case 7:
+					Char1SkillAll(0,30,0,0,0);
+					break;
+				case 8:
+					Char1Skill(0,0,0,25,25);
+					break;
+				case 9:
+					Char1Skill(800,0,0,0,20);
+					break;
+				case 10:
+					Char1SkillAll(0,30,0,0,0);
+					break;
+				case 11:
+					Char1Skill(0,0,0,25,25);
+					break;
+				case 12:
+					Char1Skill(800,0,0,0,20);
+					break;
 	
 				default:
-					# code...
+					Char1Skill(0,0,0,0,0);
 					break;
 			}
 		}
