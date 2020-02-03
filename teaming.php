@@ -358,6 +358,7 @@ $warning = "4キャラ全員編成してください"
         }
 
         function handleDrop(e) {
+            console.log("aasdf");
             // this/e.target is current target element.
 
             if (e.stopPropagation) {
@@ -390,8 +391,6 @@ $warning = "4キャラ全員編成してください"
             col.addEventListener('dragleave', handleDragLeave, false);
             col.addEventListener('drop', handleDrop, false);
             col.addEventListener('dragend', handleDragEnd, false);
-
-            console.log("aasdf");
         });
 
         var a = 0;
