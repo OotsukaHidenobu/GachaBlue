@@ -138,6 +138,29 @@ $warning = "4キャラ全員編成してください"
         box-shadow: inset 0 0 3px #000;
 
     }
+    /* モーダル コンテンツエリア */
+#modal-main {
+　　display: none;
+　　width: 500px;
+　　height: 300px;
+　　margin: 0;
+　　padding: 0;
+　　background-color: #ffffff;
+　　color: #666666;
+　　position:fixed;
+　　z-index: 2;
+}
+/* モーダル 背景エリア */
+#modal-bg {
+　　display:none;
+　　width:100%;
+　　height:100%;
+　　background-color: rgba(0,0,0,0.5);
+　　position:fixed;
+　　top:0;
+　　left:0;
+　　z-index: 1;
+}
 
     /* .column.over {
         border: 2px dashed #000;
@@ -212,13 +235,14 @@ $warning = "4キャラ全員編成してください"
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
+        <div id="modal-main">モーダルウィンドウ</div>
+            <img class="img img1" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
+            <img class="img img2" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data3['Image'] ?>" id="ball" name="<?= $id3 ?>">
+            <img class="img img3" src="assets/<?= $data3['Image'] ?>" id="ball" name="<?= $id3 ?>">
         </a>
 
     </div>
@@ -385,6 +409,47 @@ $warning = "4キャラ全員編成してください"
     } else {
         audio.pause();
       audioWrap.addClass('play');
+    }
+  });
+});
+
+$(function(){
+
+ //テキストリンクをクリックしたら
+$(".img1").click(function(){
+     //body内の最後に<div id="modal-bg"></div>を挿入
+    $("body").append('<div id="modal-bg"></div>');
+
+   //画面中央を計算する関数を実行
+   modalResize();
+
+   //モーダルウィンドウを表示
+       $("#modal-bg,#modal-main").fadeIn("slow");
+
+   //画面のどこかをクリックしたらモーダルを閉じる
+     $("#modal-bg,#modal-main").click(function(){
+         $("#modal-main,#modal-bg").fadeOut("slow",function(){
+        //挿入した<div id="modal-bg"></div>を削除
+             $('#modal-bg').remove() ;
+        });
+
+       });
+
+   //画面の左上からmodal-mainの横幅・高さを引き、その値を2で割ると画面中央の位置が計算できます
+    $(window).resize(modalResize);
+     function modalResize(){
+
+           var w = $(window).width();
+         var h = $(window).height();
+
+           var cw = $("#modal-main").outerWidth();
+          var ch = $("#modal-main").outerHeight();
+
+       //取得した値をcssに追加する
+           $("#modal-main").css({
+               "left": ((w - cw)/2) + "px",
+               "top": ((h - ch)/2) + "px"
+         });
     }
   });
 });
