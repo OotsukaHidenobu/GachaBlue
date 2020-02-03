@@ -26,33 +26,31 @@ $power3 = getDB1('select Power from Characters where id=?',[$id3]);
 $power4 = getDB1('select Power from Characters where id=?',[$id4]);
 
 $Skill1ID1 = getDB1('select Skill1ID from Characters where id=?',[$id1]);
-$Skill1ID2 = getDB1('select Skill1ID from Characters where id=?',[$id2]);
-$Skill1ID3 = getDB1('select Skill1ID from Characters where id=?',[$id3]);
-$Skill1ID4 = getDB1('select Skill1ID from Characters where id=?',[$id4]);
-
 $Skill1Image1 = getDB1('select Skill1Image from Characters where id=?',[$id1]);
-$Skill1Image2 = getDB1('select Skill1Image from Characters where id=?',[$id2]);
-$Skill1Image3 = getDB1('select Skill1Image from Characters where id=?',[$id3]);
-$Skill1Image4 = getDB1('select Skill1Image from Characters where id=?',[$id4]);
-
 $Skill2ID1 = getDB1('select Skill2ID from Characters where id=?',[$id1]);
-$Skill2ID2 = getDB1('select Skill2ID from Characters where id=?',[$id2]);
-$Skill2ID3 = getDB1('select Skill2ID from Characters where id=?',[$id3]);
-$Skill2ID4 = getDB1('select Skill2ID from Characters where id=?',[$id4]);
-
 $Skill2Image1 = getDB1('select Skill2Image from Characters where id=?',[$id1]);
-$Skill2Image2 = getDB1('select Skill2Image from Characters where id=?',[$id2]);
-$Skill2Image3 = getDB1('select Skill2Image from Characters where id=?',[$id3]);
-$Skill2Image4 = getDB1('select Skill2Image from Characters where id=?',[$id4]);
-
 $Skill3ID1 = getDB1('select Skill3ID from Characters where id=?',[$id1]);
-$Skill3ID2 = getDB1('select Skill3ID from Characters where id=?',[$id2]);
-$Skill3ID3 = getDB1('select Skill3ID from Characters where id=?',[$id3]);
-$Skill3ID4 = getDB1('select Skill3ID from Characters where id=?',[$id4]);
-
 $Skill3Image1 = getDB1('select Skill3Image from Characters where id=?',[$id1]);
+
+$Skill1ID2 = getDB1('select Skill1ID from Characters where id=?',[$id2]);
+$Skill1Image2 = getDB1('select Skill1Image from Characters where id=?',[$id2]);
+$Skill2ID2 = getDB1('select Skill2ID from Characters where id=?',[$id2]);
+$Skill2Image2 = getDB1('select Skill2Image from Characters where id=?',[$id2]);
+$Skill3ID2 = getDB1('select Skill3ID from Characters where id=?',[$id2]);
 $Skill3Image2 = getDB1('select Skill3Image from Characters where id=?',[$id2]);
+
+$Skill1ID3 = getDB1('select Skill1ID from Characters where id=?',[$id3]);
+$Skill1Image3 = getDB1('select Skill1Image from Characters where id=?',[$id3]);
+$Skill2ID3 = getDB1('select Skill2ID from Characters where id=?',[$id3]);
+$Skill2Image3 = getDB1('select Skill2Image from Characters where id=?',[$id3]);
+$Skill3ID3 = getDB1('select Skill3ID from Characters where id=?',[$id3]);
 $Skill3Image3 = getDB1('select Skill3Image from Characters where id=?',[$id3]);
+
+$Skill1ID4 = getDB1('select Skill1ID from Characters where id=?',[$id4]);
+$Skill1Image4 = getDB1('select Skill1Image from Characters where id=?',[$id4]);
+$Skill2ID4 = getDB1('select Skill2ID from Characters where id=?',[$id4]);
+$Skill2Image4 = getDB1('select Skill2Image from Characters where id=?',[$id4]);
+$Skill3ID4 = getDB1('select Skill3ID from Characters where id=?',[$id4]);
 $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 ?>
 
@@ -87,9 +85,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char1Attack" value="<?= $power1['Power'] ?>" id="Char1Attack" class="CharAttack">
             <input type="hidden" name="Char1Defence" value="100" id="Char1Defence" class="CharDefence">
             <img src="assets/<?= $image1['Image'] ?>">
-            <img src="assets/reizi.png"onclick="Char1Skill(0,0,0,25,25)">
-            <img src="assets/mizeraburu_mist.png"onclick="Char1Skill(0,30,0,0,0)">
-            <img src="assets/amabure.png"onclick="Char1Skill(800,0,0,0,25)">
+            <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)">
+            <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Char1Skill(0,30,0,0,0)">
+            <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Char1Skill(800,0,0,0,25)">
         </div>
         <div id="CharactersImage2" class="CharactersImage">
             <h1 id="Char2HPBar" class="CharHPBar">HP:</h1>
@@ -97,9 +95,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char2Attack" value="<?= $power2['Power'] ?>" id="Char2Attack" class="CharAttack">
             <input type="hidden" name="Char2Defence" value="100" id="Char2Defence" class="CharDefence">
             <img src="assets/<?= $image2['Image'] ?>">
-            <img src="assets/mizeraburu_mist.png">
-            <img src="assets/mizeraburu_mist.png">
-            <img src="assets/mizeraburu_mist.png">
+            <img src="assets/<?= $Skill1Image2['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)">
+            <img src="assets/<?= $Skill2Image2['Skill2Image'] ?>"onclick="Char1Skill(0,30,0,0,0)">
+            <img src="assets/<?= $Skill3Image2['Skill3Image'] ?>"onclick="Char1Skill(800,0,0,0,25)">
         </div>
         <div id="CharactersImage3" class="CharactersImage">
             <h1 id="Char3HPBar" class="CharHPBar">HP:</h1>
@@ -107,9 +105,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char3Attack" value="<?= $power3['Power'] ?>" id="Char3Attack" class="CharAttack">
             <input type="hidden" name="Char3Defence" value="100" id="Char3Defence" class="CharDefence">
             <img src="assets/<?= $image3['Image'] ?>">
-            <img src="assets/mizeraburu_mist.png">
-            <img src="assets/mizeraburu_mist.png">
-            <img src="assets/mizeraburu_mist.png">
+            <img src="assets/<?= $Skill1Image3['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)">
+            <img src="assets/<?= $Skill2Image3['Skill2Image'] ?>"onclick="Char1Skill(0,30,0,0,0)">
+            <img src="assets/<?= $Skill3Image3['Skill3Image'] ?>"onclick="Char1Skill(800,0,0,0,25)">
         </div>
         <div id="CharactersImage4" class="CharactersImage">
             <h1 id="Char4HPBar" class="CharHPBar">HP:</h1>
@@ -117,9 +115,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char4Attack" value="<?= $power4['Power'] ?>" id="Char4Attack" class="CharAttack">
             <input type="hidden" name="Char4Defence" value="100" id="Char4Defence" class="CharDefence">
             <img src="assets/<?= $image4['Image'] ?>">
-            <img src="assets/mizeraburu_mist.png">
-            <img src="assets/mizeraburu_mist.png">
-            <img src="assets/mizeraburu_mist.png">
+            <img src="assets/<?= $Skill1Image4['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)">
+            <img src="assets/<?= $Skill2Image4['Skill2Image'] ?>"onclick="Char1Skill(0,30,0,0,0)">
+            <img src="assets/<?= $Skill3Image4['Skill3Image'] ?>"onclick="Char1Skill(800,0,0,0,25)">
         </div>
     </div>
     <div>
@@ -243,6 +241,13 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 CharactersImage4.style.backgroundColor = "#000";
                 CharactersImage4.style.opacity = 0.6;
             }
+
+			var a;
+			for(int i = 0; i < $image1.length; i++){
+				a += $image1[i];
+				console.log(a);
+			}
+			
 
             enemyHP.innerHTML -= allPower;
             console.log(allPower);
