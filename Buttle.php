@@ -277,7 +277,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
 
         #CharactersImage2 {
             position: absolute;
-            top: 140px;
+            top: 180px;
             left: 600px;
         }
 
@@ -288,7 +288,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
 
         #CharactersImage3 {
             position: absolute;
-            top: 280px;
+            top: 360px;
             left: 600px;
         }
 
@@ -299,7 +299,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
 
         #CharactersImage4 {
             position: absolute;
-            top: 420px;
+            top: 540px;
             left: 600px;
         }
 
