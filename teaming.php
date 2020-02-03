@@ -251,34 +251,6 @@ $warning = "4キャラ全員編成してください"
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-04" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
-	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>3つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
-	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
-	<p><a id="modal-close" class="button-link">閉じる</a></p>
-	<!-- モーダルウィンドウのコンテンツ終了 -->
-</div>
-<div id="modal-05" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
-	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>3つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
-	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
-	<p><a id="modal-close" class="button-link">閉じる</a></p>
-	<!-- モーダルウィンドウのコンテンツ終了 -->
-</div>
-<div id="modal-06" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
-	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>3つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
-	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
-	<p><a id="modal-close" class="button-link">閉じる</a></p>
-	<!-- モーダルウィンドウのコンテンツ終了 -->
-</div>
-<div id="modal-07" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
-	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>3つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
-	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
-	<p><a id="modal-close" class="button-link">閉じる</a></p>
-	<!-- モーダルウィンドウのコンテンツ終了 -->
-</div>
 
 
     <div class="columns team">
@@ -418,6 +390,8 @@ $warning = "4キャラ全員編成してください"
             col.addEventListener('dragleave', handleDragLeave, false);
             col.addEventListener('drop', handleDrop, false);
             col.addEventListener('dragend', handleDragEnd, false);
+
+            console.log("aasdf");
         });
 
         var a = 0;
