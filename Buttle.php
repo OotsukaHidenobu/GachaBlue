@@ -273,42 +273,103 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             EnemyDefence.value = parseFloat(EnemyDefence.value) - (parseFloat(EnemyDefence.value) * parseFloat(defenceDebuff) / 100);
         }
 
+		var push_1;
+		var push_2;
+		var push_3;
+		var push_4;
+		var push_5;
+		var push_6;
+		var push_7;
+		var push_8;
+		var push_9;
+		var push_10;
+		var push_11;
+		var push_12;
+
 		function Skill(id){
 			switch (id) {
 				case 1:
+				if(!push_1){
+					push_1 = true;
+					return;
+				}
 					Char1SkillAll(0,30,0,0,0);
 					break;
 				case 2:
+				if(!push_2){
+					push_2 = true;
+					return;
+				}
 					Char1Skill(0,0,0,25,25);
 					break;
 				case 3:
+				if(!push_3){
+					push_3 = true;
+					return;
+				}
 					Char1Skill(800,0,0,0,20);
 					break;
 				case 4:
+				if(!push_4){
+					push_4 = true;
+					return;
+				}
 					Char1SkillAll(0,30,0,0,0);
 					break;
 				case 5:
+				if(!push_5){
+					push_5 = true;
+					return;
+				}
 					Char1Skill(0,0,0,25,25);
 					break;
 				case 6:
+				if(!push_6){
+					push_6 = true;
+					return;
+				}
 					Char1Skill(800,0,0,0,20);
 					break;
 				case 7:
+				if(!push_7){
+					push_7 = true;
+					return;
+				}
 					Char1SkillAll(0,30,0,0,0);
 					break;
 				case 8:
+				if(!push_8){
+					push_8 = true;
+					return;
+				}
 					Char1Skill(0,0,0,25,25);
 					break;
 				case 9:
+				if(!push_9){
+					push_9 = true;
+					return;
+				}
 					Char1Skill(800,0,0,0,20);
 					break;
 				case 10:
+				if(!push_10){
+					push_10 = true;
+					return;
+				}
 					Char1SkillAll(0,30,0,0,0);
 					break;
 				case 11:
+				if(!push_11){
+					push_11 = true;
+					return;
+				}
 					Char1Skill(0,0,0,25,25);
 					break;
 				case 12:
+				if(!push_12){
+					push_12 = true;
+					return;
+				}
 					Char1Skill(800,0,0,0,20);
 					break;
 	
