@@ -181,7 +181,6 @@ $warning = "4キャラ全員編成してください"
 <div class="audio_wrap">
   <div class="audio_button"></div>
   <audio id="audio" src="./Music/bgm_maoudamashii_fantasy14.mp3" loop>
-    <!-- あなたのブラウザーは <code>audio</code> 要素をサポートしていません。 -->
   </audio>
 </div>
     <h1>編成画面</h1>
@@ -379,10 +378,10 @@ $warning = "4キャラ全員編成してください"
 
   audioBtn.on('click', function () {
     if( audioWrap.hasClass('play') ) {
-      audio.pause();
+        audio.play();
       audioWrap.removeClass('play');
     } else {
-      audio.play();
+        audio.pause();
       audioWrap.addClass('play');
     }
   });
