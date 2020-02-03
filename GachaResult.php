@@ -18,7 +18,7 @@ for($i=0;$i<9;$i++){
     foreach($raritys as $rarity => $rarity_probability){
       $probability += $rarity_probability;
       if($rand <= $probability){ // 排出レアリティ確定
-        $result[] = array_rand( $$cards[$rarity], 1 ); // 排出レアリティ内からランダムに1枚取得
+        $result[] = array_rand( $cards[$rarity], 1 ); // 排出レアリティ内からランダムに1枚取得
         break;
       }
     }
