@@ -8,7 +8,7 @@
     <script src="./Music/BGM.js"></script>
     <script src="./Music/Se.js"></script>
 
-    <h1>おいらはビィ。こいつはガチャピン。</h1>
+    <h1>ガチャブル</h1>
     <div id="btn-first">
         <p><input type="button" value="ガチャを引く" onclick="Se(0)" id="btn-text"></p>
     </div>
@@ -16,12 +16,16 @@
         <p><input type="button" value="引きなおす" onclick="Se(0)" id="restart">
             <input type="button" value="編成" onclick="Se(1)"id="formation"></p>
     </div>
-
+    <div id="gacha-result">
+        <a href="gacha.php">ガチャ結果</a>
+    </div>
     <script>
     document.querySelector("#btn-thereafter").style.display="none";
+        document.querySelector("#gacha-result").style.display="none";
     document.querySelector("#btn-text").addEventListener("click",(e)=>{
         document.querySelector("#btn-first").style.display="none";
         document.querySelector("#btn-thereafter").style.display="block";
+        document.querySelector("#gacha-result").style.display="block";
     });
     </script>
     <div id="BGMPlay">
