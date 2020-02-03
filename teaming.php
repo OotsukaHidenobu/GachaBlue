@@ -35,7 +35,7 @@ $warning = "4キャラ全員編成してください"
     <title>teaming</title>
 
 </head>
-
+<script src="script/jquery-3.1.1.min.js"></script>
 <style>
     /* Prevent the text contents of draggable elements from being selectable. */
     [draggable] {
@@ -309,7 +309,7 @@ $("#modal-open").click(
         <button id="button">戦闘開始</button>
     </div>
 
-    <script src="script/jquery-3.1.1.min.js"></script>
+
 
     <script>
         var dragSrcEl = null;
