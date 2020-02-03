@@ -226,13 +226,15 @@ $warning = "4キャラ全員編成してください"
 </div>
     <h1>編成画面</h1>
 
-    <div id="modal-overlay"></div>
-    <p><a id="modal-open" class="button-link">クリックするとモーダルウィンドウを開きます。</a></p>
-
-    <div id="modal-content">
+    <div id="modal-content" style="left: 238.5px; top: 122px; display: none;">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p>モーダルウィンドウのコンテンツをHTMLで自由に編集することができます。画像や、動画埋め込みなど、お好きなものを入れて下さい。</p>
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
-    </div>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<p><a id="modal-open" class="button-link">クリックするとモーダルウィンドウを開きます。</a></p>
 
     <div class="columns team">
         <span class="columm">
