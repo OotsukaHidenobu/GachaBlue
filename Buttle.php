@@ -267,45 +267,45 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
 
         .CharHPBar {
             position: absolute;
-            left: 400px;
+            left: 330px;
         }
 
         #Char1HP {
             position: absolute;
-            left: 220px;
+            left: 400px;
         }
 
         #CharactersImage2 {
             position: absolute;
-            top: 140px;
+            top: 180px;
             left: 600px;
         }
 
         #Char2HP {
             position: absolute;
-            left: 220px;
+            left: 400px;
         }
 
         #CharactersImage3 {
             position: absolute;
-            top: 280px;
+            top: 360px;
             left: 600px;
         }
 
         #Char3HP {
             position: absolute;
-            left: 220px;
+            left: 400px;
         }
 
         #CharactersImage4 {
             position: absolute;
-            top: 420px;
+            top: 540px;
             left: 600px;
         }
 
         #Char4HP {
             position: absolute;
-            left: 220px;
+            left: 400px;
         }
 
         .CharactersImage {
@@ -370,7 +370,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
             border-radius: 4px;
             border-bottom: 4px solid #d37800;
             position: absolute;
-            left: 600px;
+            left: 200px;
         }
 
         #texture {
