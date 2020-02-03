@@ -225,14 +225,32 @@ $warning = "4キャラ全員編成してください"
   </audio>
 </div>
     <h1>編成画面</h1>
+</div>
 
-    <div id="modal-content" style="left: 238.5px; top: 122px; display: none;">
+<div id="modal-content-01" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>モーダルウィンドウのコンテンツをHTMLで自由に編集することができます。画像や、動画埋め込みなど、お好きなものを入れて下さい。</p>
+	<p>1つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
+
+<div id="modal-content-02" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p>1つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
+	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<div id="modal-content-03" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p>1つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
+	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
 
 <p><a id="modal-open" class="button-link">クリックするとモーダルウィンドウを開きます。</a></p>
 
@@ -262,13 +280,13 @@ $warning = "4キャラ全員編成してください"
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img img-1" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
+            <img class="img modal-syncer" data-target="modal-01" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
+            <img class="img modal-syncer" data-target="modal-02" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data3['Image'] ?>" id="ball" name="<?= $id3 ?>">
+            <img class="img modal-syncer" data-target="modal-02" src="assets/<?= $data3['Image'] ?>" id="ball" name="<?= $id3 ?>">
         </a>
 
     </div>
@@ -438,42 +456,102 @@ $warning = "4キャラ全員編成してください"
     }
   });
 });
+
+//モーダルコンテンツ
 $(function(){
+
+//グローバル変数
+var nowModalSyncer = null ;		//現在開かれているモーダルコンテンツ
+var modalClassSyncer = "modal-syncer" ;		//モーダルを開くリンクに付けるクラス名
+
+//モーダルのリンクを取得する
+var modals = document.getElementsByClassName( modalClassSyncer ) ;
+
 //モーダルウィンドウを出現させるクリックイベント
-$(".img-1").click( function(){
+for(var i=0,l=modals.length; l>i; i++){
 
-//キーボード操作などにより、オーバーレイが多重起動するのを防止する
-$( this ).blur() ;	//ボタンからフォーカスを外す
-if( $( "#modal-overlay" )[0] ) return false ;		//新しくモーダルウィンドウを起動しない (防止策1)
-//if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;		//現在のモーダルウィンドウを削除して新しく起動する (防止策2)
+	//全てのリンクにタッチイベントを設定する
+	modals[i].onclick = function(){
 
-//オーバーレイを出現させる
-$( "body" ).append( '<div id="modal-overlay"></div>' ) ;
-$( "#modal-overlay" ).fadeIn( "slow" ) ;
+		//ボタンからフォーカスを外す
+		this.blur() ;
 
-//コンテンツをセンタリングする
-centeringModalSyncer() ;
+		//ターゲットとなるコンテンツを確認
+		var target = this.getAttribute( "data-target" ) ;
 
-//コンテンツをフェードインする
-$( "#modal-content" ).fadeIn( "slow" ) ;
+		//ターゲットが存在しなければ終了
+		if( typeof( target )=="undefined" || !target || target==null ){
+			return false ;
+		}
 
-//[#modal-overlay]、または[#modal-close]をクリックしたら…
-$( "#modal-overlay,#modal-close" ).unbind().click( function(){
+		//コンテンツとなる要素を取得
+		nowModalSyncer = document.getElementById( target ) ;
 
-    //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
-    $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
+		//ターゲットが存在しなければ終了
+		if( nowModalSyncer == null ){
+			return false ;
+		}
 
-        //[#modal-overlay]を削除する
-        $('#modal-overlay').remove() ;
+		//キーボード操作などにより、オーバーレイが多重起動するのを防止する
+		if( $( "#modal-overlay" )[0] ) return false ;		//新しくモーダルウィンドウを起動しない
+		//if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;		//現在のモーダルウィンドウを削除して新しく起動する
 
-    } ) ;
+		//オーバーレイを出現させる
+		$( "body" ).append( '<div id="modal-overlay"></div>' ) ;
+		$( "#modal-overlay" ).fadeIn( "fast" ) ;
+
+		//コンテンツをセンタリングする
+		centeringModalSyncer() ;
+
+		//コンテンツをフェードインする
+		$( nowModalSyncer ).fadeIn( "slow" ) ;
+
+		//[#modal-overlay]、または[#modal-close]をクリックしたら…
+		$( "#modal-overlay,#modal-close" ).unbind().click( function() {
+
+			//[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+			$( "#" + target + ",#modal-overlay" ).fadeOut( "fast" , function() {
+
+				//[#modal-overlay]を削除する
+				$( '#modal-overlay' ).remove() ;
+
+			} ) ;
+
+			//現在のコンテンツ情報を削除
+			nowModalSyncer = null ;
+
+		} ) ;
+
+	}
+
+}
+
+	//リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
+	$( window ).resize( centeringModalSyncer ) ;
+
+	//センタリングを実行する関数
+	function centeringModalSyncer() {
+
+		//モーダルウィンドウが開いてなければ終了
+		if( nowModalSyncer == null ) return false ;
+
+		//画面(ウィンドウ)の幅、高さを取得
+		var w = $( window ).width() ;
+		var h = $( window ).height() ;
+
+		//コンテンツ(#modal-content)の幅、高さを取得
+		// jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
+//		var cw = $( nowModalSyncer ).outerWidth( {margin:true} ) ;
+//		var ch = $( nowModalSyncer ).outerHeight( {margin:true} ) ;
+		var cw = $( nowModalSyncer ).outerWidth() ;
+		var ch = $( nowModalSyncer ).outerHeight() ;
+
+		//センタリングを実行する
+		$( nowModalSyncer ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
+
+	}
 
 } ) ;
-
-} ) ;
-
-
-});
 
 
 
