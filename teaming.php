@@ -131,10 +131,9 @@ $warning = "4キャラ全員編成してください"
         /* float: left; */
         border: 2px solid #666666;
         background-color: #ccc;
-        margin-top:50px;
         margin-bottom: 30px;
         margin-right: 20px;
-        -webkit-border-radius: 10px;
+        -webkit-border-radius: 30px;
         -ms-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
