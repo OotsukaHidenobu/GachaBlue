@@ -358,7 +358,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         }
 
         #Attack {
-			clear;
+			clear: both;
             display: inline-block;
             max-width: 180px;
             text-align: left;
