@@ -15,6 +15,7 @@ $id9 = $_GET["id9"];
 $id10 = $_GET["id10"];
 
 $data1 = getDB1('select Image from Characters where id=?',[$id1]);
+$data1_text1 = getDB1('select Skill1Image from Characters where id=?',[$id1]);
 $data2 = getDB1('select Image from Characters where id=?',[$id2]);
 $data3 = getDB1('select Image from Characters where id=?',[$id3]);
 $data4 = getDB1('select Image from Characters where id=?',[$id4]);
@@ -229,11 +230,9 @@ $warning = "4キャラ全員編成してください"
 
 <div id="modal-01" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
-    <?php
-    $txt = getDB1('select Skill1Text from Characters where id=1');
-    echo "<p> $txt </p>";
+    <?=
+        $data1_text1['Skill1Image'];
     ?>
-    <p><?= "$data1['Image']"?></p>
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
 	<!-- モーダルウィンドウのコンテンツ終了 -->
