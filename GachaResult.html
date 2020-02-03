@@ -198,8 +198,10 @@
         };
         if (answer[i] == answer[0]) {
           id1 = id;
-        } else if (answer[i] == answer[0]) {
+        } else if (answer[i] == answer[1]) {
           id2 = id;
+        } else if (answer[i] == answer[2]) {
+          id3 = id;
         }
 
       }
@@ -209,9 +211,9 @@
     });
 
     team_btn.addEventListener('click', () => {
-      console.log(id1);
-      console.log(id2);
-      location.href = `teaming.php?id1=` + encodeURIComponent(id1)
+      location.href = `teaming.php?id1=` + encodeURIComponent(id1) + "&id2=" + encodeURIComponent(id2) + "&id3=" + encodeURIComponent(id3) + "&id4=" + encodeURIComponent(id4)
+        + "&id5=" + encodeURIComponent(id5) + "&id6=" + encodeURIComponent(id6) + "&id7=" + encodeURIComponent(id7) + "&id8=" + encodeURIComponent(id8)
+        + "&id9=" + encodeURIComponent(id9) + "&id10=" + encodeURIComponent(id10);
     });
   </script>
 </body>
