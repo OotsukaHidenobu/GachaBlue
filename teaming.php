@@ -478,10 +478,10 @@ for(var i=0,l=modals.length; l>i; i++){
 		//ターゲットとなるコンテンツを確認
 		var target = this.getAttribute( "data-target" ) ;
 
-		//ターゲットが存在しなければ終了
-		if( typeof( target )=="undefined" || !target || target==null ){
-			return false ;
-		}
+		// //ターゲットが存在しなければ終了
+		// if( typeof( target )=="undefined" || !target || target==null ){
+		// 	return false ;
+		// }
 
 		//コンテンツとなる要素を取得
 		nowModalSyncer = document.getElementById( target ) ;
