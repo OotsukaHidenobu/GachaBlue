@@ -13,20 +13,16 @@ $cards['R']   = [ 'ファン', 'ルグル', 'ガルン', 'ビーンズ', 'ディ
 
 $rand = mt_rand(0,10000); // 乱数生成
 
-// 普通に9連
-for($i=0;$i<10;$i++){
-  $probability = 0;
-  foreach($raritys as $rarity => $rarity_probability){
-    $probability += $rarity_probability;
-    if($rand <= $probability){ // 排出レアリティ確定
-      $result[] = array_rand( $$cards[$rarity], 1 ); // 排出レアリティ内からランダムに1枚取得
-      break;
-    }
+$probability = 0;
+foreach($raritys as $rarity => $rarity_probability){
+  $probability += $rarity_probability;
+  if($rand <= $probability){ // 排出レアリティ確定
+    $result = array_rand( $$cards[$rarity], 1 ); // 排出レアリティ内からランダムに1枚取得
+    break;
   }
 }
 
-foreach($result as $v){
-    echo $v.'<br>';
-  }
+// 結果表示
+echo $result;
 
 ?>
