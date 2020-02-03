@@ -229,7 +229,7 @@ $warning = "4キャラ全員編成してください"
 
 <div id="modal-01" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>1つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
+	<p><?php getDB1('select Skill1Text from Characters where id=1'); ?></p>
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
 	<!-- モーダルウィンドウのコンテンツ終了 -->
