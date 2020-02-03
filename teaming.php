@@ -1,11 +1,31 @@
 <?php
 require_once('common.php');
-// idの最大値を取得（=問題数）
-$data = getDB1('select max(id) as maxid from Question');
 // 出題する問題を決定
-$i = rand(1, $data['maxid']);
+//$i = ('');
 // 問題文を取得
-$data = getDB1('select Image from Characters where id=1');
+$id1 = $_GET["id1"];
+$id2 = $_GET["id2"];
+$id3 = $_GET["id3"];
+$id4 = $_GET["id4"];
+$id5 = $_GET["id5"];
+$id6 = $_GET["id6"];
+$id7 = $_GET["id7"];
+$id8 = $_GET["id8"];
+$id9 = $_GET["id9"];
+$id10 = $_GET["id10"];
+
+$data1 = getDB1('select Image from Characters where id=?',[$id1]);
+$data2 = getDB1('select Image from Characters where id=?',[$id2]);
+$data3 = getDB1('select Image from Characters where id=?',[$id3]);
+$data4 = getDB1('select Image from Characters where id=?',[$id4]);
+$data5 = getDB1('select Image from Characters where id=?',[$id5]);
+$data6 = getDB1('select Image from Characters where id=?',[$id6]);
+$data7 = getDB1('select Image from Characters where id=?',[$id7]);
+$data8 = getDB1('select Image from Characters where id=?',[$id8]);
+$data9 = getDB1('select Image from Characters where id=?',[$id9]);
+$data10 = getDB1('select Image from Characters where id=?',[$id10]);
+
+$warning = "4キャラ全員編成してください"
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -50,7 +70,7 @@ $data = getDB1('select Image from Characters where id=1');
         /* clear: left; */
         margin-bottom: 30px;
         text-align: center;
-
+  white-space:nowrap;
     }
 
     .center {
@@ -143,14 +163,32 @@ $data = getDB1('select Image from Characters where id=1');
         -moz-border-radius-topright: 10px;
         border-top-right-radius: 10px;
     } */
+    .play .audio_button {
+    background-image: url(assets/SkillIcon.png);
+}
+    .audio_button {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-left:20px;
+    margin-top:20px;
+    background: url(assets/mizeraburu_mist.png) no-repeat center center;
+    background-size: contain;
+}
 </style>
 
 <body>
+<div class="audio_wrap">
+  <div class="audio_button"></div>
+  <audio id="audio" src="./Music/bgm_maoudamashii_fantasy14.mp3" loop>
+    <!-- あなたのブラウザーは <code>audio</code> 要素をサポートしていません。 -->
+  </audio>
+</div>
     <h1>編成画面</h1>
     <div class="columns team">
         <span class="columm">
             <a class="column" draggable="true">
-                <img class="img team-img" src="ガチャブル画像/Empty/?= $data['Image'] ?" id="ball">
+                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
             </a>
         </span>
 
@@ -173,42 +211,42 @@ $data = getDB1('select Image from Characters where id=1');
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
+            <img class="img" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/オイゲン/unnamed00AX3T5G.png" id="ball">
-        </a>
-
-    </div>
-
-    <div class="columns">
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/アポロ/unnamedA7JOSI2A.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/ビィ/unnamed2OTKPCCB.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/モニカ/unnamed3W9Q327M.png" id="ball">
-        </a>
-        <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="assets/<?= $data3['Image'] ?>" id="ball" name="<?= $id3 ?>">
         </a>
 
     </div>
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="assets/<?= $data4['Image'] ?>" id="ball" name="<?= $id4 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="assets/<?= $data5['Image'] ?>" id="ball" name="<?= $id5 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/katarina.jpg" id="ball">
+            <img class="img" src="assets/<?= $data6['Image'] ?>" id="ball" name="<?= $id6 ?>">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img"src="assets/<?= $data7['Image'] ?>" id="ball" name="<?= $id7 ?>">
+        </a>
+
+    </div>
+
+    <div class="columns">
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data8['Image'] ?>" id="ball" name="<?= $id8 ?>">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data9['Image'] ?>" id="ball" name="<?= $id9 ?>">
+        </a>
+        <a class="column" draggable="true">
+            <img class="img" src="assets/<?= $data10['Image'] ?>" id="ball" name="<?= $id10 ?>">
         </a>
 
     </div>
@@ -218,7 +256,7 @@ $data = getDB1('select Image from Characters where id=1');
         <button id="button">戦闘開始</button>
     </div>
 
-
+    <script src="script/jquery-3.1.1.min.js"></script>
 
     <script>
         var dragSrcEl = null;
@@ -288,31 +326,69 @@ $data = getDB1('select Image from Characters where id=1');
 
         var a = 0;
         var b = 0;
+        var id1 = 0;
+        var id2 = 0;
+        var id3 = 0;
+        var id4 = 0;
 
-        document.querySelector("#button").addEventListener("click", (e) => {
+
+            button.addEventListener("click", (e) => {
+                var answer = document.querySelectorAll(".team .img");
+            var button = document.querySelector("#button");
             a = 0;
             b = 0;
-            const answer = document.querySelectorAll(".team img.img");
-            answer.forEach(function (param) {
-                if (param.src == "file:///D:/GitClone/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
+            for(var i=0; i<answer.length; i++){
+                if (answer[i].src == "http://hp1366.neecbox.net/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
 
                     a++;
 
                 }
                 else {
-
+                    id1 = answer[0].name;
+                    id2 = answer[1].name;
+                    id3 = answer[2].name;
+                    id4 = answer[3].name;
                     b++;
-
                 }
-            })
+            }
+            // answer.forEach(function (param) {
+            //     if (param.src == "http://hp1366.neecbox.net/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
+
+            //         a++;
+            //         console.log("aaa");
+
+            //     }
+            //     else {
+
+            //         b++;
+            //         console.log("param.name");
+            //     }
+            // })
             if (b == 4) {
-                location.href = `Buttle.html`;
+                location.href = `Buttle.html?id1=` + encodeURIComponent(id1) +"&id2="+ encodeURIComponent(id2)+"&id3="+ encodeURIComponent(id3)+"&id4="+ encodeURIComponent(id4);
             }
             else {
-                alert("4人編成してください");
+                alert("<?php echo $warning; ?>");
             }
         });
+
+        $(function () {
+  var audioBtn = $('.audio_button'),
+  audioWrap = $('.audio_wrap'),
+  audio = document.getElementById('audio');
+
+  audioBtn.on('click', function () {
+    if( audioWrap.hasClass('play') ) {
+      audio.pause();
+      audioWrap.removeClass('play');
+    } else {
+      audio.play();
+      audioWrap.addClass('play');
+    }
+  });
+});
     </script>
 </body>
+
 
 </html>

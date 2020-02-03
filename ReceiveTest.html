@@ -312,7 +312,7 @@ $data = getDB1('select Image from Characters where id=1');
                 }
             })
             if (b == 4) {
-                location.href = `ReceiveTest.html?id=` + encodeURIComponent(1) + '&id=' + encodeURIComponent(4) + '&id=' + encodeURIComponent(433);
+                location.href = `Buttle.html?=` + encodeURIComponent(1) + '=' + encodeURIComponent(4);
 
             }
             else {
@@ -320,8 +320,10 @@ $data = getDB1('select Image from Characters where id=1');
                 alert("dame");
             }
         });
+        var query = location.search;
+        var value = query.split('=');
 
-
+        console.log(decodeURIComponent(value[3]));
     </script>
 </body>
 

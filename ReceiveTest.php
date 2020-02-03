@@ -1,10 +1,32 @@
-<!-- <?php
+<?php
 require_once('common.php');
 // 出題する問題を決定
-$i = rand(1, $data['maxid']);
+//$i = rand(1, $data['maxid']);
 // 問題文を取得
-$data = getDB1('select Image from Characters where id=1');
-?> -->
+$id1 = $_GET["id1"];
+$id2 = $_GET["id2"];
+$id3 = $_GET["id3"];
+$id4 = $_GET["id4"];
+$id5 = $_GET["id5"];
+$id6 = $_GET["id6"];
+$id7 = $_GET["id7"];
+$id8 = $_GET["id8"];
+$id9 = $_GET["id9"];
+$id10 = $_GET["id10"];
+
+$data1 = getDB1('select Image from Characters where id=?',[$id1]);
+$data2 = getDB1('select Image from Characters where id=?',[$id2]);
+$data3 = getDB1('select Image from Characters where id=?',[$id3]);
+$data4 = getDB1('select Image from Characters where id=?',[$id4]);
+$data5 = getDB1('select Image from Characters where id=?',[$id5]);
+$data6 = getDB1('select Image from Characters where id=?',[$id6]);
+$data7 = getDB1('select Image from Characters where id=?',[$id7]);
+$data8 = getDB1('select Image from Characters where id=?',[$id8]);
+$data9 = getDB1('select Image from Characters where id=?',[$id9]);
+$data10 = getDB1('select Image from Characters where id=?',[$id10]);
+
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -171,7 +193,7 @@ $data = getDB1('select Image from Characters where id=1');
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
+            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="ガチャブル画像/イオ/unnamedB89DZEEQ.png" id="ball">
@@ -299,7 +321,7 @@ $data = getDB1('select Image from Characters where id=1');
             b = 0;
             answer.forEach(function (param) {
                 console.log(param.src);
-                if (param.src == "file:///D:/GitClone/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
+                if (param.src == "http://hp1366.neecbox.net/GachaBlue/%E3%82%AC%E3%83%81%E3%83%A3%E3%83%96%E3%83%AB%E7%94%BB%E5%83%8F/Empty/Empty.png") {
 
                     a++;
                     console.log("aaa");
@@ -307,12 +329,12 @@ $data = getDB1('select Image from Characters where id=1');
                 else {
 
                     b++;
-                    console.log("bbb");
+                    console.log(param.name);
 
                 }
             })
             if (b == 4) {
-                location.href = `ReceiveTest.html?id=` + encodeURIComponent(1) + '&id=' + encodeURIComponent(4) + '&id=' + encodeURIComponent(433);
+                location.href = `Buttle.html?=` + encodeURIComponent(1) + '=' + encodeURIComponent(4);
 
             }
             else {
@@ -320,8 +342,10 @@ $data = getDB1('select Image from Characters where id=1');
                 alert("dame");
             }
         });
+        var query = location.search;
+        var value = query.split('=');
 
-
+        console.log(decodeURIComponent(value[3]));
     </script>
 </body>
 
