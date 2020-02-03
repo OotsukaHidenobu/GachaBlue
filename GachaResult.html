@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>ガチャ</title>
+
+</head>
+<script src="script/jquery-3.1.1.min.js"></script>
+
+<style>
+  #button {
+    width: 250px;
+    height: 60px;
+    padding: 10px;
+    font-size: 30px;
+
+
+  }
+
+  #button-div {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+</style>
+
+<body>
+
+  <div class="columns team">
+    <span class="columm">
+      <a class="column" draggable="true">
+        <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="gacha-result">
+      </a>
+    </span>
+
+    <span class="columm">
+      <a class="column" draggable="true">
+        <img class="img team-img modal-syncer" src="ガチャブル画像/Empty/Empty.png" id="ball">
+      </a>
+    </span>
+    <span class="columm">
+      <a class="column" draggable="true">
+        <img class="img team-img modal-syncer" src="ガチャブル画像/Empty/Empty.png" id="ball">
+      </a>
+    </span>
+    <span class="columm">
+      <a class="column" draggable="true">
+        <img class="img team-img modal-syncer" src="ガチャブル画像/Empty/Empty.png" id="ball">
+      </a>
+    </span>
+  </div>
+
+  <div class="columns">
+    <a class="column" draggable="true">
+      <img class="img modal-syncer" data-target="modal-01" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
+    </a>
+    <a class="column" draggable="true">
+      <img class="img modal-syncer" data-target="modal-02" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
+    </a>
+    <a class="column" draggable="true">
+      <img class="img modal-syncer" data-target="modal-03" src="assets/<?= $data3['Image'] ?>" id="ball" name="<?= $id3 ?>">
+    </a>
+
+  </div>
+
+  <div class="columns">
+    <a class="column" draggable="true">
+      <img class="img modal-syncer" data-target="modal-04" src="assets/<?= $data4['Image'] ?>" id="ball" name="<?= $id4 ?>">
+    </a>
+    <a class="column" draggable="true">
+      <img class="img modal-syncer" data-target="modal-05" src="assets/<?= $data5['Image'] ?>" id="ball" name="<?= $id5 ?>">
+    </a>
+    <a class="column" draggable="true">
+      <img class="img modal-syncer" data-target="modal-06" src="assets/<?= $data6['Image'] ?>" id="ball" name="<?= $id6 ?>">
+    </a>
+    <a class="column" draggable="true">
+      <img class="img modal-syncer" data-target="modal-07" src="assets/<?= $data7['Image'] ?>" id="ball" name="<?= $id7 ?>">
+    </a>
+
+  </div>
+
+  <div class="columns">
+    <a class="column" draggable="true">
+      <img class="img" src="assets/<?= $data8['Image'] ?>" id="ball" name="<?= $id8 ?>">
+    </a>
+    <a class="column" draggable="true">
+      <img class="img" src="assets/<?= $data9['Image'] ?>" id="ball" name="<?= $id9 ?>">
+    </a>
+    <a class="column" draggable="true">
+      <img class="img" src="assets/<?= $data10['Image'] ?>" id="ball" name="<?= $id10 ?>">
+    </a>
+
+  </div>
+
+  <div id="button-div">
+    <button id="button">ガチャを引く</button>
+  </div>
+
+
+  <script>
+    const btn = document.getElementById('button');
+
+    btn.addEventListener('mousedown', () => {
+      btn.classList.add('pressed')
+    });
+
+    btn.addEventListener('mouseup', () => {
+      btn.classList.remove('pressed')
+    });
+
+    btn.addEventListener('click', () => {
+
+      var h1 = document.getElementById("show-rality");
+      h1.textContent = "";
+      var h1 = document.getElementById("description");
+      h1.textContent = "";
+      const n = Math.random();
+
+      if (n < 0.8) {
+        var gr = 3;
+      } else {
+        var gr = 2;
+      };
+
+      switch (gr) {
+
+        case 3:
+          const results = ["assets/jeeta.png", "assets/katarina.png", "assets/rakamu.png", "assets/io.png", "assets/oigen.png",
+            "assets/rozetta.png", "assets/risya.png", "assets/monika.png", "assets/syero.png", "assets/vira.png", "assets/kurokisi.png", "assets/okisu.png", "assets/suturumu.png", "assets/doranku.png"];
+          const n2 = Math.floor(Math.random() * results.length);  //0から1の整数
+          document.getElementById('gacha-result').src = results[n2];
+          break;
+
+        case 2:
+          const results2 = ["assets/ruria.png", "assets/b.png"];
+          const n3 = Math.floor(Math.random() * results2.length);  //0から4の整数
+          document.getElementById('gacha-result').src = results2[n3];
+          break;
+      };
+      const gachaResult = document.getElementById('gacha-result').src;
+      console.log(gachaResult);
+      switch (gachaResult) {
+        case "http://hp1366.neecbox.net/GachaBlue/assets/jeeta.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/ruria.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/b.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/katarina.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/rakamu.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/io.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/oigen.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/rozetta.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/risya.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/monika.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/syero.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/vira.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/kurokisi.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/okisu.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/suturumu.png":
+          break;
+        case "http://hp1366.neecbox.net/GachaBlue/assets/doranku.png":
+          break;
+      };
+    });
+  </script>
+</body>
+
+</html>
