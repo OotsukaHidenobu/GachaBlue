@@ -16,10 +16,10 @@ Skill1Image varchar(32),
 Skill1Text varchar(256),
 Skill2ID integer,
 Skill2Image varchar(32),
-Skill1Text varchar(256),
+Skill2Text varchar(256),
 Skill3ID integer,
 Skill3Image varchar(32),
-Skill1Text varchar(256),
+Skill3Text varchar(256),
 PRIMARY KEY(ID)
 );
 
