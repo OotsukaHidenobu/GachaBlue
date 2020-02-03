@@ -358,6 +358,7 @@ $warning = "4キャラ全員編成してください"
         }
 
         function handleDrop(e) {
+            MordalContent();
             // this/e.target is current target element.
 
             if (e.stopPropagation) {
@@ -390,8 +391,6 @@ $warning = "4キャラ全員編成してください"
             col.addEventListener('dragleave', handleDragLeave, false);
             col.addEventListener('drop', handleDrop, false);
             col.addEventListener('dragend', handleDragEnd, false);
-
-            console.log("aasdf");
         });
 
         var a = 0;
@@ -441,6 +440,74 @@ $warning = "4キャラ全員編成してください"
                 alert("<?php echo $warning; ?>");
             }
         });
+
+        function MordalContent(){
+//グローバル変数
+var nowModalSyncer = null ;		//現在開かれているモーダルコンテンツ
+var modalClassSyncer = "modal-syncer" ;		//モーダルを開くリンクに付けるクラス名
+
+//モーダルのリンクを取得する
+var modals = document.getElementsByClassName( modalClassSyncer ) ;
+
+//モーダルウィンドウを出現させるクリックイベント
+for(var i=0,l=modals.length; l>i; i++){
+
+	//全てのリンクにタッチイベントを設定する
+	modals[i].onclick = function(){
+
+		//ボタンからフォーカスを外す
+		this.blur() ;
+
+		//ターゲットとなるコンテンツを確認
+		var target = this.getAttribute( "data-target" ) ;
+
+		//ターゲットが存在しなければ終了
+		if( typeof( target )=="undefined" || !target || target==null ){
+			return false ;
+		}
+
+		//コンテンツとなる要素を取得
+		nowModalSyncer = document.getElementById( target ) ;
+
+		//ターゲットが存在しなければ終了
+		if( nowModalSyncer == null ){
+			return false ;
+		}
+
+		//キーボード操作などにより、オーバーレイが多重起動するのを防止する
+		if( $( "#modal-overlay" )[0] ) return false ;		//新しくモーダルウィンドウを起動しない
+		//if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;		//現在のモーダルウィンドウを削除して新しく起動する
+
+		//オーバーレイを出現させる
+		$( "body" ).append( '<div id="modal-overlay"></div>' ) ;
+		$( "#modal-overlay" ).fadeIn( "fast" ) ;
+
+		//コンテンツをセンタリングする
+		centeringModalSyncer() ;
+
+		//コンテンツをフェードインする
+		$( nowModalSyncer ).fadeIn( "slow" ) ;
+
+		//[#modal-overlay]、または[#modal-close]をクリックしたら…
+		$( "#modal-overlay,#modal-close" ).unbind().click( function() {
+
+			//[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+			$( "#" + target + ",#modal-overlay" ).fadeOut( "fast" , function() {
+
+				//[#modal-overlay]を削除する
+				$( '#modal-overlay' ).remove() ;
+
+			} ) ;
+
+			//現在のコンテンツ情報を削除
+			nowModalSyncer = null ;
+
+		} ) ;
+
+	}
+
+}
+        }
 
         $(function () {
   var audioBtn = $('.audio_button'),
