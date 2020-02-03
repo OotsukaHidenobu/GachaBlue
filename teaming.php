@@ -164,7 +164,7 @@ $warning = "4キャラ全員編成してください"
         border-top-right-radius: 10px;
     } */
     .play .audio_button {
-    background-image: url(assets/SkillIcon.png);
+    background-image: url(ガチャブル画像/♪surassyu.png);
 }
     .audio_button {
     position: relative;
@@ -172,7 +172,7 @@ $warning = "4キャラ全員編成してください"
     height: 80px;
     margin-left:20px;
     margin-top:20px;
-    background: url(assets/mizeraburu_mist.png) no-repeat center center;
+    background: url(ガチャブル画像/♪.png) no-repeat center center;
     background-size: contain;
 }
 </style>
@@ -180,8 +180,7 @@ $warning = "4キャラ全員編成してください"
 <body>
 <div class="audio_wrap">
   <div class="audio_button"></div>
-  <audio id="audio" src="./Music/bgm_maoudamashii_fantasy14.mp3" loop>
-    <!-- あなたのブラウザーは <code>audio</code> 要素をサポートしていません。 -->
+  <audio id="audio" src="./Music/bgm_maoudamashii_fantasy14.mp3" autoplay loop>
   </audio>
 </div>
     <h1>編成画面</h1>
@@ -379,10 +378,10 @@ $warning = "4キャラ全員編成してください"
 
   audioBtn.on('click', function () {
     if( audioWrap.hasClass('play') ) {
-      audio.pause();
+        audio.play();
       audioWrap.removeClass('play');
     } else {
-      audio.play();
+        audio.pause();
       audioWrap.addClass('play');
     }
   });
