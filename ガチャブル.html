@@ -10,14 +10,16 @@
 
     <h1>ガチャブル</h1>
     <div id="btn-first">
-        <p><input type="button" value="ガチャを引く" onclick="Se(0)" id="btn-text"></p>
+        <form action="gacha.php">
+        <p><input type="button" value="ガチャを引く" onclick="Se(0)" id="btn-text"></p></form>
     </div>
     <div id="btn-thereafter">
-        <p><input type="button" value="引きなおす" onclick="Se(0)" id="restart">
+        <form action="gacha.php">
+        <p><input type="button" value="引きなおす" onclick="Se(0)" id="restart"></form>
             <input type="button" value="編成" onclick="Se(1)"id="formation"></p>
     </div>
     <div id="gacha-result">
-        <a href="gacha.php">ガチャ結果</a>
+        ガチャ結果
     </div>
     <script>
     document.querySelector("#btn-thereafter").style.display="none";
