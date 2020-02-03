@@ -463,9 +463,6 @@ $(function(){
 var nowModalSyncer = null ;		//現在開かれているモーダルコンテンツ
 var modalClassSyncer = "modal-syncer" ;		//モーダルを開くリンクに付けるクラス名
 
-//ターゲットとなるコンテンツを確認
-var target = this.getAttribute( "data-target" ) ;
-
 //モーダルのリンクを取得する
 var modals = document.getElementsByClassName( modalClassSyncer ) ;
 
@@ -478,20 +475,21 @@ for(var i=0,l=modals.length; l>i; i++){
 		//ボタンからフォーカスを外す
 		this.blur() ;
 
+		//ターゲットとなるコンテンツを確認
+		var target = this.getAttribute( "data-target" ) ;
 
-
-		//ターゲットが存在しなければ終了
-		if( typeof( target )=="undefined" || !target || target==null ){
-			return false ;
-		}
+		// //ターゲットが存在しなければ終了
+		// if( typeof( target )=="undefined" || !target || target==null ){
+		// 	return false ;
+		// }
 
 		//コンテンツとなる要素を取得
 		nowModalSyncer = document.getElementById( target ) ;
 
-		//ターゲットが存在しなければ終了
-		if( nowModalSyncer == null ){
-			return false ;
-		}
+		// //ターゲットが存在しなければ終了
+		// if( nowModalSyncer == null ){
+		// 	return false ;
+		// }
 
 		//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 		if( $( "#modal-overlay" )[0] ) return false ;		//新しくモーダルウィンドウを起動しない
