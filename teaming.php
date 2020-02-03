@@ -233,6 +233,7 @@ $warning = "4キャラ全員編成してください"
     $txt = getDB1('select Skill1Text from Characters where id=1');
     echo "<p> $txt </p>";
     ?>
+    <?= $data1['Image']?>
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
 	<!-- モーダルウィンドウのコンテンツ終了 -->
