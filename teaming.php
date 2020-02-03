@@ -251,6 +251,34 @@ $warning = "4キャラ全員編成してください"
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
+<div id="modal-04" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p>3つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
+	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+<div id="modal-05" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p>3つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
+	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+<div id="modal-06" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p>3つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
+	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+<div id="modal-07" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p>3つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
+	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
 
 
     <div class="columns team">
@@ -262,17 +290,17 @@ $warning = "4キャラ全員編成してください"
 
         <span class="columm">
             <a class="column" draggable="true">
-                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
+                <img class="img team-img modal-syncer" src="ガチャブル画像/Empty/Empty.png" id="ball">
             </a>
         </span>
         <span class="columm">
             <a class="column" draggable="true">
-                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
+                <img class="img team-img modal-syncer" src="ガチャブル画像/Empty/Empty.png" id="ball">
             </a>
         </span>
         <span class="columm">
             <a class="column" draggable="true">
-                <img class="img team-img" src="ガチャブル画像/Empty/Empty.png" id="ball">
+                <img class="img team-img modal-syncer" src="ガチャブル画像/Empty/Empty.png" id="ball">
             </a>
         </span>
     </div>
@@ -292,16 +320,16 @@ $warning = "4キャラ全員編成してください"
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data4['Image'] ?>" id="ball" name="<?= $id4 ?>">
+            <img class="img modal-syncer" data-target="modal-04" src="assets/<?= $data4['Image'] ?>" id="ball" name="<?= $id4 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data5['Image'] ?>" id="ball" name="<?= $id5 ?>">
+            <img class="img modal-syncer" data-target="modal-05" src="assets/<?= $data5['Image'] ?>" id="ball" name="<?= $id5 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data6['Image'] ?>" id="ball" name="<?= $id6 ?>">
+            <img class="img modal-syncer" data-target="modal-06" src="assets/<?= $data6['Image'] ?>" id="ball" name="<?= $id6 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img"src="assets/<?= $data7['Image'] ?>" id="ball" name="<?= $id7 ?>">
+            <img class="img modal-syncer" data-target="modal-07" src="assets/<?= $data7['Image'] ?>" id="ball" name="<?= $id7 ?>">
         </a>
 
     </div>
@@ -478,18 +506,18 @@ for(var i=0,l=modals.length; l>i; i++){
 		//ターゲットとなるコンテンツを確認
 		var target = this.getAttribute( "data-target" ) ;
 
-		// //ターゲットが存在しなければ終了
-		// if( typeof( target )=="undefined" || !target || target==null ){
-		// 	return false ;
-		// }
+		//ターゲットが存在しなければ終了
+		if( typeof( target )=="undefined" || !target || target==null ){
+			return false ;
+		}
 
 		//コンテンツとなる要素を取得
 		nowModalSyncer = document.getElementById( target ) ;
 
-		// //ターゲットが存在しなければ終了
-		// if( nowModalSyncer == null ){
-		// 	return false ;
-		// }
+		//ターゲットが存在しなければ終了
+		if( nowModalSyncer == null ){
+			return false ;
+		}
 
 		//キーボード操作などにより、オーバーレイが多重起動するのを防止する
 		if( $( "#modal-overlay" )[0] ) return false ;		//新しくモーダルウィンドウを起動しない
