@@ -228,10 +228,10 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         /////////////
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
             enemyHP.innerHTML -= parseFloat(Damege);
-            parseFloat(Char1Attack.value) *= parseFloat(1) + parseFloat(attackBuff) / 100;
-            parseFloat(Char1Defence.value) *= parseFloat(1) + parseFloat(defenceBuff) / 100;
-            parseFloat(EnemyAttack.value) /= parseFloat(1) - parseFloat(attackDebuff) / 100;
-            parseFloat(EnemyDefence.value) /= parseFloat(1) - parseFloat(defenceDebuff) / 100;
+            parseFloat(Char1Attack.value) += parseFloat(Char1Attack.value) * parseFloat(attackBuff) / 100;
+            parseFloat(Char1Defence.value) += parseFloat(Char1Defence.value) * parseFloat(defenceBuff) / 100;
+            parseFloat(EnemyAttack.value) -= parseFloat(EnemyAttack.value) * parseFloat(attackDebuff) / 100;
+            parseFloat(EnemyDefence.value) -= parseFloat(EnemyDefence.value) * parseFloat(defenceDebuff) / 100;
             console.log("çUåÇóÕ:" + Char1Attack.value + ", ñhå‰óÕ:" + Char1Defence.value + ", ìGÇÃçUåÇóÕ:" + EnemyAttack.value + ", ìGÇÃñhå‰óÕ:" + EnemyDefence.value)
         }
         function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
