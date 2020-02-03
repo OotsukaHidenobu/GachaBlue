@@ -29,7 +29,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>êÌÇ¶ÅI</title>
 
     <!--<link rel="stylesheet" href="./css/style.css">-->
@@ -63,7 +63,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         </div>
         <div id="CharactersImage2" class="CharactersImage">
             <h1 id="Char2HPBar" class="CharHPBar">HP:</h1>
-            <h1 id="Char2HP" class="CharHP">1000</h1>
+            <h1 id="Char2HP" class="CharHP"><?= $hp2['Hp'] ?></h1>
             <input type="hidden" name="Char2Attack" value="300" id="Char2Attack" class="CharAttack">
             <input type="hidden" name="Char2Defence" value="100" id="Char2Defence" class="CharDefence">
             <img src="assets/jeeta-dot.png">
@@ -73,7 +73,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         </div>
         <div id="CharactersImage3" class="CharactersImage">
             <h1 id="Char3HPBar" class="CharHPBar">HP:</h1>
-            <h1 id="Char3HP" class="CharHP">1000</h1>
+            <h1 id="Char3HP" class="CharHP"><?= $hp3['Hp'] ?></h1>
             <input type="hidden" name="Char3Attack" value="300" id="Char3Attack" class="CharAttack">
             <input type="hidden" name="Char3Defence" value="100" id="Char3Defence" class="CharDefence">
             <img src="assets/jeeta-dot.png">
@@ -83,7 +83,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         </div>
         <div id="CharactersImage4" class="CharactersImage">
             <h1 id="Char4HPBar" class="CharHPBar">HP:</h1>
-            <h1 id="Char4HP" class="CharHP">1000</h1>
+            <h1 id="Char4HP" class="CharHP"><?= $hp4['Hp'] ?></h1>
             <input type="hidden" name="Char4Attack" value="300" id="Char4Attack" class="CharAttack">
             <input type="hidden" name="Char4Defence" value="100" id="Char4Defence" class="CharDefence">
             <img src="assets/jeeta-dot.png">
@@ -129,6 +129,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         
 
         function hp_down() {
+		console.log(Char1Attack);
             var Char1Power = parseFloat(Char1Attack.value) + Math.round(parseFloat(Char1Attack.value / 100) * (Math.random() * 2 - 1));
             var Char2Power = parseFloat(Char2Attack.value) + Math.round(parseFloat(Char2Attack.value / 100) * (Math.random() * 2 - 1));
             var Char3Power = parseFloat(Char3Attack.value) + Math.round(parseFloat(Char3Attack.value / 100) * (Math.random() * 2 - 1));
