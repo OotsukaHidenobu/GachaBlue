@@ -22,12 +22,11 @@ for($i=0;$i<9;$i++){
       }
     }
   }
+echo $cards[0];
 
-  var_dump($result);
-
-// // 結果表示
-// foreach($result as $v){
-//     echo $v.'<br>';
-//   }
+// 結果表示
+foreach($result as $v){
+    echo $v.'<br>';
+  }
 
 ?>
