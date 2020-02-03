@@ -358,7 +358,6 @@ $warning = "4キャラ全員編成してください"
         }
 
         function handleDrop(e) {
-            MordalContent();
             // this/e.target is current target element.
 
             if (e.stopPropagation) {
