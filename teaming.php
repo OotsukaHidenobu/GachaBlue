@@ -472,27 +472,6 @@ $( "#modal-overlay,#modal-close" ).unbind().click( function(){
 
 } ) ;
 
-//リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
-$( window ).resize( centeringModalSyncer ) ;
-
-	//センタリングを実行する関数
-	function centeringModalSyncer() {
-
-		//画面(ウィンドウ)の幅、高さを取得
-		var w = $( window ).width() ;
-		var h = $( window ).height() ;
-
-		// コンテンツ(#modal-content)の幅、高さを取得
-		// jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
-//		var cw = $( "#modal-content" ).outerWidth( {margin:true} );
-//		var ch = $( "#modal-content" ).outerHeight( {margin:true} );
-		var cw = $( "#modal-content" ).outerWidth();
-		var ch = $( "#modal-content" ).outerHeight();
-
-		//センタリングを実行する
-		$( "#modal-content" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
-
-	}
 
 });
 
@@ -505,7 +484,7 @@ function centeringModalSyncer(){
 var w = $(window).width();
 
 //画面(ウィンドウ)の高さを取得し、変数[h]に格納
-var h = $(window).height();
+var h = window.innerHeight;
 
 //コンテンツ(#modal-content)の幅を取得し、変数[cw]に格納
 var cw = $("#modal-content").outerWidth({margin:true});
