@@ -14,6 +14,13 @@ $id8 = $_GET["id8"];
 $id9 = $_GET["id9"];
 $id10 = $_GET["id10"];
 
+$sql = "SELECT * FROM Characters";
+
+// SQLステートメントを実行し、結果を変数に格納
+$stmt = $dbh->query($sql);
+
+echo $stmt['name'];
+
 $data1 = getDB1('select Image from Characters where id=?',[$id1]);
 $data1_text1 = getDB1('select Skill1Image from Characters where id=?',[$id1]);
 $data2 = getDB1('select Image from Characters where id=?',[$id2]);
