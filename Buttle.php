@@ -56,7 +56,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
             <h1 id="Char1HP" class="CharHP"><?= $hp1['Hp'] ?></h1>
             <input type="hidden" name="Char1Attack" value="<?= $power1['Power'] ?>" id="Char1Attack" class="CharAttack">
             <input type="hidden" name="Char1Defence" value="100" id="Char1Defence" class="CharDefence">
-            <img src="assets/<?= $image1['PImageower'] ?>">
+            <img src="assets/<?= $image1['Image'] ?>">
             <img src="assets/mizeraburu_mist.png"onclick="Char1Skill(0,0,0,25,25)">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -66,7 +66,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
             <h1 id="Char2HP" class="CharHP"><?= $hp2['Hp'] ?></h1>
             <input type="hidden" name="Char2Attack" value="<?= $power2['Power'] ?>" id="Char2Attack" class="CharAttack">
             <input type="hidden" name="Char2Defence" value="100" id="Char2Defence" class="CharDefence">
-            <img src="assets/<?= $image2['PImageower'] ?>">
+            <img src="assets/<?= $image2['Image'] ?>">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -76,7 +76,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
             <h1 id="Char3HP" class="CharHP"><?= $hp3['Hp'] ?></h1>
             <input type="hidden" name="Char3Attack" value="<?= $power3['Power'] ?>" id="Char3Attack" class="CharAttack">
             <input type="hidden" name="Char3Defence" value="100" id="Char3Defence" class="CharDefence">
-            <img src="assets/<?= $image3['PImageower'] ?>">
+            <img src="assets/<?= $image3['Image'] ?>">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -86,7 +86,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
             <h1 id="Char4HP" class="CharHP"><?= $hp4['Hp'] ?></h1>
             <input type="hidden" name="Char4Attack" value="<?= $power4['Power'] ?>" id="Char4Attack" class="CharAttack">
             <input type="hidden" name="Char4Defence" value="100" id="Char4Defence" class="CharDefence">
-            <img src="assets/<?= $image4['PImageower'] ?>">
+            <img src="assets/<?= $image4['Image'] ?>">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
