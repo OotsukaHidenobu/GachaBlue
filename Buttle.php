@@ -227,11 +227,11 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         //ïsãÔçáî≠ê∂íÜ
         /////////////
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
-            enemyHP.innerHTML -= Damege;
-            Char1Attack.value += (parseFloat(Char1Attack.value) / 100) * attackBuff;
-            Char1Defence.value += (parseFloat(Char1Defence.value) / 100) * defenceBuff;
-            EnemyAttack.value -= (parseFloat(EnemyAttack.value) / 100) * attackDebuff;
-            EnemyDefence.value -= (parseFloat(EnemyDefence.value) / 100) * defenceDebuff;
+            enemyHP.innerHTML -= parseFloat(Damege);
+            Char1Attack.value = parseFloat(Char1Attack.value) + (parseFloat(Char1Attack.value) * parseFloat(attackBuff) / 100);
+            Char1Defence.value = parseFloat(Char1Defence.value) + (parseFloat(Char1Defence.value) * parseFloat(defenceBuff) / 100);
+            EnemyAttack.value = parseFloat(EnemyAttack.value) - (parseFloat(EnemyAttack.value) * parseFloat(attackDebuff) / 100);
+            EnemyDefence.value = parseFloat(EnemyDefence.value) - (parseFloat(EnemyDefence.value) * parseFloat(defenceDebuff) / 100);
             console.log("çUåÇóÕ:" + Char1Attack.value + ", ñhå‰óÕ:" + Char1Defence.value + ", ìGÇÃçUåÇóÕ:" + EnemyAttack.value + ", ìGÇÃñhå‰óÕ:" + EnemyDefence.value)
         }
         function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
@@ -371,8 +371,8 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
             border-radius: 4px;
             border-bottom: 4px solid #d37800;
             position: absolute;
-			top: -650px;
-            left: 600px;
+			top: 160px;
+            left: 800px;
         }
 
         #texture {
