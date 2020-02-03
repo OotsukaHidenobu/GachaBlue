@@ -262,7 +262,7 @@ $warning = "4キャラ全員編成してください"
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
+            <img class="img img-1" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
         </a>
         <a class="column" draggable="true">
             <img class="img" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
@@ -440,7 +440,7 @@ $warning = "4キャラ全員編成してください"
 });
 $(function(){
 //モーダルウィンドウを出現させるクリックイベント
-$("#modal-open").click( function(){
+$(".img-1").click( function(){
 
 //キーボード操作などにより、オーバーレイが多重起動するのを防止する
 $( this ).blur() ;	//ボタンからフォーカスを外す
