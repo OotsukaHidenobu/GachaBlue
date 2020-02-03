@@ -53,8 +53,8 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
         </div>
         <div id="CharactersImage1" class="CharactersImage">
             <h1 id="Char1HPBar" class="CharHPBar">HP:</h1>
-            <h1 id="Char1HP" class="CharHP"><?= $hp1['HP'] ?></h1>
-            <input type="hidden" name="Char1Attack" value=<?= $power1['Power'] ?> id="Char1Attack" class="CharAttack">
+            <h1 id="Char1HP" class="CharHP">"<?= $hp1['HP'] ?>"</h1>
+            <input type="hidden" name="Char1Attack" value="<?= $power1['Power'] ?>" id="Char1Attack" class="CharAttack">
             <input type="hidden" name="Char1Defence" value="100" id="Char1Defence" class="CharDefence">
             <img src="assets/jeeta-dot.png">
             <img src="assets/mizeraburu_mist.png"onclick="Char1Skill(0,0,0,25,25)">
