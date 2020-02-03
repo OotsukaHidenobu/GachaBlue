@@ -358,19 +358,6 @@ $warning = "4キャラ全員編成してください"
         }
 
         function handleDrop(e) {
-            // this/e.target is current target element.
-
-            if (e.stopPropagation) {
-                e.stopPropagation(); // Stops some browsers from redirecting.
-            }
-
-            // Don't do anything if dropping the same column we're dragging.
-            if (dragSrcEl != this) {
-                // Set the source column's HTML to the HTML of the columnwe dropped on.
-                dragSrcEl.innerHTML = this.innerHTML;
-                this.innerHTML = e.dataTransfer.getData('text/html');
-            }
-
             //モーダルコンテンツ
 $(function(){
 
@@ -439,6 +426,20 @@ for(var i=0,l=modals.length; l>i; i++){
 	}
 
 }
+            // this/e.target is current target element.
+
+            if (e.stopPropagation) {
+                e.stopPropagation(); // Stops some browsers from redirecting.
+            }
+
+            // Don't do anything if dropping the same column we're dragging.
+            if (dragSrcEl != this) {
+                // Set the source column's HTML to the HTML of the columnwe dropped on.
+                dragSrcEl.innerHTML = this.innerHTML;
+                this.innerHTML = e.dataTransfer.getData('text/html');
+            }
+
+
 
             return false;
         }
