@@ -26,7 +26,7 @@ for($i=0;$i<9;$i++){
 
 
 // 結果表示
-foreach(result as $v){
+foreach($result as $v){
     echo $v.'<br>';
   }
 
