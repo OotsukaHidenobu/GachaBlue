@@ -35,7 +35,7 @@ $warning = "4キャラ全員編成してください"
     <title>teaming</title>
 
 </head>
-
+<script src="script/jquery-3.1.1.min.js"></script>
 <style>
     /* Prevent the text contents of draggable elements from being selectable. */
     [draggable] {
@@ -138,29 +138,7 @@ $warning = "4キャラ全員編成してください"
         box-shadow: inset 0 0 3px #000;
 
     }
-    /* モーダル コンテンツエリア */
-#modal-main {
-　　display: none;
-　　width: 500px;
-　　height: 300px;
-　　margin: 0;
-　　padding: 0;
-　　background-color: #ffffff;
-　　color: #666666;
-　　position:fixed;
-　　z-index: 2;
-}
-/* モーダル 背景エリア */
-#modal-bg {
-　　display:none;
-　　width:100%;
-　　height:100%;
-　　background-color: rgba(0,0,0,0.5);
-　　position:fixed;
-　　top:0;
-　　left:0;
-　　z-index: 1;
-}
+
 
     /* .column.over {
         border: 2px dashed #000;
@@ -200,17 +178,44 @@ $warning = "4キャラ全員編成してください"
     background: url(ガチャブル画像/♪.png) no-repeat center center;
     background-size: contain;
 }
-#contents {
-  z-index: 0;
-  font-size: 16px;
+#modal-content{
+	width:50%;
+	margin:1.5em auto 0;
+	padding:10px 20px;
+	border:2px solid #aaa;
+	background:#fff;
+	z-index:2;
+    position:fixed;
 }
-.page-txt {
-  margin: 30px 0 0;
-  height: 2000px;
+
+.modal-p{
+	margin-top:1em;
 }
-#modal-open {
-  color: #cc0000;
+
+.modal-p:first-child{
+	margin-top:0;
 }
+
+.button-link{
+	color:#00f;
+	text-decoration:underline;
+}
+
+.button-link:hover{
+	cursor:pointer;
+	color:#f00;
+}
+#modal-overlay{
+	z-index:1;
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:120%;
+	background-color:rgba(0,0,0,0.75);
+}
+
 </style>
 
 <body>
@@ -220,6 +225,17 @@ $warning = "4キャラ全員編成してください"
   </audio>
 </div>
     <h1>編成画面</h1>
+
+    <div id="modal-content" style="left: 238.5px; top: 122px; display: none;">
+	<!-- モーダルウィンドウのコンテンツ開始 -->
+	<p>モーダルウィンドウのコンテンツをHTMLで自由に編集することができます。画像や、動画埋め込みなど、お好きなものを入れて下さい。</p>
+	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<p><a id="modal-open" class="button-link">クリックするとモーダルウィンドウを開きます。</a></p>
+
     <div class="columns team">
         <span class="columm">
             <a class="column" draggable="true">
@@ -243,26 +259,16 @@ $warning = "4キャラ全員編成してください"
             </a>
         </span>
     </div>
-    <div id="modal-main">モーダルウィンドウ</div>
-
-<!-- #contents START -->
-  <div id="contents">
-    <p><a id="modal-open">【クリックでモーダルウィンドウを開きます。】</a></p>
-    <p class="page-txt">ここからページ本文<br>
-    <br>
-    ↓↓↓　スクロールしてください ↓↓↓</p>
-  </div>
-<!--/#contents-->
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img img1" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
+            <img class="img" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img img2" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
+            <img class="img" src="assets/<?= $data2['Image'] ?>" id="ball" name="<?= $id2 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img img3" src="assets/<?= $data3['Image'] ?>" id="ball" name="<?= $id3 ?>">
+            <img class="img" src="assets/<?= $data3['Image'] ?>" id="ball" name="<?= $id3 ?>">
         </a>
 
     </div>
@@ -301,7 +307,7 @@ $warning = "4キャラ全員編成してください"
         <button id="button">戦闘開始</button>
     </div>
 
-    <script src="script/jquery-3.1.1.min.js"></script>
+
 
     <script>
         var dragSrcEl = null;
@@ -432,48 +438,96 @@ $warning = "4キャラ全員編成してください"
     }
   });
 });
-
 $(function(){
+//モーダルウィンドウを出現させるクリックイベント
+$("#modal-open").click( function(){
 
- //テキストリンクをクリックしたら
-$("#modal-open").click(function(){
-     //body内の最後に<div id="modal-bg"></div>を挿入
-    $("body").append('<div id="modal-bg"></div>');
+//キーボード操作などにより、オーバーレイが多重起動するのを防止する
+$( this ).blur() ;	//ボタンからフォーカスを外す
+if( $( "#modal-overlay" )[0] ) return false ;		//新しくモーダルウィンドウを起動しない (防止策1)
+//if($("#modal-overlay")[0]) $("#modal-overlay").remove() ;		//現在のモーダルウィンドウを削除して新しく起動する (防止策2)
 
-   //画面中央を計算する関数を実行
-   modalResize();
+//オーバーレイを出現させる
+$( "body" ).append( '<div id="modal-overlay"></div>' ) ;
+$( "#modal-overlay" ).fadeIn( "slow" ) ;
 
-   //モーダルウィンドウを表示
-       $("#modal-bg,#modal-main").fadeIn("slow");
+//コンテンツをセンタリングする
+centeringModalSyncer() ;
 
-   //画面のどこかをクリックしたらモーダルを閉じる
-     $("#modal-bg,#modal-main").click(function(){
-         $("#modal-main,#modal-bg").fadeOut("slow",function(){
-        //挿入した<div id="modal-bg"></div>を削除
-             $('#modal-bg').remove() ;
-        });
+//コンテンツをフェードインする
+$( "#modal-content" ).fadeIn( "slow" ) ;
 
-       });
+//[#modal-overlay]、または[#modal-close]をクリックしたら…
+$( "#modal-overlay,#modal-close" ).unbind().click( function(){
 
-   //画面の左上からmodal-mainの横幅・高さを引き、その値を2で割ると画面中央の位置が計算できます
-    $(window).resize(modalResize);
-     function modalResize(){
+    //[#modal-content]と[#modal-overlay]をフェードアウトした後に…
+    $( "#modal-content,#modal-overlay" ).fadeOut( "slow" , function(){
 
-           var w = $(window).width();
-         var h = $(window).height();
+        //[#modal-overlay]を削除する
+        $('#modal-overlay').remove() ;
 
-           var cw = $("#modal-main").outerWidth();
-          var ch = $("#modal-main").outerHeight();
+    } ) ;
 
-       //取得した値をcssに追加する
-           $("#modal-main").css({
-               "left": ((w - cw)/2) + "px",
-               "top": ((h - ch)/2) + "px"
-         });
-    }
-  });
+} ) ;
+
+} ) ;
+
+//リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
+$( window ).resize( centeringModalSyncer ) ;
+
+	//センタリングを実行する関数
+	function centeringModalSyncer() {
+
+		//画面(ウィンドウ)の幅、高さを取得
+		var w = $( window ).width() ;
+		var h = $( window ).height() ;
+
+		// コンテンツ(#modal-content)の幅、高さを取得
+		// jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
+//		var cw = $( "#modal-content" ).outerWidth( {margin:true} );
+//		var ch = $( "#modal-content" ).outerHeight( {margin:true} );
+		var cw = $( "#modal-content" ).outerWidth();
+		var ch = $( "#modal-content" ).outerHeight();
+
+		//センタリングを実行する
+		$( "#modal-content" ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
+
+	}
+
 });
-    </script>
+
+
+
+//センタリングをする関数
+function centeringModalSyncer(){
+
+//画面(ウィンドウ)の幅を取得し、変数[w]に格納
+var w = $(window).width();
+
+//画面(ウィンドウ)の高さを取得し、変数[h]に格納
+var h = $(window).height();
+
+//コンテンツ(#modal-content)の幅を取得し、変数[cw]に格納
+var cw = $("#modal-content").outerWidth({margin:true});
+
+//コンテンツ(#modal-content)の高さを取得し、変数[ch]に格納
+var ch = $("#modal-content").outerHeight({margin:true});
+
+//コンテンツ(#modal-content)を真ん中に配置するのに、左端から何ピクセル離せばいいか？を計算して、変数[pxleft]に格納
+var pxleft = ((w - cw)/2);
+
+//コンテンツ(#modal-content)を真ん中に配置するのに、上部から何ピクセル離せばいいか？を計算して、変数[pxtop]に格納
+var pxtop = ((h - ch)/2);
+
+//[#modal-content]のCSSに[left]の値(pxleft)を設定
+$("#modal-content").css({"left": pxleft + "px"});
+
+//[#modal-content]のCSSに[top]の値(pxtop)を設定
+$("#modal-content").css({"top": pxtop + "px"});
+
+}
+
+</script>
 </body>
 
 
