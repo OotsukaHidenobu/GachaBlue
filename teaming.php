@@ -164,7 +164,7 @@ $warning = "4キャラ全員編成してください"
         border-top-right-radius: 10px;
     } */
     .play .audio_button {
-    background-image: url(assets/SkillIcon.png);
+    background-image: url(ガチャブル画像/♪surassyu.png);
 }
     .audio_button {
     position: relative;
@@ -172,7 +172,7 @@ $warning = "4キャラ全員編成してください"
     height: 80px;
     margin-left:20px;
     margin-top:20px;
-    background: url(assets/mizeraburu_mist.png) no-repeat center center;
+    background: url(ガチャブル画像/♪.png) no-repeat center center;
     background-size: contain;
 }
 </style>
