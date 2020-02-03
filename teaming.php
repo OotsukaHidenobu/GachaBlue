@@ -230,7 +230,7 @@ $warning = "4キャラ全員編成してください"
 <div id="modal-01" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
 	<!-- モーダルウィンドウのコンテンツ開始 -->
     <?php
-    $txt = "HTML内でのPHPスクリプト実行処理";
+    $txt = getDB1('select Image from Characters where id=1');
     echo "<p> $txt </p>";
     ?>
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
