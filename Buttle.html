@@ -21,13 +21,15 @@
         <div id="EnemyImage" class="EnemyImage">
             <img src="assets/UltimateBahamut.png">
             <input type="hidden" name="EnemyAttack" value="500" id="EnemyAttack" class="EnemyAttack">
+            <input type="hidden" name="EnemyDefence" value="100" id="EnemyDefence" class="EnemyDefence">
         </div>
         <div id="CharactersImage1" class="CharactersImage">
             <h1 id="Char1HPBar" class="CharHPBar">HP:</h1>
             <h1 id="Char1HP" class="CharHP">1000</h1>
             <input type="hidden" name="Char1Attack" value="300" id="Char1Attack" class="CharAttack">
+            <input type="hidden" name="Char1Defence" value="100" id="Char1Defence" class="CharDefence">
             <img src="assets/jeeta-dot.png">
-            <img src="assets/mizeraburu_mist.png">
+            <img src="assets/mizeraburu_mist.png"onclick="Char1Skill(0,0,0,25,25)">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
         </div>
@@ -35,6 +37,7 @@
             <h1 id="Char2HPBar" class="CharHPBar">HP:</h1>
             <h1 id="Char2HP" class="CharHP">1000</h1>
             <input type="hidden" name="Char2Attack" value="300" id="Char2Attack" class="CharAttack">
+            <input type="hidden" name="Char2Defence" value="100" id="Char2Defence" class="CharDefence">
             <img src="assets/jeeta-dot.png">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -44,6 +47,7 @@
             <h1 id="Char3HPBar" class="CharHPBar">HP:</h1>
             <h1 id="Char3HP" class="CharHP">1000</h1>
             <input type="hidden" name="Char3Attack" value="300" id="Char3Attack" class="CharAttack">
+            <input type="hidden" name="Char3Defence" value="100" id="Char3Defence" class="CharDefence">
             <img src="assets/jeeta-dot.png">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -53,6 +57,7 @@
             <h1 id="Char4HPBar" class="CharHPBar">HP:</h1>
             <h1 id="Char4HP" class="CharHP">1000</h1>
             <input type="hidden" name="Char4Attack" value="300" id="Char4Attack" class="CharAttack">
+            <input type="hidden" name="Char4Defence" value="100" id="Char4Defence" class="CharDefence">
             <img src="assets/jeeta-dot.png">
             <img src="assets/mizeraburu_mist.png">
             <img src="assets/mizeraburu_mist.png">
@@ -69,8 +74,9 @@
     <!--Javascript-->
     <!--//////////-->
     <script type="text/javascript">
-        var hp = document.getElementById('HP')
+        var enemyHP = document.getElementById('HP')
         var enemyAttack = document.getElementById('EnemyAttack')
+        var EnemyDefence = document.getElementById('EnemyDefence')
 
         var Char1Attack = document.getElementById('Char1Attack')
         var Char2Attack = document.getElementById('Char2Attack')
@@ -82,7 +88,15 @@
         var Char3HP = document.getElementById('Char3HP')
         var Char4HP = document.getElementById('Char4HP')
 
+        var Char1Defence = document.getElementById('Char1Defence')
+        var Char2Defence = document.getElementById('Char2Defence')
+        var Char3Defence = document.getElementById('Char3Defence')
+        var Char4Defence = document.getElementById('Char4Defence')
+
         var CharHPArray = [Char1HP, Char2HP, Char3HP, Char4HP];
+        var m_charHPArray = [Char1HP, Char2HP, Char3HP, Char4HP];
+        var CharAttackArray = [Char1Attack, Char2Attack, Char3Attack, Char4Attack]
+        var CharDefenceArray = [Char1Defence, Char2Defence, Char3Defence, Char4Defence]
 
         
 
@@ -91,38 +105,43 @@
             var Char2Power = parseFloat(Char2Attack.value) + Math.round(parseFloat(Char2Attack.value / 100) * (Math.random() * 2 - 1));
             var Char3Power = parseFloat(Char3Attack.value) + Math.round(parseFloat(Char3Attack.value / 100) * (Math.random() * 2 - 1));
             var Char4Power = parseFloat(Char4Attack.value) + Math.round(parseFloat(Char4Attack.value / 100) * (Math.random() * 2 - 1));
+
             var enemyPower = parseFloat(enemyAttack.value) + Math.round(parseFloat(enemyAttack.value / 100) * (Math.random() * 2 - 1));
 
-            var allPower = Char1Power + Char2Power + Char3Power + Char4Power;
-
+            var allPower = 0;
+            for (var i = 0; i < 4; i++) {
+                if (CharHPArray[i].innerHTML > 0) {
+                    allPower += parseFloat(CharAttackArray[i].value) + Math.round(parseFloat(CharAttackArray[i].value / 100) * (Math.random() * 2 - 1));
+                }
+            }
 
             var fullpunch = Math.random() * 100;
             if (fullpunch < 5) {
-                for (var i = 0; i < CharHPArray.length; i++) {
-                    CharHPArray[i].innerHTML -= Math.round(enemyPower / 2);
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    m_charHPArray[i].innerHTML -= Math.round(enemyPower / 2);
                 }
             }
             else {
-                var rand = Math.random() * CharHPArray.length;
+                var rand = Math.random() * m_charHPArray.length;
                 if (rand < 1) {
-                    CharHPArray[0].innerHTML -= enemyPower;
+                    m_charHPArray[0].innerHTML -= enemyPower;
                 }
                 else if (rand < 2) {
-                    CharHPArray[1].innerHTML -= enemyPower;
+                    m_charHPArray[1].innerHTML -= enemyPower;
                 }
                 else if (rand < 3) {
-                    CharHPArray[2].innerHTML -= enemyPower;
+                    m_charHPArray[2].innerHTML -= enemyPower;
                 }
                 else if (rand < 4) {
-                    CharHPArray[3].innerHTML -= enemyPower;
+                    m_charHPArray[3].innerHTML -= enemyPower;
                 }
             }
 
             if (Char1HP.innerHTML <= 0) {
                 Char1HP.innerHTML = 0;
-                for (var i = 0; i < CharHPArray.length; i++) {
-                    if (CharHPArray[i] == Char1HP) {
-                        CharHPArray.splice(i, 1);
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    if (m_charHPArray[i] == Char1HP) {
+                        m_charHPArray.splice(i, 1);
                         break;
                     }
                 }
@@ -132,9 +151,9 @@
             }
             if (Char2HP.innerHTML <= 0) {
                 Char2HP.innerHTML = 0;
-                for (var i = 0; i < CharHPArray.length; i++) {
-                    if (CharHPArray[i] == Char2HP) {
-                        CharHPArray.splice(i, 1);
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    if (m_charHPArray[i] == Char2HP) {
+                        m_charHPArray.splice(i, 1);
                         break;
                     }
                 }
@@ -144,9 +163,9 @@
             }
             if (Char3HP.innerHTML <= 0) {
                 Char3HP.innerHTML = 0;
-                for (var i = 0; i < CharHPArray.length; i++) {
-                    if (CharHPArray[i] == Char3HP) {
-                        CharHPArray.splice(i, 1);
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    if (m_charHPArray[i] == Char3HP) {
+                        m_charHPArray.splice(i, 1);
                         break;
                     }
                 }
@@ -156,9 +175,9 @@
             }
             if (Char4HP.innerHTML <= 0) {
                 Char4HP.innerHTML = 0;
-                for (var i = 0; i < CharHPArray.length; i++) {
-                    if (CharHPArray[i] == Char4HP) {
-                        CharHPArray.splice(i, 1);
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    if (m_charHPArray[i] == Char4HP) {
+                        m_charHPArray.splice(i, 1);
                         break;
                     }
                 }
@@ -167,14 +186,36 @@
                 CharactersImage4.style.opacity = 0.6;
             }
 
-            hp.innerHTML -= allPower;
-            console.log(CharHPArray.length);
-            if (hp.innerHTML <= 0) {
+            enemyHP.innerHTML -= allPower;
+            console.log(allPower);
+            if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
             }
-            else if (CharHPArray.length <= 0) {
+            else if (m_charHPArray.length <= 0) {
                 location.href = "./Result_Lose.html";
             }
+        }
+        /////////////
+        //不具合発生中
+        /////////////
+        function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
+            enemyHP.innerHTML -= Damege;
+            Char1Attack.value += (parseFloat(Char1Attack.value) / 100) * attackBuff;
+            Char1Defence.value += (parseFloat(Char1Defence.value) / 100) * defenceBuff;
+            EnemyAttack.value -= (parseFloat(EnemyAttack.value) / 100) * attackDebuff;
+            EnemyDefence.value -= (parseFloat(EnemyDefence.value) / 100) * defenceDebuff;
+            console.log("攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 敵の攻撃力:" + EnemyAttack.value + ", 敵の防御力:" + EnemyDefence.value)
+        }
+        function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
+            enemyHP.innerHTML -= Damege;
+            for (var i = 0; i < 4; i++) {
+                CharAttackArray[i].value += (CharAttackArray[i].value / 100) * attackBuff;
+            }
+            for (var i = 0; i < 4; i++) {
+                CharDefenceArray[i].value += (CharDefenceArray[i].value / 100) * defenceBuff;
+            }
+            EnemyAttack.value -= (EnemyAttack.value / 100) * attackDebuff;
+            EnemyDefence.value -= (EnemyDefence.value / 100) * defenceDebuff;
         }
     </script>
 
