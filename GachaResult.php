@@ -2,8 +2,8 @@
 require_once('common.php');
 
 $raritys = [
-  'SSR' =>  8000,
-  'SR'  => 2000,
+  'SSR' =>  1000,
+  'SR'  => 9000,
 ];
 
 $cards['SSR'] = [ 'アイツ', 'コイツ', ];
