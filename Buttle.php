@@ -242,13 +242,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 CharactersImage4.style.opacity = 0.6;
             }
 
-			var a;
-			for(int i = 0; i < $image1.length; i++){
-				a += $image1[i];
-				console.log(a);
-			}
-			
-
             enemyHP.innerHTML -= allPower;
             console.log(allPower);
             if (enemyHP.innerHTML <= 0) {
