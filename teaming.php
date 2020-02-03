@@ -232,10 +232,19 @@ $warning = "4キャラ全員編成してください"
             </a>
         </span>
     </div>
+    <div id="modal-main">モーダルウィンドウ</div>
+
+<!-- #contents START -->
+  <div id="contents">
+    <p><a id="modal-open">【クリックでモーダルウィンドウを開きます。】</a></p>
+    <p class="page-txt">ここからページ本文<br>
+    <br>
+    ↓↓↓　スクロールしてください ↓↓↓</p>
+  </div>
+<!--/#contents-->
 
     <div class="columns">
         <a class="column" draggable="true">
-        <div id="modal-main">モーダルウィンドウ</div>
             <img class="img img1" src="assets/<?= $data1['Image'] ?>" id="ball" name="<?= $id1 ?>">
         </a>
         <a class="column" draggable="true">
@@ -416,7 +425,7 @@ $warning = "4キャラ全員編成してください"
 $(function(){
 
  //テキストリンクをクリックしたら
-$(".img1").click(function(){
+$("#modal-open").click(function(){
      //body内の最後に<div id="modal-bg"></div>を挿入
     $("body").append('<div id="modal-bg"></div>');
 
