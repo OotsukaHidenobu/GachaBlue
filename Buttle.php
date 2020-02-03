@@ -24,6 +24,36 @@ $power1 = getDB1('select Power from Characters where id=?',[$id1]);
 $power2 = getDB1('select Power from Characters where id=?',[$id2]);
 $power3 = getDB1('select Power from Characters where id=?',[$id3]);
 $power4 = getDB1('select Power from Characters where id=?',[$id4]);
+
+$Skill1ID1 = getDB1('select Skill1ID from Characters where id=?',[$id1]);
+$Skill1ID2 = getDB1('select Skill1ID from Characters where id=?',[$id2]);
+$Skill1ID3 = getDB1('select Skill1ID from Characters where id=?',[$id3]);
+$Skill1ID4 = getDB1('select Skill1ID from Characters where id=?',[$id4]);
+
+$Skill1Image1 = getDB1('select Skill1Image from Characters where id=?',[$id1]);
+$Skill1Image2 = getDB1('select Skill1Image from Characters where id=?',[$id2]);
+$Skill1Image3 = getDB1('select Skill1Image from Characters where id=?',[$id3]);
+$Skill1Image4 = getDB1('select Skill1Image from Characters where id=?',[$id4]);
+
+$Skill2ID1 = getDB1('select Skill2ID from Characters where id=?',[$id1]);
+$Skill2ID2 = getDB1('select Skill2ID from Characters where id=?',[$id2]);
+$Skill2ID3 = getDB1('select Skill2ID from Characters where id=?',[$id3]);
+$Skill2ID4 = getDB1('select Skill2ID from Characters where id=?',[$id4]);
+
+$Skill2Image1 = getDB1('select Skill2Image from Characters where id=?',[$id1]);
+$Skill2Image2 = getDB1('select Skill2Image from Characters where id=?',[$id2]);
+$Skill2Image3 = getDB1('select Skill2Image from Characters where id=?',[$id3]);
+$Skill2Image4 = getDB1('select Skill2Image from Characters where id=?',[$id4]);
+
+$Skill3ID1 = getDB1('select Skill3ID from Characters where id=?',[$id1]);
+$Skill3ID2 = getDB1('select Skill3ID from Characters where id=?',[$id2]);
+$Skill3ID3 = getDB1('select Skill3ID from Characters where id=?',[$id3]);
+$Skill3ID4 = getDB1('select Skill3ID from Characters where id=?',[$id4]);
+
+$Skill3Image1 = getDB1('select Skill3Image from Characters where id=?',[$id1]);
+$Skill3Image2 = getDB1('select Skill3Image from Characters where id=?',[$id2]);
+$Skill3Image3 = getDB1('select Skill3Image from Characters where id=?',[$id3]);
+$Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 ?>
 
 <!DOCTYPE html>
@@ -223,9 +253,7 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
                 location.href = "./Result_Lose.html";
             }
         }
-        /////////////
-        //ïsãÔçáî≠ê∂íÜ
-        /////////////
+
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
             enemyHP.innerHTML -= parseFloat(Damege);
             Char1Attack.value = parseFloat(Char1Attack.value) + (parseFloat(Char1Attack.value) * parseFloat(attackBuff) / 100);
@@ -235,16 +263,34 @@ $power4 = getDB1('select Power from Characters where id=?',[$id4]);
             console.log("çUåÇóÕ:" + Char1Attack.value + ", ñhå‰óÕ:" + Char1Defence.value + ", ìGÇÃçUåÇóÕ:" + EnemyAttack.value + ", ìGÇÃñhå‰óÕ:" + EnemyDefence.value)
         }
         function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
-            enemyHP.innerHTML -= Damege;
+            enemyHP.innerHTML -= parseFloat(Damege);
             for (var i = 0; i < 4; i++) {
-                CharAttackArray[i].value += (CharAttackArray[i].value / 100) * attackBuff;
+                CharAttackArray[i].value = parseFloat(CharAttackArray[i].value) + (parseFloat(CharAttackArray[i].value) * parseFloat(attackBuff) / 100);
             }
             for (var i = 0; i < 4; i++) {
-                CharDefenceArray[i].value += (CharDefenceArray[i].value / 100) * defenceBuff;
+                CharDefenceArray[i].value = parseFloat(CharDefenceArray[i].value) + (parseFloat(CharDefenceArray[i].value) * parseFloat(defenceBuff) / 100);
             }
-            EnemyAttack.value -= (EnemyAttack.value / 100) * attackDebuff;
-            EnemyDefence.value -= (EnemyDefence.value / 100) * defenceDebuff;
+            EnemyAttack.value = parseFloat(EnemyAttack.value) - (parseFloat(EnemyAttack.value) * parseFloat(attackDebuff) / 100);
+            EnemyDefence.value = parseFloat(EnemyDefence.value) - (parseFloat(EnemyDefence.value) * parseFloat(defenceDebuff) / 100);
         }
+
+		function Skill(id){
+			switch (id) {
+				case 1:
+					Char1SkillAll(0,30,0,0,0);
+					break;
+				case 2:
+					Char1Skill(0,0,0,25,25);
+					break;
+				case 3:
+					Char1Skill(800,0,0,0,20);
+					break;
+	
+				default:
+					# code...
+					break;
+			}
+		}
     </script>
 
     <!--/////-->
