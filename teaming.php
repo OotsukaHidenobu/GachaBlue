@@ -436,7 +436,7 @@ $warning = "4キャラ全員編成してください"
     }
   });
 });
-
+$(function(){
 //モーダルウィンドウを出現させるクリックイベント
 $("#modal-open").click( function(){
 
@@ -469,6 +469,9 @@ $( "#modal-overlay,#modal-close" ).unbind().click( function(){
 } ) ;
 
 } ) ;
+});
+
+
 
 //センタリングをする関数
 function centeringModalSyncer(){
