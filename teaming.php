@@ -526,63 +526,63 @@ for(var i=0,l=modals.length; l>i; i++){
 
 }
 
-	//リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
-	$( window ).resize( centeringModalSyncer ) ;
+// 	//リサイズされたら、センタリングをする関数[centeringModalSyncer()]を実行する
+// 	$( window ).resize( centeringModalSyncer ) ;
 
-	//センタリングを実行する関数
-	function centeringModalSyncer() {
+// 	//センタリングを実行する関数
+// 	function centeringModalSyncer() {
 
-		//モーダルウィンドウが開いてなければ終了
-		if( nowModalSyncer == null ) return false ;
+// 		//モーダルウィンドウが開いてなければ終了
+// 		if( nowModalSyncer == null ) return false ;
 
-		//画面(ウィンドウ)の幅、高さを取得
-		var w = $( window ).width() ;
-		var h = $( window ).height() ;
+// 		//画面(ウィンドウ)の幅、高さを取得
+// 		var w = $( window ).width() ;
+// 		var h = $( window ).height() ;
 
-		//コンテンツ(#modal-content)の幅、高さを取得
-		// jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
-//		var cw = $( nowModalSyncer ).outerWidth( {margin:true} ) ;
-//		var ch = $( nowModalSyncer ).outerHeight( {margin:true} ) ;
-		var cw = $( nowModalSyncer ).outerWidth() ;
-		var ch = $( nowModalSyncer ).outerHeight() ;
+// 		//コンテンツ(#modal-content)の幅、高さを取得
+// 		// jQueryのバージョンによっては、引数[{margin:true}]を指定した時、不具合を起こします。
+// //		var cw = $( nowModalSyncer ).outerWidth( {margin:true} ) ;
+// //		var ch = $( nowModalSyncer ).outerHeight( {margin:true} ) ;
+// 		var cw = $( nowModalSyncer ).outerWidth() ;
+// 		var ch = $( nowModalSyncer ).outerHeight() ;
 
-		//センタリングを実行する
-		$( nowModalSyncer ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
+// 		//センタリングを実行する
+// 		$( nowModalSyncer ).css( {"left": ((w - cw)/2) + "px","top": ((h - ch)/2) + "px"} ) ;
 
-	}
+// 	}
 
 } ) ;
 
 
 
-// //センタリングをする関数
-// function centeringModalSyncer(){
+//センタリングをする関数
+function centeringModalSyncer(){
 
-// //画面(ウィンドウ)の幅を取得し、変数[w]に格納
-// var w = $(window).width();
+//画面(ウィンドウ)の幅を取得し、変数[w]に格納
+var w = $(window).width();
 
-// //画面(ウィンドウ)の高さを取得し、変数[h]に格納
-// var h = window.innerHeight;
+//画面(ウィンドウ)の高さを取得し、変数[h]に格納
+var h = window.innerHeight;
 
-// //コンテンツ(#modal-content)の幅を取得し、変数[cw]に格納
-// var cw = $("#modal-content").outerWidth({margin:true});
+//コンテンツ(#modal-content)の幅を取得し、変数[cw]に格納
+var cw = $("#modal-content").outerWidth({margin:true});
 
-// //コンテンツ(#modal-content)の高さを取得し、変数[ch]に格納
-// var ch = $("#modal-content").outerHeight({margin:true});
+//コンテンツ(#modal-content)の高さを取得し、変数[ch]に格納
+var ch = $("#modal-content").outerHeight({margin:true});
 
-// //コンテンツ(#modal-content)を真ん中に配置するのに、左端から何ピクセル離せばいいか？を計算して、変数[pxleft]に格納
-// var pxleft = ((w - cw)/2);
+//コンテンツ(#modal-content)を真ん中に配置するのに、左端から何ピクセル離せばいいか？を計算して、変数[pxleft]に格納
+var pxleft = ((w - cw)/2);
 
-// //コンテンツ(#modal-content)を真ん中に配置するのに、上部から何ピクセル離せばいいか？を計算して、変数[pxtop]に格納
-// var pxtop = ((h - ch)/2);
+//コンテンツ(#modal-content)を真ん中に配置するのに、上部から何ピクセル離せばいいか？を計算して、変数[pxtop]に格納
+var pxtop = ((h - ch)/2);
 
-// //[#modal-content]のCSSに[left]の値(pxleft)を設定
-// $("#modal-content").css({"left": pxleft + "px"});
+//[#modal-content]のCSSに[left]の値(pxleft)を設定
+$("#modal-content").css({"left": pxleft + "px"});
 
-// //[#modal-content]のCSSに[top]の値(pxtop)を設定
-// $("#modal-content").css({"top": pxtop + "px"});
+//[#modal-content]のCSSに[top]の値(pxtop)を設定
+$("#modal-content").css({"top": pxtop + "px"});
 
-// }
+}
 
 </script>
 </body>
