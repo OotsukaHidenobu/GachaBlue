@@ -84,8 +84,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <h1 id="Char1HP" class="CharHP"><?= $hp1['Hp'] ?></h1>
             <input type="hidden" name="Char1Attack" value="<?= $power1['Power'] ?>" id="Char1Attack" class="CharAttack">
             <input type="hidden" name="Char1Defence" value="100" id="Char1Defence" class="CharDefence">
-            <img src="assets/<?= $image1['Image'] ?>">
-            <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)">
+            <input img src="assets/<?= $image1['Image'] ?>">
+            <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)" onclick="disabled = true">
             <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Char1Skill(0,30,0,0,0)">
             <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Char1Skill(800,0,0,0,25)">
         </div>
@@ -253,6 +253,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         }
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
+			
             enemyHP.innerHTML -= parseFloat(Damege);
             Char1Attack.value = parseFloat(Char1Attack.value) + (parseFloat(Char1Attack.value) * parseFloat(attackBuff) / 100);
             Char1Defence.value = parseFloat(Char1Defence.value) + (parseFloat(Char1Defence.value) * parseFloat(defenceBuff) / 100);
