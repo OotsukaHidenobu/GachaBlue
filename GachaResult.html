@@ -120,10 +120,10 @@
     <button id="teaming-button">編成へ</button>
   </div>
   <div id="btn-first">
-    <p><input type="button" value="ガチャを引く" onclick="Se(0)" id="btn-text"></p>
+    <p><input type="button" value="ガチャを引く" onclick="Se(0)" id="button"></p>
   </div>
   <div id="btn-thereafter">
-    <p><input type="button" value="引きなおす" onclick="Se(0)" id="restart">
+    <p><input type="button" value="引きなおす" onclick="Se(0)" id="button">
       <input type="button" value="編成" onclick="Se(1)" id="formation"></p>
   </div>
 
@@ -136,7 +136,7 @@
       document.querySelector("#btn-thereafter").style.display = "block";
     });
 
-    const btn = document.getElementById('btn-text');
+    const btn = document.getElementById('button');
     const team_btn = document.getElementById('teaming-button');
 
     var answer = document.querySelectorAll(".columns img");
