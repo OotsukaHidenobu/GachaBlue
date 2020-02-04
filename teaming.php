@@ -180,7 +180,7 @@ $warning = "4キャラ全員編成してください"
 }
 .modal-content{
 	width:50%;
-	margin:1.5em auto 0;
+	margin:1.0em auto 0;
 	padding:40px 20px;
 	border:2px solid #aaa;
 	background:#fff;
