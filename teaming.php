@@ -15,7 +15,7 @@ $id9 = $_GET["id9"];
 $id10 = $_GET["id10"];
 
 $data1 = getDB1('select Image from Characters where id=?',[$id1]);
-$data1_text1 = getDB1('select Skill1Text from Characters where id=?',[$id1]);
+$data1_text1 = getDB1('select * from Characters where id=?',[$id1]);
 $data2 = getDB1('select Image from Characters where id=?',[$id2]);
 $data3 = getDB1('select Image from Characters where id=?',[$id3]);
 $data4 = getDB1('select Image from Characters where id=?',[$id4]);
@@ -232,7 +232,7 @@ $warning = "4キャラ全員編成してください"
     <!-- モーダルウィンドウのコンテンツ開始 -->
     <p>ステータス</p>
     <p></p>
-    <p><?=$data1_text1['Skill1Image']?></p>
+    <p><?=$data1_text1['Skill1Text']?></p>
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
 	<!-- モーダルウィンドウのコンテンツ終了 -->
