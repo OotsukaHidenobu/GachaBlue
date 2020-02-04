@@ -65,6 +65,10 @@
     </audio>
   </div>
 
+  </div>
+  <h1>ガチャ</h1>
+  </div>
+
 
   <div class="columns">
     <a class="column" draggable="true">
@@ -115,10 +119,24 @@
   <div id="button-div">
     <button id="teaming-button">編成へ</button>
   </div>
+  <div id="btn-first">
+    <p><input type="button" value="ガチャを引く" onclick="Se(0)" id="btn-text"></p>
+  </div>
+  <div id="btn-thereafter">
+    <p><input type="button" value="引きなおす" onclick="Se(0)" id="restart">
+      <input type="button" value="編成" onclick="Se(1)" id="formation"></p>
+  </div>
 
 
   <script>
-    const btn = document.getElementById('button');
+
+    document.querySelector("#btn-thereafter").style.display = "none";
+    document.querySelector("#btn-text").addEventListener("click", (e) => {
+      document.querySelector("#btn-first").style.display = "none";
+      document.querySelector("#btn-thereafter").style.display = "block";
+    });
+
+    const btn = document.getElementById('btn-text restart');
     const team_btn = document.getElementById('teaming-button');
 
     var answer = document.querySelectorAll(".columns img");
