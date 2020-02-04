@@ -113,17 +113,17 @@
   </div>
 
   <div id="button-div">
-    <button id="button">ガチャを引く</button>
+    <button id="button" class="gacha-button">ガチャを引く</button>
   </div>
 
   <div id="button-div">
     <button id="teaming-button">編成へ</button>
   </div>
   <div id="btn-first">
-    <p><input type="button" value="ガチャを引く" onclick="Se(0)" id="button"></p>
+    <p><input type="button" value="ガチャを引く" onclick="Se(0)" id="btn-text" class="gacha-button"></p>
   </div>
   <div id="btn-thereafter">
-    <p><input type="button" value="引きなおす" onclick="Se(0)" id="button">
+    <p><input type="button" value="引きなおす" onclick="Se(0)" id="restart" class="gacha-button">
       <input type="button" value="編成" onclick="Se(1)" id="formation"></p>
   </div>
 
@@ -136,7 +136,7 @@
       document.querySelector("#btn-thereafter").style.display = "block";
     });
 
-    const btn = document.getElementById('button');
+    const btn = document.querySelectorAll(".gacha-button");
     const team_btn = document.getElementById('teaming-button');
 
     var answer = document.querySelectorAll(".columns img");
@@ -155,111 +155,132 @@
     var n2;
     var n3;
 
-    btn.addEventListener('click', () => {
+    btn.forEach(function (el, i) {
+      el.addEventListener('click', function () {
+        for (var i = 0; 0 < answer.length; i++) {
+          const n = Math.random();
 
-      for (var i = 0; 0 < answer.length; i++) {
-        const n = Math.random();
+          if (n < 0.8) {
+            var gr = 3;
+          } else {
+            var gr = 2;
+          };
 
-        if (n < 0.8) {
-          var gr = 3;
-        } else {
-          var gr = 2;
-        };
+          switch (gr) {
 
-        switch (gr) {
+            case 3:
+              const results = ["assets/jeeta.png", "assets/katarina.png", "assets/rakamu.png", "assets/io.png", "assets/oigen.png",
+                "assets/rozetta.png", "assets/risya.png", "assets/monika.png", "assets/syero.png", "assets/vira.png", "assets/kurokisi.png", "assets/okisu.png", "assets/suturumu.png", "assets/doranku.png"];
+              n2 = Math.floor(Math.random() * results.length);
+              answer[i].src = results[n2];
+              break;
 
-          case 3:
-            const results = ["assets/jeeta.png", "assets/katarina.png", "assets/rakamu.png", "assets/io.png", "assets/oigen.png",
-              "assets/rozetta.png", "assets/risya.png", "assets/monika.png", "assets/syero.png", "assets/vira.png", "assets/kurokisi.png", "assets/okisu.png", "assets/suturumu.png", "assets/doranku.png"];
-            n2 = Math.floor(Math.random() * results.length);
-            answer[i].src = results[n2];
-            break;
+            case 2:
+              const results2 = ["assets/ruria.png", "assets/b.png"];
+              n3 = Math.floor(Math.random() * results2.length);
+              answer[i].src = results2[n3];
+              break;
+          };
 
-          case 2:
-            const results2 = ["assets/ruria.png", "assets/b.png"];
-            n3 = Math.floor(Math.random() * results2.length);
-            answer[i].src = results2[n3];
-            break;
-        };
+          const gachaResult = answer[i].src;
 
-        const gachaResult = answer[i].src;
+          switch (gachaResult) {
+            case "http://hp1366.neecbox.net/GachaBlue/assets/jeeta.png":
+              id = 1;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/ruria.png":
+              id = 2;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/b.png":
+              id = 3;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/katarina.png":
+              id = 4;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/rakamu.png":
+              id = 5;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/io.png":
+              id = 6;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/oigen.png":
+              id = 7;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/rozetta.png":
+              id = 8;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/risya.png":
+              id = 9;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/monika.png":
+              id = 10;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/syero.png":
+              id = 11;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/vira.png":
+              id = 12;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/kurokisi.png":
+              id = 13;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/okisu.png":
+              id = 14;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/suturumu.png":
+              id = 15;
+              break;
+            case "http://hp1366.neecbox.net/GachaBlue/assets/doranku.png":
+              id = 16;
+              break;
+          };
+          if (answer[i] == answer[0]) {
+            id1 = id;
+          } else if (answer[i] == answer[1]) {
+            id2 = id;
+          } else if (answer[i] == answer[2]) {
+            id3 = id;
+          } else if (answer[i] == answer[3]) {
+            id4 = id;
+          } else if (answer[i] == answer[4]) {
+            id5 = id;
+          } else if (answer[i] == answer[5]) {
+            id6 = id;
+          } else if (answer[i] == answer[6]) {
+            id7 = id;
+          } else if (answer[i] == answer[7]) {
+            id8 = id;
+          } else if (answer[i] == answer[8]) {
+            id9 = id;
+          } else if (answer[i] == answer[9]) {
+            id10 = id;
+          }
 
-        switch (gachaResult) {
-          case "http://hp1366.neecbox.net/GachaBlue/assets/jeeta.png":
-            id = 1;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/ruria.png":
-            id = 2;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/b.png":
-            id = 3;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/katarina.png":
-            id = 4;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/rakamu.png":
-            id = 5;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/io.png":
-            id = 6;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/oigen.png":
-            id = 7;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/rozetta.png":
-            id = 8;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/risya.png":
-            id = 9;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/monika.png":
-            id = 10;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/syero.png":
-            id = 11;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/vira.png":
-            id = 12;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/kurokisi.png":
-            id = 13;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/okisu.png":
-            id = 14;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/suturumu.png":
-            id = 15;
-            break;
-          case "http://hp1366.neecbox.net/GachaBlue/assets/doranku.png":
-            id = 16;
-            break;
-        };
-        if (answer[i] == answer[0]) {
-          id1 = id;
-        } else if (answer[i] == answer[1]) {
-          id2 = id;
-        } else if (answer[i] == answer[2]) {
-          id3 = id;
-        } else if (answer[i] == answer[3]) {
-          id4 = id;
-        } else if (answer[i] == answer[4]) {
-          id5 = id;
-        } else if (answer[i] == answer[5]) {
-          id6 = id;
-        } else if (answer[i] == answer[6]) {
-          id7 = id;
-        } else if (answer[i] == answer[7]) {
-          id8 = id;
-        } else if (answer[i] == answer[8]) {
-          id9 = id;
-        } else if (answer[i] == answer[9]) {
-          id10 = id;
         }
+      })
+    })
 
-      }
+    // btn.addEventListener('click', () => {
 
 
 
+
+
+    // });
+    $(function () {
+      var audioBtn = $('.audio_button'),
+        audioWrap = $('.audio_wrap'),
+        audio = document.getElementById('audio');
+
+      audioBtn.on('click', function () {
+        if (audioWrap.hasClass('play')) {
+          audio.play();
+          audioWrap.removeClass('play');
+        } else {
+          audio.pause();
+          audioWrap.addClass('play');
+        }
+      });
     });
 
     team_btn.addEventListener('click', () => {
