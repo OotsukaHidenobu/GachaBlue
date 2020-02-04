@@ -322,11 +322,11 @@ $warning = "4キャラ全員編成してください"
 
     <br clear="left">
     <div id="button-div">
-        <button id="button">戦闘開始</button>
+        <button id="button" onclick="Se(1)">戦闘開始</button>
     </div>
 
 
-
+    <script src="./Music/Se.js"></script>
     <script>
         var dragSrcEl = null;
 
