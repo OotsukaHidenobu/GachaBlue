@@ -229,7 +229,7 @@ $warning = "4キャラ全員編成してください"
 
 <div id="modal-01" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
     <!-- モーダルウィンドウのコンテンツ開始 -->
-    <p>ステータス</p>
+    <h3>ステータス</h3>
     <p>HP:<?=$data1['Hp']?></p>
     <p>攻撃力:<?=$data1['Power']?></p>
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
