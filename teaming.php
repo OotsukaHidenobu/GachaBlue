@@ -227,7 +227,7 @@ $warning = "4キャラ全員編成してください"
     <h1>編成画面</h1>
 </div>
 
-<div id="modal-01" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
+<div id="modal-01" class="modal-content" style="left: 334.5px; top: 122px; display: none;">
     <!-- モーダルウィンドウのコンテンツ開始 -->
     <h3>ステータス</h3>
     <p>HP:<?=$data1['Hp']?></p>
