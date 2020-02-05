@@ -610,9 +610,10 @@ $warning = "4キャラ全員編成してください"
             if (b == 4) {
                 location.href = `Buttle.php?id1=` + encodeURIComponent(id1) +"&id2="+ encodeURIComponent(id2)+"&id3="+ encodeURIComponent(id3)+"&id4="+ encodeURIComponent(id4);
             }
-            else {<?php
+            else {
+                <?php
 $alert = "<script type='text/javascript'>alert('4キャラ全員編成してください。');</script>";
-echo $alert;
+echo $alert;?>
             }
         });
 
