@@ -204,6 +204,7 @@ $warning = "4キャラ全員編成してください"
 .button-link:hover{
 	cursor:pointer;
 	color:#f00;
+    margin-top:30px;
 }
 #modal-overlay{
 	z-index:1;
@@ -220,7 +221,7 @@ $warning = "4キャラ全員編成してください"
     height: 40px;
 }
 .modal-txt{
-    margin-left:10px;
+    margin-left:30px;
 }
 </style>
 
@@ -238,6 +239,7 @@ $warning = "4キャラ全員編成してください"
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
     <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
     <h3>ステータス</h3>
     <p class="modal-txt">HP:<?=$data1['Hp']?></p>
     <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
