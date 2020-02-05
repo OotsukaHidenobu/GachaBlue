@@ -488,7 +488,7 @@ $warning = "4キャラ全員編成してください"
             <img class="img modal-syncer" data-target="modal-09" src="assets/<?= $data9['Image'] ?>" id="ball" name="<?= $id9 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img modal-syncer" data-target="modal-010" src="assets/<?= $data10['Image'] ?>" id="ball" name="<?= $id10 ?>">
+            <img class="img modal-syncer" data-target="modal-10" src="assets/<?= $data10['Image'] ?>" id="ball" name="<?= $id10 ?>">
         </a>
 
     </div>
