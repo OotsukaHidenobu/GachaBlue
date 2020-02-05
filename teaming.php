@@ -179,7 +179,7 @@ $warning = "4キャラ全員編成してください";
     background-size: contain;
 }
 .modal-content{
-	width:500px;
+	width:600px;
 	margin:1.0em auto 0;
 	padding:40px 20px;
 	border:2px solid #aaa;
