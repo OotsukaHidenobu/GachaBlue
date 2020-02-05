@@ -219,7 +219,9 @@ $warning = "4キャラ全員編成してください"
     width:40px;
     height: 40px;
 }
-
+.modal-txt{
+    margin-left:10px;
+}
 </style>
 
 <body>
@@ -237,10 +239,12 @@ $warning = "4キャラ全員編成してください"
    display: none;">
     <!-- モーダルウィンドウのコンテンツ開始 -->
     <h3>ステータス</h3>
-    <p>HP:<?=$data1['Hp']?></p>
-    <p>攻撃力:<?=$data1['Power']?></p>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
     <h3>アビリティ</h3>
-    <p><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
     <p></p>
 
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
