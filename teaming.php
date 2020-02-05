@@ -26,7 +26,6 @@ $data9 = getDB1('select * from Characters where id=?',[$id9]);
 $data10 = getDB1('select * from Characters where id=?',[$id10]);
 
 $warning = "4キャラ全員編成してください";
-$alert = "<script type='text/javascript'>alert('こちらは侍エンジニア塾です。');</script>";
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -612,7 +611,8 @@ $alert = "<script type='text/javascript'>alert('こちらは侍エンジニア�
                 location.href = `Buttle.php?id1=` + encodeURIComponent(id1) +"&id2="+ encodeURIComponent(id2)+"&id3="+ encodeURIComponent(id3)+"&id4="+ encodeURIComponent(id4);
             }
             else {
-                <?=$alert?>
+                alert("<?php echo $warning; ?>");
+                break;
             }
         });
 
