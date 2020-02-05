@@ -9,13 +9,21 @@
 <script src="script/jquery-3.1.1.min.js"></script>
 
 <style>
-  #button {
+  .gacha-button {
     width: 250px;
     height: 60px;
     padding: 10px;
     font-size: 30px;
+    margin-top: 20px;
+    margin-right: 10px;
+  }
 
-
+  #teaming-button{
+    width: 250px;
+    height: 60px;
+    padding: 10px;
+    font-size: 30px;
+    margin-top: 20px;
   }
 
   h1 {
@@ -49,7 +57,7 @@
     background-size: contain;
   }
 
-  img {
+  .img {
     display: inline-block;
     background: #ffff00;
     width: 10em;
@@ -86,52 +94,53 @@
   <h1>ガチャ</h1>
   </div>
   <div id="gacha-image">
-    <img style="margin-bottom:0;" src="https://gamewith.s3.amazonaws.com/animation_gifs/65441dc021dfa933.gif" width="247"
-      height="352">
+    <img src="https://gamewith.s3.amazonaws.com/animation_gifs/65441dc021dfa933.gif" width="247" height="372">
   </div>
 
+  <div id="column-all">
+    <div class="columns">
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
 
-  <div class="columns">
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
+    </div>
 
+    <div class="columns">
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
+
+    </div>
+
+    <div class="columns">
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
+      <a class="column" draggable="true">
+        <img class="img" src="" id="ball">
+      </a>
+
+    </div>
   </div>
 
-  <div class="columns">
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
-
-  </div>
-
-  <div class="columns">
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
-    <a class="column" draggable="true">
-      <img class="img" src="" id="ball">
-    </a>
-
-  </div>
 
   <!-- <div id="button-div">
     <button id="button" class="gacha-button">ガチャを引く</button>
@@ -152,10 +161,12 @@
   <script>
 
     document.querySelector("#btn-thereafter").style.display = "none";
+    document.querySelector("#column-all").style.display = "none";
     document.querySelector("#btn-text").addEventListener("click", (e) => {
       document.querySelector("#gacha-image").style.display = "none";
       document.querySelector("#btn-first").style.display = "none";
       document.querySelector("#btn-thereafter").style.display = "block";
+      document.querySelector("#column-all").style.display = "block";
     });
 
     const btn = document.querySelectorAll(".gacha-button");
