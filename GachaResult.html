@@ -55,6 +55,9 @@
     width: 10em;
 
   }
+  .gacha-image{
+    text-align: center;
+  }
 
   #button-div {
     text-align: center;
@@ -83,7 +86,7 @@
   <h1>ガチャ</h1>
   </div>
 
-  <img class="js-gacha-do js-gacha-image" style="margin-bottom:0;" src="https://gamewith.s3.amazonaws.com/animation_gifs/65441dc021dfa933.gif">
+  <img class="gacha-image" style="margin-bottom:0;" src="https://gamewith.s3.amazonaws.com/animation_gifs/65441dc021dfa933.gif">
 
   <div class="columns">
     <a class="column" draggable="true">
@@ -147,6 +150,7 @@
 
     document.querySelector("#btn-thereafter").style.display = "none";
     document.querySelector("#btn-text").addEventListener("click", (e) => {
+      document.querySelector(".gacha-image").style.display = "none";
       document.querySelector("#btn-first").style.display = "none";
       document.querySelector("#btn-thereafter").style.display = "block";
     });
