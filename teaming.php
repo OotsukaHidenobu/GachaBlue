@@ -227,16 +227,16 @@ $warning = "4キャラ全員編成してください"
     <h1>編成画面</h1>
 </div>
 
-<div id="modal-01" class="modal-content" style="top: 50%;
-  left: 50%;
+<div id="modal-01" class="modal-content" style="top: 50%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
-  -webkit- transform: translateY(-50%) translateX(-50%); display: none;">
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
     <!-- モーダルウィンドウのコンテンツ開始 -->
     <h3>ステータス</h3>
     <p>HP:<?=$data1['Hp']?></p>
     <p>攻撃力:<?=$data1['Power']?></p>
     <h3>アビリティ</h3>
-    <p><img ></p>
+    <p><img src="assets/<?= $data1['Skill1Image'] ?>">:<?=$data1['Skill1Text']?></p>
     <p></p>
 
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
