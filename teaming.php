@@ -199,12 +199,13 @@ $warning = "4キャラ全員編成してください"
 .button-link{
 	color:#00f;
 	text-decoration:underline;
+    margin-top:30px;
 }
 
 .button-link:hover{
 	cursor:pointer;
 	color:#f00;
-    margin-top:30px;
+
 }
 #modal-overlay{
 	z-index:1;
@@ -221,7 +222,7 @@ $warning = "4キャラ全員編成してください"
     height: 40px;
 }
 .modal-txt{
-    margin-left:30px;
+    margin-left:50px;
 }
 </style>
 
@@ -253,18 +254,173 @@ $warning = "4キャラ全員編成してください"
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-02" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
-	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>2つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
-	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+<div id="modal-02" class="modal-content" style="top: 50%; left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
+    <h3>ステータス</h3>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
+    <h3>アビリティ</h3>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
+    <p></p>
+
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-03" class="modal-content" style="left: 234.5px; top: 122px; display: none;">
-	<!-- モーダルウィンドウのコンテンツ開始 -->
-	<p>3つ目のモーダルウィンドウです。全体を囲むdiv要素に[id="modal-content-01"]が設定されています。</p>
-	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
+<div id="modal-03" class="modal-content" style="top: 50%; left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
+    <h3>ステータス</h3>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
+    <h3>アビリティ</h3>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
+    <p></p>
+
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<div id="modal-04" class="modal-content" style="top: 50%; left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
+    <h3>ステータス</h3>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
+    <h3>アビリティ</h3>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
+    <p></p>
+
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<div id="modal-05" class="modal-content" style="top: 50%; left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
+    <h3>ステータス</h3>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
+    <h3>アビリティ</h3>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
+    <p></p>
+
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<div id="modal-06" class="modal-content" style="top: 50%; left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
+    <h3>ステータス</h3>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
+    <h3>アビリティ</h3>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
+    <p></p>
+
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<div id="modal-07" class="modal-content" style="top: 50%; left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
+    <h3>ステータス</h3>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
+    <h3>アビリティ</h3>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
+    <p></p>
+
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<div id="modal-08" class="modal-content" style="top: 50%; left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
+    <h3>ステータス</h3>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
+    <h3>アビリティ</h3>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
+    <p></p>
+
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<div id="modal-09" class="modal-content" style="top: 50%; left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
+    <h3>ステータス</h3>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
+    <h3>アビリティ</h3>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
+    <p></p>
+
+	<p><a id="modal-close" class="button-link">閉じる</a></p>
+	<!-- モーダルウィンドウのコンテンツ終了 -->
+</div>
+
+<div id="modal-10" class="modal-content" style="top: 50%; left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+   display: none;">
+    <!-- モーダルウィンドウのコンテンツ開始 -->
+    <h2 style="text-align: center;"><?=$data1['Name']?></h2>
+    <h3>ステータス</h3>
+    <p class="modal-txt">HP:<?=$data1['Hp']?></p>
+    <p class="modal-txt">攻撃力:<?=$data1['Power']?></p>
+    <h3>アビリティ</h3>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>" align="middle">:<?=$data1['Skill1Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill2Image'] ?>" align="middle">:<?=$data1['Skill2Text']?></p>
+    <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
+    <p></p>
+
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
@@ -326,13 +482,13 @@ $warning = "4キャラ全員編成してください"
 
     <div class="columns">
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data8['Image'] ?>" id="ball" name="<?= $id8 ?>">
+            <img class="img modal-syncer" data-target="modal-08" src="assets/<?= $data8['Image'] ?>" id="ball" name="<?= $id8 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data9['Image'] ?>" id="ball" name="<?= $id9 ?>">
+            <img class="img modal-syncer" data-target="modal-09" src="assets/<?= $data9['Image'] ?>" id="ball" name="<?= $id9 ?>">
         </a>
         <a class="column" draggable="true">
-            <img class="img" src="assets/<?= $data10['Image'] ?>" id="ball" name="<?= $id10 ?>">
+            <img class="img modal-syncer" data-target="modal-010" src="assets/<?= $data10['Image'] ?>" id="ball" name="<?= $id10 ?>">
         </a>
 
     </div>
