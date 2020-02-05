@@ -215,6 +215,10 @@ $warning = "4キャラ全員編成してください"
 	height:120%;
 	background-color:rgba(0,0,0,0.75);
 }
+#skill-img{
+    width:40px;
+    height: 40px;
+}
 
 </style>
 
@@ -236,7 +240,7 @@ $warning = "4キャラ全員編成してください"
     <p>HP:<?=$data1['Hp']?></p>
     <p>攻撃力:<?=$data1['Power']?></p>
     <h3>アビリティ</h3>
-    <p><img src="assets/<?= $data1['Skill1Image'] ?>">:<?=$data1['Skill1Text']?></p>
+    <p><img id="skill-img" src="assets/<?= $data1['Skill1Image'] ?>">:<?=$data1['Skill1Text']?></p>
     <p></p>
 
 	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
