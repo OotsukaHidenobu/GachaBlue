@@ -247,7 +247,6 @@ $warning = "4キャラ全員編成してください"
     <p class="modal-txt"><img id="skill-img" src="assets/<?= $data1['Skill3Image'] ?>" align="middle">:<?=$data1['Skill3Text']?></p>
     <p></p>
 
-	<p>「閉じる」か「背景」をクリックするとモーダルウィンドウを終了します。</p>
 	<p><a id="modal-close" class="button-link">閉じる</a></p>
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
