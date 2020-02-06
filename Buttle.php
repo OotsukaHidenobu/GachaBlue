@@ -58,13 +58,13 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>ƒoƒgƒ‹</title>
+    <title>ãƒãƒˆãƒ«</title>
 
     <!--<link rel="stylesheet" href="./css/style.css">-->
 </head>
 <body>
     <div id="EnenyName" class="EnemyName">
-        <h1>ƒAƒ‹ƒeƒBƒƒbƒgƒoƒnƒ€[ƒg</h1>
+        <h1>ã‚¢ãƒ«ãƒ†ã‚£ãƒ¡ãƒƒãƒˆãƒãƒãƒ ãƒ¼ãƒˆ</h1>
     </div>
     <hr id="HPBar" class="HPBar" />
     <h1 href="#" class="HP">
@@ -121,7 +121,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         </div>
     </div>
     <div>
-        <button id="Attack" class="Attack" onclick="hp_down()">UŒ‚</button>
+        <button id="Attack" class="Attack" onclick="hp_down()">æ”»æ’ƒ</button>
     </div>
     <div id="Characters" class="Characters">
     </div>
@@ -259,7 +259,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             Char1Defence.value = parseFloat(Char1Defence.value) + (parseFloat(Char1Defence.value) * parseFloat(defenceBuff) / 100);
             EnemyAttack.value = parseFloat(EnemyAttack.value) - (parseFloat(EnemyAttack.value) * parseFloat(attackDebuff) / 100);
             EnemyDefence.value = parseFloat(EnemyDefence.value) - (parseFloat(EnemyDefence.value) * parseFloat(defenceDebuff) / 100);
-            console.log("UŒ‚—Í:" + Char1Attack.value + ", –hŒä—Í:" + Char1Defence.value + ", “G‚ÌUŒ‚—Í:" + EnemyAttack.value + ", “G‚Ì–hŒä—Í:" + EnemyDefence.value)
+            console.log("æ”»æ’ƒåŠ›:" + Char1Attack.value + ", é˜²å¾¡åŠ›:" + Char1Defence.value + ", æ•µã®æ”»æ’ƒåŠ›:" + EnemyAttack.value + ", æ•µã®é˜²å¾¡åŠ›:" + EnemyDefence.value)
         }
         function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
             enemyHP.innerHTML -= parseFloat(Damege);
