@@ -57,7 +57,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>êÌÇ¶ÅI</title>
 
     <!--<link rel="stylesheet" href="./css/style.css">-->
