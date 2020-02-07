@@ -88,6 +88,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID1['Skill1ID'] ?>, '1')">
             <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID1['Skill2ID'] ?>, '1')">
             <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID1['Skill3ID'] ?>, '1')">
+			<div id="buffID">
+
+			</div>
         </div>
         <div id="CharactersImage2" class="CharactersImage">
             <h1 id="Char2HPBar" class="CharHPBar">HP:</h1>
@@ -320,6 +323,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				case 1:
 				if(!push_1){
 					Char1SkillAll(0,30,0,0,0);
+					var buff = document.createElement("img");
+					buff.src="assets/AttackUp.png";
+					document.getElementById('buffID').appendChild(buff);
 					push_1 = true;
 					return;
 				}
@@ -424,6 +430,10 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             height: 10px;
             background: red;
         }
+
+		#buffID{
+		
+		}
 
 
         #CharactersImage1 {
