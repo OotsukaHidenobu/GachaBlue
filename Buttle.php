@@ -258,7 +258,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var DlimitDebuff = 0;
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
-		console.log(CharNum);
 			CharNum -= 1;
             enemyHP.innerHTML -= parseFloat(Damege);
 			AlimitBuff[CharNum] += parseFloat(attackBuff);
@@ -267,6 +266,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 			DlimitDebuff += parseFloat(defenceDebuff);
 			if(AlimitDebuff > 50) AlimitDebuff = 50;
 			if(DlimitDebuff > 50) DlimitDebuff = 50;
+			console.log(AlimitBuff);
+			console.log(AlimitDebuff);
             console.log("キャラ:" + CharNum + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff[CharNum] + ", 防御力:" + DlimitBuff[CharNum] + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff)
         }
         function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
