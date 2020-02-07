@@ -179,17 +179,18 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             }
             else {
                 var rand = Math.random() * m_charHPArray.length;
+				
                 if (rand < 1) {
-                    m_charHPArray[0].innerHTML -= Math.round(enemyPower) * (DlimitBuff[i] / 100);
+                    m_charHPArray[0].innerHTML -= Math.round(enemyPower) * (DlimitBuff[0] / 100);
                 }
                 else if (rand < 2) {
-                    m_charHPArray[1].innerHTML -= Math.round(enemyPower) * (DlimitBuff[i] / 100);
+                    m_charHPArray[1].innerHTML -= Math.round(enemyPower) * (DlimitBuff[1] / 100);
                 }
                 else if (rand < 3) {
-                    m_charHPArray[2].innerHTML -= Math.round(enemyPower) * (DlimitBuff[i] / 100);
+                    m_charHPArray[2].innerHTML -= Math.round(enemyPower) * (DlimitBuff[2] / 100);
                 }
                 else if (rand < 4) {
-                    m_charHPArray[3].innerHTML -= Math.round(enemyPower) * (DlimitBuff[i] / 100);
+                    m_charHPArray[3].innerHTML -= Math.round(enemyPower) * (DlimitBuff[3] / 100);
                 }
             }
 
@@ -198,6 +199,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 for (var i = 0; i < m_charHPArray.length; i++) {
                     if (m_charHPArray[i] == Char1HP) {
                         m_charHPArray.splice(i, 1);
+						DlimitBuff.splice(i, 1);
                         break;
                     }
                 }
@@ -210,6 +212,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 for (var i = 0; i < m_charHPArray.length; i++) {
                     if (m_charHPArray[i] == Char2HP) {
                         m_charHPArray.splice(i, 1);
+						DlimitBuff.splice(i, 1);
                         break;
                     }
                 }
@@ -222,6 +225,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 for (var i = 0; i < m_charHPArray.length; i++) {
                     if (m_charHPArray[i] == Char3HP) {
                         m_charHPArray.splice(i, 1);
+						DlimitBuff.splice(i, 1);
                         break;
                     }
                 }
@@ -234,6 +238,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 for (var i = 0; i < m_charHPArray.length; i++) {
                     if (m_charHPArray[i] == Char4HP) {
                         m_charHPArray.splice(i, 1);
+						DlimitBuff.splice(i, 1);
                         break;
                     }
                 }
