@@ -585,9 +585,9 @@ $warning = "4キャラ全員編成してください";
         var id4 = 0;
 
 
-
             button.addEventListener("click", (e) => {
                 var answer = document.querySelectorAll(".team .img");
+            var button = document.querySelector("#button");
             var buttonDiv = $('#button-div');
             a = 0;
             b = 0;
@@ -609,7 +609,7 @@ $warning = "4キャラ全員編成してください";
                 location.href = `Buttle.php?id1=` + encodeURIComponent(id1) +"&id2="+ encodeURIComponent(id2)+"&id3="+ encodeURIComponent(id3)+"&id4="+ encodeURIComponent(id4);
             }
             else {
-                //alert("<?php echo $warning; ?>");
+                alert("あああ");
             }
         });
 
