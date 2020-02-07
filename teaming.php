@@ -508,6 +508,8 @@ $warning = "4キャラ全員編成してください";
         <button id="button" data-target="modal-11" onclick="Se(1)">戦闘開始</button>
     </div>
 
+    <button id="test-button">テスト</button>
+
 
     <script src="./Music/Se.js"></script>
     <script>
@@ -584,6 +586,10 @@ $warning = "4キャラ全員編成してください";
         var id3 = 0;
         var id4 = 0;
 
+        $('#test-button').om("click", function(){
+
+        })
+
 
             $('#button').on("click", function(){
                 var answer = document.querySelectorAll(".team .img");
@@ -612,7 +618,7 @@ $warning = "4キャラ全員編成してください";
             }
         });
 
-        function MordalContent(){
+function MordalContent(){
 //グローバル変数
 var nowModalSyncer = null ;		//現在開かれているモーダルコンテンツ
 var modalClassSyncer = "modal-syncer" ;		//モーダルを開くリンクに付けるクラス名
@@ -678,9 +684,9 @@ for(var i=0,l=modals.length; l>i; i++){
 	}
 
 }
-        }
+}
 
-        $(function () {
+    $(function () {
   var audioBtn = $('.audio_button'),
   audioWrap = $('.audio_wrap'),
   audio = document.getElementById('audio');
