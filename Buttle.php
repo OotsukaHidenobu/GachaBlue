@@ -242,8 +242,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 CharactersImage4.style.opacity = 0.6;
             }
 
-            enemyHP.innerHTML -= allPower - (allPower * DlimitDebuff / 100);
-            console.log(allPower);
+            enemyHP.innerHTML -= allPower * (100 / DlimitDebuff);
+            console.log(allPower * (100 / DlimitDebuff));
             if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
             }
@@ -319,49 +319,49 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 				case 4:
 				if(!push_4){
-					Char1SkillAll(0,30,0,0,0);
+					Char1SkillAll(0,0,30,0,0);
 					push_4 = true;
 					return;
 				}
 					break;
 				case 5:
 				if(!push_5){
-					Char1Skill(0,0,0,25,25);
+					Char1Skill(0,30,0,0,0);
 					push_5 = true;
 					return;
 				}
 					break;
 				case 6:
 				if(!push_6){
-					Char1Skill(800,0,0,0,20);
+					Char1Skill(0,0,30,0,0);
 					push_6 = true;
 					return;
 				}
 					break;
 				case 7:
 				if(!push_7){
-					Char1SkillAll(0,30,0,0,0);
+					Char1SkillAll(1000,0,0,0,0);
 					push_7 = true;
 					return;
 				}
 					break;
 				case 8:
 				if(!push_8){
-					Char1Skill(0,0,0,25,25);
+					Char1Skill(0,25,25,0,0);
 					push_8 = true;
 					return;
 				}
 					break;
 				case 9:
 				if(!push_9){
-					Char1Skill(800,0,0,0,20);
+					Char1Skill(0,50,0,0,0);
 					push_9 = true;
 					return;
 				}
 					break;
 				case 10:
 				if(!push_10){
-					Char1SkillAll(0,30,0,0,0);
+					Char1SkillAll(1000,0,0,0,0);
 					push_10 = true;
 					return;
 				}
@@ -375,7 +375,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 				case 12:
 				if(!push_12){
-					Char1Skill(800,0,0,0,20);
+					Char1Skill(0,0,50,0,0);
 					push_12 = true;
 					return;
 				}
