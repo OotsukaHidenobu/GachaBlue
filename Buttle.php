@@ -413,6 +413,14 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             text-align: center;
         }
 
+        #HPBar {
+			clear:both;
+            border: none;
+            width: 800px;
+            height: 10px;
+            background: red;
+        }
+
 
         #CharactersImage1 {
             background-color: none;
@@ -426,15 +434,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         .CharHPBar {
             position: absolute;
             left: 330px;
-        }
-
-        #HPBar {
-			clear:both;
-            margin-top: 1%;
-            border: none;
-            width: 800px;
-            height: 10px;
-            background: red;
         }
 
         #Char1HP {
