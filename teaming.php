@@ -425,17 +425,6 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-11" class="modal-content" style="top: 50%; left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit- transform: translateY(-50%) translateX(-50%);
-   display: none;">
-    <!-- モーダルウィンドウのコンテンツ開始 -->
-    <h3>4キャラ全員編成してください</h3>
-
-	<p><a id="modal-close" class="button-link">閉じる</a></p>
-	<!-- モーダルウィンドウのコンテンツ終了 -->
-</div>
-
 
     <div class="columns team">
         <span class="columm">
@@ -505,10 +494,9 @@ $warning = "4キャラ全員編成してください";
 
     <br clear="left">
     <div id="button-div">
-        <button id="button" >戦闘開始</button>
+        <button id="button" onclick="Se(2)">戦闘開始</button>
     </div>
 
-    <button id="test-button">テスト</button>
 
     <script src="./Music/Se.js"></script>
     <script>
@@ -586,8 +574,6 @@ $warning = "4キャラ全員編成してください";
         var id4 = 0;
 
 
-
-
             $('#button').on("click", function(){
                 var answer = document.querySelectorAll(".team .img");
             var buttonDiv = $('#button-div');
@@ -611,12 +597,8 @@ $warning = "4キャラ全員編成してください";
                 location.href = `Buttle.php?id1=` + encodeURIComponent(id1) +"&id2="+ encodeURIComponent(id2)+"&id3="+ encodeURIComponent(id3)+"&id4="+ encodeURIComponent(id4);
             }
             else {
-                alert("クリックされました");
+                alert("4キャラ全員編成してください");
             }
-        });
-
-        $('#test-button').on("click", function(){
-            alert("クリックされました");
         });
 
 function MordalContent(){
