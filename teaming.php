@@ -509,7 +509,6 @@ $warning = "4キャラ全員編成してください";
     </div>
 
     <button id="test-button">テスト</button>
-    <div id="output"></div>
 
     <script src="./Music/Se.js"></script>
     <script>
@@ -586,9 +585,8 @@ $warning = "4キャラ全員編成してください";
         var id3 = 0;
         var id4 = 0;
 
-        $('#test-button').om("click", function(){
-            var target = document.getElementById("output");
-            target.innerHTML = "Penguin";
+        $('#test-button').on("click", function(){
+            alert("クリックされました");
         });
 
 
