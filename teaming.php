@@ -585,9 +585,7 @@ $warning = "4キャラ全員編成してください";
         var id3 = 0;
         var id4 = 0;
 
-        $('#test-button').on("click", function(){
-            alert("クリックされました");
-        });
+
 
 
             $('#button').on("click", function(){
@@ -615,6 +613,10 @@ $warning = "4キャラ全員編成してください";
             else {
                 alert("<?php echo $warning; ?>");
             }
+        });
+
+        $('#test-button').on("click", function(){
+            alert("クリックされました");
         });
 
 function MordalContent(){
