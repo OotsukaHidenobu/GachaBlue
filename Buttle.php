@@ -297,6 +297,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var push_12 = false;
 
 		function Skill(id, CharNum){
+		console.log(CharNum);
 			switch (id) {
 				case 1:
 				if(!push_1){
