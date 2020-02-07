@@ -258,6 +258,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var DlimitDebuff = 0;
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
+		console/log(CharNum);
 			CharNum -= 1;
             enemyHP.innerHTML -= parseFloat(Damege);
 			AlimitBuff[CharNum] += parseFloat(attackBuff);
@@ -297,7 +298,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var push_12 = false;
 
 		function Skill(id, CharNum){
-		console.log(CharNum);
 			switch (id) {
 				case 1:
 				if(!push_1){
