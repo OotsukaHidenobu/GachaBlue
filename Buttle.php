@@ -131,7 +131,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     <!--//////////-->
     <script type="text/javascript">
         var enemyHP = document.getElementById('HP')
-		var enemyMaxHP = enemyHP;
+		var enemyMaxHP = 11000;
         var enemyAttack = document.getElementById('EnemyAttack')
         var EnemyDefence = document.getElementById('EnemyDefence')
 
@@ -249,9 +249,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 
             enemyHP.innerHTML -= allPower * (100 / DlimitDebuff);
 			var HPBar = document.getElementById('HPBar');
-			console.log(enemyHP);
+			console.log(enemyHP.value);
 			console.log(enemyMaxHP);
-			HPBar.width = (6 * Math.floor(enemyHP / 110)) +"px";
+			HPBar.width = (6 * Math.floor(enemyHP.value / 110)) +"px";
             console.log(allPower * (100 / DlimitDebuff));
             if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
