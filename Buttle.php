@@ -274,6 +274,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             enemyHP.innerHTML -= parseFloat(Damege);
             for (var i = 0; i < 4; i++) {
                 AlimitBuff[i] += parseFloat(attackBuff);
+			}
             for (var i = 0; i < 4; i++) {
                 DlimitBuff[i] += parseFloat(defenceBuff);
             }
