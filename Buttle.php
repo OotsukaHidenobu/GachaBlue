@@ -163,9 +163,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             var Char4Power = parseFloat((Char4Attack.value) * ((AlimitBuff[3]+100)/100)+1) + Math.round(parseFloat(Char4Attack.value / 100) * (Math.random() * 2 - 1));
 
             var enemyPower = parseFloat(enemyAttack.value) + Math.round(parseFloat(enemyAttack.value / 100) * (Math.random() * 2 - 1));
-			console.log(enemyPower);
-			enemyPower = enemyPower * Math.round(AlimitDebuff / 100);
-			console.log(enemyPower);
+			enemyPower = enemyPower * Math.round(parseFloat(AlimitDebuff) / 100);
             var allPower = 0;
             for (var i = 0; i < 4; i++) {
                 if (CharHPArray[i].innerHTML > 0) {
