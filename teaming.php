@@ -235,7 +235,7 @@ $warning = "4キャラ全員編成してください";
     <h1>編成画面</h1>
 </div>
 
-<div id="modal-01" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-01" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
