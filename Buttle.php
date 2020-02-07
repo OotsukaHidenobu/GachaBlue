@@ -255,16 +255,16 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var AlimitDebuff = 0;
 		var DlimitDebuff = 0;
 
-        function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
+        function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
 			
             enemyHP.innerHTML -= parseFloat(Damege);
-            Char1Attack.value = parseFloat(Char1Attack.value) + (parseFloat(Char1Attack.value) * parseFloat(attackBuff) / 100);
-            Char1Defence.value = parseFloat(Char1Defence.value) + (parseFloat(Char1Defence.value) * parseFloat(defenceBuff) / 100);
+            CharAttackArray[CharNum].value = parseFloat(CharAttackArray[CharNum].value) + (parseFloat(CharAttackArray[CharNum].value) * parseFloat(attackBuff) / 100);
+            CharDefenceArray[CharNum].value = parseFloat(CharDefenceArray[CharNum].value) + (parseFloat(CharDefenceArray[CharNum].value) * parseFloat(defenceBuff) / 100);
 			AlimitDebuff += parseFloat(attackDebuff);
 			DlimitDebuff += parseFloat(defenceDebuff);
 			if(AlimitDebuff > 50) AlimitDebuff = 50;
 			if(DlimitDebuff > 50) DlimitDebuff = 50;
-            console.log("ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff)
+            console.log("キャラ:" + CharNum + ", ダメージ:" + Damege + ", 攻撃力:" + CharAttackArray[CharNum].value + ", 防御力:" + CharDefenceArray[CharNum].value + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff)
         }
         function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
             enemyHP.innerHTML -= parseFloat(Damege);
@@ -278,7 +278,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 			DlimitDebuff += parseFloat(defenceDebuff);
 			if(AlimitDebuff > 50) AlimitDebuff = 50;
 			if(DlimitDebuff > 50) DlimitDebuff = 50;
-            console.log("ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff)
+            console.log("全体	" + ", ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff)
 		}
 
 		var push_1 = false;
