@@ -66,7 +66,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     <div id="EnenyName" class="EnemyName">
         <h1>アルティメットバハムート</h1>
     </div>
-    <hr id="HPBar" class="HPBar" align="left" />
+    <hr id="HPBar" class="HPBar" width="600px" align="left" />
     <h1 href="#" class="HP">
         HP:
         <h1 id="HP" class="HP">
@@ -420,7 +420,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 			clear:both;
             margin-top: 1%;
             border: none;
-            width: 600px;
             height: 10px;
             background: red;
         }
