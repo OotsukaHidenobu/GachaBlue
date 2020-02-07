@@ -583,11 +583,11 @@ $warning = "4キャラ全員編成してください";
         var id2 = 0;
         var id3 = 0;
         var id4 = 0;
+        var button = document.querySelector("#button");
 
 
             button.addEventListener("click", (e) => {
                 var answer = document.querySelectorAll(".team .img");
-            var button = document.querySelector("#button");
             var buttonDiv = $('#button-div');
             a = 0;
             b = 0;
