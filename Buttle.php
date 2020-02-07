@@ -252,8 +252,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             }
         }
 
-		var AlimitDebuff;
-		var DlimitDebuff;
+		var AlimitDebuff = 0;
+		var DlimitDebuff = 0;
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
 			
