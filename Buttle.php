@@ -174,22 +174,22 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             var fullpunch = Math.random() * 100;
             if (fullpunch < 5) {
                 for (var i = 0; i < m_charHPArray.length; i++) {
-                    m_charHPArray[i].innerHTML -= Math.round((enemyPower / 2) * (DlimitBuff[i] / 100));
+                    m_charHPArray[i].innerHTML -= Math.round((enemyPower / 2) * (parseFloat(DlimitBuff[i]) / 100));
                 }
             }
             else {
                 var rand = Math.random() * m_charHPArray.length;
                 if (rand < 1) {
-                    m_charHPArray[0].innerHTML -= Math.round(enemyPower * (DlimitBuff[i] / 100));
+                    m_charHPArray[0].innerHTML -= Math.round(enemyPower * (parseFloat(DlimitBuff[i]) / 100));
                 }
                 else if (rand < 2) {
-                    m_charHPArray[1].innerHTML -= Math.round(enemyPower * (DlimitBuff[i] / 100));
+                    m_charHPArray[1].innerHTML -= Math.round(enemyPower * (parseFloat(DlimitBuff[i]) / 100));
                 }
                 else if (rand < 3) {
-                    m_charHPArray[2].innerHTML -= Math.round(enemyPower * (DlimitBuff[i] / 100));
+                    m_charHPArray[2].innerHTML -= Math.round(enemyPower * (parseFloat(DlimitBuff[i]) / 100));
                 }
                 else if (rand < 4) {
-                    m_charHPArray[3].innerHTML -= Math.round(enemyPower * (DlimitBuff[i] / 100));
+                    m_charHPArray[3].innerHTML -= Math.round(enemyPower * (parseFloat(DlimitBuff[i]) / 100));
                 }
             }
 
