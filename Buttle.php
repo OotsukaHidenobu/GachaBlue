@@ -260,7 +260,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             enemyHP.innerHTML -= parseFloat(Damege);
             Char1Attack.value = parseFloat(Char1Attack.value) + (parseFloat(Char1Attack.value) * parseFloat(attackBuff) / 100);
             Char1Defence.value = parseFloat(Char1Defence.value) + (parseFloat(Char1Defence.value) * parseFloat(defenceBuff) / 100);
-			AlimitDebuff += parseFloat(attackBuff);
+			AlimitDebuff += parseFloat(attackDebuff);
 			DlimitDebuff += parseFloat(defenceDebuff);
 			if(AlimitDebuff > 50) AlimitDebuff = 50;
 			if(DlimitDebuff > 50) DlimitDebuff = 50;
@@ -274,7 +274,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             for (var i = 0; i < 4; i++) {
                 CharDefenceArray[i].value = parseFloat(CharDefenceArray[i].value) + (parseFloat(CharDefenceArray[i].value) * parseFloat(defenceBuff) / 100);
             }
-			AlimitDebuff += parseFloat(attackBuff);
+			AlimitDebuff += parseFloat(attackDebuff);
 			DlimitDebuff += parseFloat(defenceDebuff);
 			if(AlimitDebuff > 50) AlimitDebuff = 50;
 			if(DlimitDebuff > 50) DlimitDebuff = 50;
