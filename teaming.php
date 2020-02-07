@@ -505,7 +505,7 @@ $warning = "4キャラ全員編成してください";
 
     <br clear="left">
     <div id="button-div">
-        <button id="button" data-target="modal-11" onclick="Se(1)">戦闘開始</button>
+        <button id="button" >戦闘開始</button>
     </div>
 
     <button id="test-button">テスト</button>
@@ -611,7 +611,7 @@ $warning = "4キャラ全員編成してください";
                 location.href = `Buttle.php?id1=` + encodeURIComponent(id1) +"&id2="+ encodeURIComponent(id2)+"&id3="+ encodeURIComponent(id3)+"&id4="+ encodeURIComponent(id4);
             }
             else {
-                alert("<?php echo $warning; ?>");
+                alert("クリックされました");
             }
         });
 
