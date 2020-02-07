@@ -428,6 +428,14 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             left: 330px;
         }
 
+        #HPBar {
+            margin-top: 1%;
+            border: none;
+            width: 800px;
+            height: 10px;
+            background: red;
+        }
+
         #Char1HP {
             position: absolute;
             left: 400px;
@@ -502,14 +510,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 margin: 0;
                 padding: 0;
             }
-
-        #HPBar {
-            margin-top: 1%;
-            border: none;
-            width: 50%;
-            height: 10px;
-            background: red;
-        }
 
         .HP {
             float: left;
