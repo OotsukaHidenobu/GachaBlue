@@ -415,8 +415,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 
         #HPBar {
 			clear:both;
+            margin-top: 1%;
             border: none;
-            width: 800px;
+            width: 400px;
             height: 10px;
             background: red;
         }
