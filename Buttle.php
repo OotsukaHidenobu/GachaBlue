@@ -260,8 +260,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             enemyHP.innerHTML -= parseFloat(Damege);
             Char1Attack.value = parseFloat(Char1Attack.value) + (parseFloat(Char1Attack.value) * parseFloat(attackBuff) / 100);
             Char1Defence.value = parseFloat(Char1Defence.value) + (parseFloat(Char1Defence.value) * parseFloat(defenceBuff) / 100);
-			AlimitDebuff += attackBuff;
-			DlimitDebuff += defenceDebuff;
+			AlimitDebuff += parseFloat(attackBuff);
+			DlimitDebuff += parseFloat(defenceDebuff);
 			if(AlimitDebuff > 50) AlimitDebuff = 50;
 			if(DlimitDebuff > 50) DlimitDebuff = 50;
             console.log("ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff)
@@ -274,8 +274,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             for (var i = 0; i < 4; i++) {
                 CharDefenceArray[i].value = parseFloat(CharDefenceArray[i].value) + (parseFloat(CharDefenceArray[i].value) * parseFloat(defenceBuff) / 100);
             }
-			AlimitDebuff += attackBuff;
-			DlimitDebuff += defenceDebuff;
+			AlimitDebuff += parseFloat(attackBuff);
+			DlimitDebuff += parseFloat(defenceDebuff);
 			if(AlimitDebuff > 50) AlimitDebuff = 50;
 			if(DlimitDebuff > 50) DlimitDebuff = 50;
             console.log("ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff)
