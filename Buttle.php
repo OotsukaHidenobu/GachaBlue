@@ -181,16 +181,16 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 var rand = Math.random() * m_charHPArray.length;
 				
                 if (rand < 1) {
-                    m_charHPArray[0].innerHTML -= Math.round(enemyPower) * (DlimitBuff[0] / 100);
+                    m_charHPArray[0].innerHTML -= Math.round(enemyPower * (DlimitBuff[0] / 100));
                 }
                 else if (rand < 2) {
-                    m_charHPArray[1].innerHTML -= Math.round(enemyPower) * (DlimitBuff[1] / 100);
+                    m_charHPArray[1].innerHTML -= Math.round(enemyPower * (DlimitBuff[1] / 100));
                 }
                 else if (rand < 3) {
-                    m_charHPArray[2].innerHTML -= Math.round(enemyPower) * (DlimitBuff[2] / 100);
+                    m_charHPArray[2].innerHTML -= Math.round(enemyPower * (DlimitBuff[2] / 100));
                 }
                 else if (rand < 4) {
-                    m_charHPArray[3].innerHTML -= Math.round(enemyPower) * (DlimitBuff[3] / 100);
+                    m_charHPArray[3].innerHTML -= Math.round(enemyPower * (DlimitBuff[3] / 100));
                 }
             }
 
@@ -247,7 +247,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 CharactersImage4.style.opacity = 0.6;
             }
 
-            enemyHP.innerHTML -= allPower * (100 / DlimitDebuff);
+            enemyHP.innerHTML -= Math.round(allPower * (100 / DlimitDebuff));
 			var HPBar = document.getElementById('HPBar');
 			console.log(enemyHP.innerHTML);
 			console.log(enemyMaxHP);
