@@ -587,9 +587,9 @@ $warning = "4キャラ全員編成してください";
         var id4 = 0;
 
         $('#test-button').om("click", function(){
-            var target = document.getElementById("output");
-            target.innerHTML = "Penguin";
-        })
+            // var target = document.getElementById("output");
+            // target.innerHTML = "Penguin";
+        });
 
 
             $('#button').on("click", function(){
