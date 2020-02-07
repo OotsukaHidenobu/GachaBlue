@@ -66,7 +66,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     <div id="EnenyName" class="EnemyName">
         <h1>アルティメットバハムート</h1>
     </div>
-    <hr id="HPBar" class="HPBar" />
+    <hr id="HPBar" class="HPBar" align="left" />
     <h1 href="#" class="HP">
         HP:
         <h1 id="HP" class="HP">
@@ -131,6 +131,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     <!--//////////-->
     <script type="text/javascript">
         var enemyHP = document.getElementById('HP')
+		var enemyMaxHP = enemyHP;
         var enemyAttack = document.getElementById('EnemyAttack')
         var EnemyDefence = document.getElementById('EnemyDefence')
 
@@ -152,8 +153,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         var CharHPArray = [Char1HP, Char2HP, Char3HP, Char4HP];
         var m_charHPArray = [Char1HP, Char2HP, Char3HP, Char4HP];
         var CharAttackArray = [Char1Attack, Char2Attack, Char3Attack, Char4Attack]
-        var CharDefenceArray = [Char1Defence, Char2Defence, Char3Defence, Char4Defence]
-
+        var CharDefenceArray = [Char1Defence, Char2Defence, Char3Defence, Char4Defence] 
         
 
         function hp_down() {
@@ -248,6 +248,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             }
 
             enemyHP.innerHTML -= allPower * (100 / DlimitDebuff);
+			var HPBar = document.getElementById('HPBar');
+			HPBar.style.width = 500 * (enemyHP / enemyMaxHP);
             console.log(allPower * (100 / DlimitDebuff));
             if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
@@ -415,7 +417,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 
         #HPBar {
 			clear:both;
-			align:left;
             margin-top: 1%;
             border: none;
             width: 600px;
