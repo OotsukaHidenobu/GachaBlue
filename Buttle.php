@@ -157,10 +157,10 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         
 
         function hp_down() {
-            var Char1Power = parseFloat(Char1Attack.value * ((AlimitBuff[1]+100)/100)) + Math.round(parseFloat(Char1Attack.value / 100) * (Math.random() * 2 - 1));
-            var Char2Power = parseFloat(Char2Attack.value * ((AlimitBuff[2]+100)/100)) + Math.round(parseFloat(Char2Attack.value / 100) * (Math.random() * 2 - 1));
-            var Char3Power = parseFloat(Char3Attack.value * ((AlimitBuff[3]+100)/100)) + Math.round(parseFloat(Char3Attack.value / 100) * (Math.random() * 2 - 1));
-            var Char4Power = parseFloat(Char4Attack.value * ((AlimitBuff[4]+100)/100)) + Math.round(parseFloat(Char4Attack.value / 100) * (Math.random() * 2 - 1));
+            var Char1Power = parseFloat(Char1Attack.value * ((AlimitBuff[1]+100)/100)+1) + Math.round(parseFloat(Char1Attack.value / 100) * (Math.random() * 2 - 1));
+            var Char2Power = parseFloat(Char2Attack.value * ((AlimitBuff[2]+100)/100)+1) + Math.round(parseFloat(Char2Attack.value / 100) * (Math.random() * 2 - 1));
+            var Char3Power = parseFloat(Char3Attack.value * ((AlimitBuff[3]+100)/100)+1) + Math.round(parseFloat(Char3Attack.value / 100) * (Math.random() * 2 - 1));
+            var Char4Power = parseFloat(Char4Attack.value * ((AlimitBuff[4]+100)/100)+1) + Math.round(parseFloat(Char4Attack.value / 100) * (Math.random() * 2 - 1));
 
             var enemyPower = parseFloat(enemyAttack.value) + Math.round(parseFloat(enemyAttack.value / 100) * (Math.random() * 2 - 1));
 			enemyPower *= Math.round(AlimitDebuff / 100);
