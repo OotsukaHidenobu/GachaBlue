@@ -259,7 +259,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             Char1Defence.value = parseFloat(Char1Defence.value) + (parseFloat(Char1Defence.value) * parseFloat(defenceBuff) / 100);
             EnemyAttack.value = parseFloat(EnemyAttack.value) - (parseFloat(EnemyAttack.value) * parseFloat(attackDebuff) / 100);
             EnemyDefence.value = parseFloat(EnemyDefence.value) - (parseFloat(EnemyDefence.value) * parseFloat(defenceDebuff) / 100);
-            console.log("攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 敵の攻撃力:" + EnemyAttack.value + ", 敵の防御力:" + EnemyDefence.value)
+            console.log("ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 敵の攻撃力:" + EnemyAttack.value + ", 敵の防御力:" + EnemyDefence.value)
         }
         function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
             enemyHP.innerHTML -= parseFloat(Damege);
@@ -270,8 +270,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 CharDefenceArray[i].value = parseFloat(CharDefenceArray[i].value) + (parseFloat(CharDefenceArray[i].value) * parseFloat(defenceBuff) / 100);
             }
             EnemyAttack.value = parseFloat(EnemyAttack.value) - (parseFloat(EnemyAttack.value) * parseFloat(attackDebuff) / 100);
-            EnemyDefence.value = parseFloat(EnemyDefence.value) - (parseFloat(EnemyDefence.value) * parseFloat(defenceDebuff) / 100);
-        }
+            console.log("ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 敵の攻撃力:" + EnemyAttack.value + ", 敵の防御力:" + EnemyDefence.value)
+		}
 
 		var push_1 = false;
 		var push_2 = false;
