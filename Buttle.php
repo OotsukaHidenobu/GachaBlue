@@ -410,14 +410,13 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     <!--/////-->
     <style>
         #EnenyName {
-            text-align: center;
         }
 
         #HPBar {
 			clear:both;
             margin-top: 1%;
             border: none;
-            width: 400px;
+            width: 600px;
             height: 10px;
             background: red;
         }
