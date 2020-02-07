@@ -163,7 +163,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             var Char4Power = parseFloat(Char4Attack.value * ((AlimitBuff[4]+100)/100)+1) + Math.round(parseFloat(Char4Attack.value / 100) * (Math.random() * 2 - 1));
 
             var enemyPower = parseFloat(enemyAttack.value) + Math.round(parseFloat(enemyAttack.value / 100) * (Math.random() * 2 - 1));
-			enemyPower *= Math.round(AlimitDebuff / 100);
+			enemyPower = enemyPower * Math.round(AlimitDebuff / 100);
             var allPower = 0;
             for (var i = 0; i < 4; i++) {
                 if (CharHPArray[i].innerHTML > 0) {
@@ -174,22 +174,22 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             var fullpunch = Math.random() * 100;
             if (fullpunch < 5) {
                 for (var i = 0; i < m_charHPArray.length; i++) {
-                    m_charHPArray[i].innerHTML -= Math.round((enemyPower / 2) * (parseFloat(DlimitBuff[i]) / 100));
+                    m_charHPArray[i].innerHTML -= Math.round((enemyPower / 2) * (DlimitBuff[i] / 100));
                 }
             }
             else {
                 var rand = Math.random() * m_charHPArray.length;
                 if (rand < 1) {
-                    m_charHPArray[0].innerHTML -= Math.round(enemyPower * (parseFloat(DlimitBuff[i]) / 100));
+                    m_charHPArray[0].innerHTML -= Math.round(enemyPower * (DlimitBuff[i] / 100));
                 }
                 else if (rand < 2) {
-                    m_charHPArray[1].innerHTML -= Math.round(enemyPower * (parseFloat(DlimitBuff[i]) / 100));
+                    m_charHPArray[1].innerHTML -= Math.round(enemyPower * (DlimitBuff[i] / 100));
                 }
                 else if (rand < 3) {
-                    m_charHPArray[2].innerHTML -= Math.round(enemyPower * (parseFloat(DlimitBuff[i]) / 100));
+                    m_charHPArray[2].innerHTML -= Math.round(enemyPower * (DlimitBuff[i] / 100));
                 }
                 else if (rand < 4) {
-                    m_charHPArray[3].innerHTML -= Math.round(enemyPower * (parseFloat(DlimitBuff[i]) / 100));
+                    m_charHPArray[3].innerHTML -= Math.round(enemyPower * (DlimitBuff[i] / 100));
                 }
             }
 
