@@ -250,7 +250,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             enemyHP.innerHTML -= allPower * (100 / DlimitDebuff);
 			var HPBar = document.getElementById('HPBar');
 			console.log(HPBar);
-			var a = enemyHP / 110;
+			var a = parseFloat(enemyHP) / 110;
 			console.log(a);
 			HPBar.width = (parseInt(HPBar.width) - 6) +"px";
             console.log(allPower * (100 / DlimitDebuff));
