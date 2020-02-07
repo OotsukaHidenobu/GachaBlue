@@ -504,8 +504,8 @@ $warning = "4キャラ全員編成してください";
     </div>
 
     <br clear="left">
-    <div id="button-div">
-        <button id="button" class="modal-syncer" data-target="modal-11" onclick="Se(1)">戦闘開始</button>
+    <div id="button-div" class="modal-syncer">
+        <button id="button" data-target="modal-11" onclick="Se(1)">戦闘開始</button>
     </div>
 
 
@@ -588,7 +588,7 @@ $warning = "4キャラ全員編成してください";
             button.addEventListener("click", (e) => {
                 var answer = document.querySelectorAll(".team .img");
             var button = document.querySelector("#button");
-            var buttonDiv = document.querySelector("#button-div");
+            var buttonDiv = $('#button-div');
             a = 0;
             b = 0;
             for(var i=0; i<answer.length; i++){
