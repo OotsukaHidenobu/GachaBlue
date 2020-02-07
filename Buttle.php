@@ -333,6 +333,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				case 2:
 				if(!push_2){
 					Char1Skill(0,0,0,25,25, CharNum);
+					var buff1 = document.createElement("img");
+					buff1.src="assets/AttackDown.png";
+					document.getElementById('buffID').appendChild(buff1);
 					push_2 = true;
 					return;
 				}
