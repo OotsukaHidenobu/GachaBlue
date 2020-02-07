@@ -611,7 +611,7 @@ $warning = "4キャラ全員編成してください";
                 location.href = `Buttle.php?id1=` + encodeURIComponent(id1) +"&id2="+ encodeURIComponent(id2)+"&id3="+ encodeURIComponent(id3)+"&id4="+ encodeURIComponent(id4);
             }
             else {
-                alert("<?php echo $warning; ?>");
+                alert("クリックされました");
             }
         });
 
