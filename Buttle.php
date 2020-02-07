@@ -290,7 +290,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 			if(DlimitDebuff < 50) DlimitDebuff = 50;
 			console.log(AlimitBuff);
 			console.log(DlimitBuff);
-            console.log("全体	" + ", ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
+            console.log("全体	" + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff[CharNum] + ", 防御力:" + DlimitBuff[CharNum] + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
 		}
 
 		var push_1 = false;
