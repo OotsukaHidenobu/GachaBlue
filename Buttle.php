@@ -85,9 +85,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char1Attack" value="<?= $power1['Power'] ?>" id="Char1Attack" class="CharAttack">
             <input type="hidden" name="Char1Defence" value="100" id="Char1Defence" class="CharDefence">
             <img src="assets/<?= $image1['Image'] ?>">
-            <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)" onclick="disabled = true">
-            <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Char1Skill(0,30,0,0,0)">
-            <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Char1Skill(800,0,0,0,25)">
+            <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID1['Skill1ID'] ?>)" onclick="disabled = true">
+            <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID1['Skill2ID'] ?>)">
+            <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID1['Skill3ID'] ?>)">
         </div>
         <div id="CharactersImage2" class="CharactersImage">
             <h1 id="Char2HPBar" class="CharHPBar">HP:</h1>
@@ -95,9 +95,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char2Attack" value="<?= $power2['Power'] ?>" id="Char2Attack" class="CharAttack">
             <input type="hidden" name="Char2Defence" value="100" id="Char2Defence" class="CharDefence">
             <img src="assets/<?= $image2['Image'] ?>">
-            <img src="assets/<?= $Skill1Image2['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)">
-            <img src="assets/<?= $Skill2Image2['Skill2Image'] ?>"onclick="Char1Skill(0,30,0,0,0)">
-            <img src="assets/<?= $Skill3Image2['Skill3Image'] ?>"onclick="Char1Skill(800,0,0,0,25)">
+            <img src="assets/<?= $Skill1Image2['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID2['Skill1ID'] ?>)">
+            <img src="assets/<?= $Skill2Image2['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID2['Skill2ID'] ?>)">
+            <img src="assets/<?= $Skill3Image2['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID2['Skill3ID'] ?>)">
         </div>
         <div id="CharactersImage3" class="CharactersImage">
             <h1 id="Char3HPBar" class="CharHPBar">HP:</h1>
@@ -105,9 +105,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char3Attack" value="<?= $power3['Power'] ?>" id="Char3Attack" class="CharAttack">
             <input type="hidden" name="Char3Defence" value="100" id="Char3Defence" class="CharDefence">
             <img src="assets/<?= $image3['Image'] ?>">
-            <img src="assets/<?= $Skill1Image3['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)">
-            <img src="assets/<?= $Skill2Image3['Skill2Image'] ?>"onclick="Char1Skill(0,30,0,0,0)">
-            <img src="assets/<?= $Skill3Image3['Skill3Image'] ?>"onclick="Char1Skill(800,0,0,0,25)">
+            <img src="assets/<?= $Skill1Image3['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID3['Skill1ID'] ?>)">
+            <img src="assets/<?= $Skill2Image3['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID3['Skill2ID'] ?>)">
+            <img src="assets/<?= $Skill3Image3['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID3['Skill3ID'] ?>)">
         </div>
         <div id="CharactersImage4" class="CharactersImage">
             <h1 id="Char4HPBar" class="CharHPBar">HP:</h1>
@@ -115,9 +115,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char4Attack" value="<?= $power4['Power'] ?>" id="Char4Attack" class="CharAttack">
             <input type="hidden" name="Char4Defence" value="100" id="Char4Defence" class="CharDefence">
             <img src="assets/<?= $image4['Image'] ?>">
-            <img src="assets/<?= $Skill1Image4['Skill1Image'] ?>"onclick="Char1Skill(0,0,0,25,25)">
-            <img src="assets/<?= $Skill2Image4['Skill2Image'] ?>"onclick="Char1Skill(0,30,0,0,0)">
-            <img src="assets/<?= $Skill3Image4['Skill3Image'] ?>"onclick="Char1Skill(800,0,0,0,25)">
+            <img src="assets/<?= $Skill1Image4['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID4['Skill1ID'] ?>)">
+            <img src="assets/<?= $Skill2Image4['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID4['Skill2ID'] ?>)">
+            <img src="assets/<?= $Skill3Image4['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID4['Skill3ID'] ?>)">
         </div>
     </div>
     <div>
