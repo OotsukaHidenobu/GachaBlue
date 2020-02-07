@@ -1,5 +1,6 @@
 var playlist=[
     "./Music/mens-ou1.mp3",
+    "./Music/decision7.mp3",
     "./Music/decision7.mp3"
 ]
 var audio = document.createElement('audio');
@@ -22,6 +23,10 @@ function Se(i){
         audio.addEventListener("ended",function(){
         window.location.href='./teaming.html';
         },false);
+        break;
+        case 2:
+        audio.src=playlist[i];
+        audio.play();
         break;
     }
 }
