@@ -254,7 +254,7 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-02" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-02" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
@@ -273,7 +273,7 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-03" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-03" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
@@ -292,7 +292,7 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-04" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-04" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
@@ -311,7 +311,7 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-05" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-05" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
@@ -330,7 +330,7 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-06" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-06" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
@@ -349,7 +349,7 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-07" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-07" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
@@ -368,7 +368,7 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-08" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-08" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
@@ -387,7 +387,7 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-09" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-09" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
@@ -406,7 +406,7 @@ $warning = "4キャラ全員編成してください";
 	<!-- モーダルウィンドウのコンテンツ終了 -->
 </div>
 
-<div id="modal-10" class="modal-content" style="top: 50%; left: 50%;
+<div id="modal-10" class="modal-content" style="top: 40%; left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit- transform: translateY(-50%) translateX(-50%);
    display: none;">
