@@ -273,18 +273,18 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             EnemyDefence.value = parseFloat(EnemyDefence.value) - (parseFloat(EnemyDefence.value) * parseFloat(defenceDebuff) / 100);
         }
 
-		var push_1;
-		var push_2;
-		var push_3;
-		var push_4;
-		var push_5;
-		var push_6;
-		var push_7;
-		var push_8;
-		var push_9;
-		var push_10;
-		var push_11;
-		var push_12;
+		var push_1 = false;
+		var push_2 = false;
+		var push_3 = false;
+		var push_4 = false;
+		var push_5 = false;
+		var push_6 = false;
+		var push_7 = false;
+		var push_8 = false;
+		var push_9 = false;
+		var push_10 = false;
+		var push_11 = false;
+		var push_12 = false;
 
 		function Skill(id){
 			switch (id) {
