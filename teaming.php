@@ -505,7 +505,7 @@ $warning = "4キャラ全員編成してください";
 
     <br clear="left">
     <div id="button-div">
-        <button id="button" data-target="modal-11" onclick="Se(1)">戦闘開始</button>
+        <button id="button-combat" data-target="modal-11" onclick="Se(1)">戦闘開始</button>
     </div>
 
 
@@ -583,7 +583,7 @@ $warning = "4キャラ全員編成してください";
         var id2 = 0;
         var id3 = 0;
         var id4 = 0;
-        var button = document.querySelector("#button");
+        var button = document.querySelector("#button-combat");
 
 
             button.addEventListener("click", (e) => {
