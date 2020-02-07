@@ -424,7 +424,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         }
 
         .CharHPBar {
-            position: absolute;
             left: 330px;
         }
 
