@@ -294,7 +294,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var push_11 = false;
 		var push_12 = false;
 
-		function Skill(id){
+		function Skill(id, CharNum){
 			switch (id) {
 				case 1:
 				if(!push_1){
@@ -305,14 +305,14 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 				case 2:
 				if(!push_2){
-					Char1Skill(0,0,0,25,25);
+					Char1Skill(0,0,0,25,25, CharNum);
 					push_2 = true;
 					return;
 				}
 					break;
 				case 3:
 				if(!push_3){
-					Char1Skill(800,0,0,0,20);
+					Char1Skill(800,0,0,0,20, CharNum);
 					push_3 = true;
 					return;
 				}
@@ -326,63 +326,63 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 				case 5:
 				if(!push_5){
-					Char1Skill(0,30,0,0,0);
+					Char1SkillAll(0,30,0,0,0, CharNum);
 					push_5 = true;
 					return;
 				}
 					break;
 				case 6:
 				if(!push_6){
-					Char1Skill(0,0,30,0,0);
+					Char1SkillAll(0,0,30,0,0, CharNum);
 					push_6 = true;
 					return;
 				}
 					break;
 				case 7:
 				if(!push_7){
-					Char1SkillAll(1000,0,0,0,0);
+					Char1Skill(1000,0,0,0,0);
 					push_7 = true;
 					return;
 				}
 					break;
 				case 8:
 				if(!push_8){
-					Char1Skill(0,25,25,0,0);
+					Char1Skill(0,50,0,0,0, CharNum);
 					push_8 = true;
 					return;
 				}
 					break;
 				case 9:
 				if(!push_9){
-					Char1Skill(0,50,0,0,0);
+					Char1Skill(1000,0,50,0,0, CharNum);
 					push_9 = true;
 					return;
 				}
 					break;
 				case 10:
 				if(!push_10){
-					Char1SkillAll(1000,0,0,0,0);
+					Char1Skill(1000,15,0,0,0);
 					push_10 = true;
 					return;
 				}
 					break;
 				case 11:
 				if(!push_11){
-					Char1Skill(0,0,0,25,25);
+					Char1Skill(0,0,0,25,25, CharNum);
 					push_11 = true;
 					return;
 				}
 					break;
 				case 12:
 				if(!push_12){
-					Char1Skill(0,0,50,0,0);
+					Char1Skill(0,0,50,0,0, CharNum);
 					push_12 = true;
 					return;
 				}
 					break;
 	
 				default:
-					Char1Skill(0,0,0,0,0);
+					Char1Skill(0,0,0,0,0, CharNum);
 					break;
 			}
 		}
