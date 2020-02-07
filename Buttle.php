@@ -85,9 +85,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char1Attack" value="<?= $power1['Power'] ?>" id="Char1Attack" class="CharAttack">
             <input type="hidden" name="Char1Defence" value="100" id="Char1Defence" class="CharDefence">
             <img src="assets/<?= $image1['Image'] ?>">
-            <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID1['Skill1ID'] ?>, 1)">
-            <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID1['Skill2ID'] ?>, 1)">
-            <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID1['Skill3ID'] ?>, 1)">
+            <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID1['Skill1ID'] ?>, '1')">
+            <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID1['Skill2ID'] ?>, '1')">
+            <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID1['Skill3ID'] ?>, '1')">
         </div>
         <div id="CharactersImage2" class="CharactersImage">
             <h1 id="Char2HPBar" class="CharHPBar">HP:</h1>
@@ -95,9 +95,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char2Attack" value="<?= $power2['Power'] ?>" id="Char2Attack" class="CharAttack">
             <input type="hidden" name="Char2Defence" value="100" id="Char2Defence" class="CharDefence">
             <img src="assets/<?= $image2['Image'] ?>">
-            <img src="assets/<?= $Skill1Image2['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID2['Skill1ID'] ?>, 2)">
-            <img src="assets/<?= $Skill2Image2['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID2['Skill2ID'] ?>, 2)">
-            <img src="assets/<?= $Skill3Image2['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID2['Skill3ID'] ?>, 2)">
+            <img src="assets/<?= $Skill1Image2['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID2['Skill1ID'] ?>, '2')">
+            <img src="assets/<?= $Skill2Image2['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID2['Skill2ID'] ?>, '2')">
+            <img src="assets/<?= $Skill3Image2['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID2['Skill3ID'] ?>, '2')">
         </div>
         <div id="CharactersImage3" class="CharactersImage">
             <h1 id="Char3HPBar" class="CharHPBar">HP:</h1>
@@ -105,9 +105,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char3Attack" value="<?= $power3['Power'] ?>" id="Char3Attack" class="CharAttack">
             <input type="hidden" name="Char3Defence" value="100" id="Char3Defence" class="CharDefence">
             <img src="assets/<?= $image3['Image'] ?>">
-            <img src="assets/<?= $Skill1Image3['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID3['Skill1ID'] ?>, 3)">
-            <img src="assets/<?= $Skill2Image3['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID3['Skill2ID'] ?>, 3)">
-            <img src="assets/<?= $Skill3Image3['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID3['Skill3ID'] ?>, 3)">
+            <img src="assets/<?= $Skill1Image3['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID3['Skill1ID'] ?>, '3')">
+            <img src="assets/<?= $Skill2Image3['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID3['Skill2ID'] ?>, '3')">
+            <img src="assets/<?= $Skill3Image3['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID3['Skill3ID'] ?>, '3')">
         </div>
         <div id="CharactersImage4" class="CharactersImage">
             <h1 id="Char4HPBar" class="CharHPBar">HP:</h1>
@@ -115,9 +115,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char4Attack" value="<?= $power4['Power'] ?>" id="Char4Attack" class="CharAttack">
             <input type="hidden" name="Char4Defence" value="100" id="Char4Defence" class="CharDefence">
             <img src="assets/<?= $image4['Image'] ?>">
-            <img src="assets/<?= $Skill1Image4['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID4['Skill1ID'] ?>, 4)">
-            <img src="assets/<?= $Skill2Image4['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID4['Skill2ID'] ?>, 4)">
-            <img src="assets/<?= $Skill3Image4['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID4['Skill3ID'] ?>, 4)">
+            <img src="assets/<?= $Skill1Image4['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID4['Skill1ID'] ?>, '4')">
+            <img src="assets/<?= $Skill2Image4['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID4['Skill2ID'] ?>, '4')">
+            <img src="assets/<?= $Skill3Image4['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID4['Skill3ID'] ?>, '4')">
         </div>
     </div>
     <div>
@@ -174,22 +174,22 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             var fullpunch = Math.random() * 100;
             if (fullpunch < 5) {
                 for (var i = 0; i < m_charHPArray.length; i++) {
-                    m_charHPArray[i].innerHTML -= Math.round(enemyPower / 2);
+                    m_charHPArray[i].innerHTML -= Math.round(enemyPower / 2) * (100 / DlimitDebuff[i]);
                 }
             }
             else {
                 var rand = Math.random() * m_charHPArray.length;
                 if (rand < 1) {
-                    m_charHPArray[0].innerHTML -= enemyPower;
+                    m_charHPArray[0].innerHTML -= enemyPower * (100 / DlimitDebuff[0]);
                 }
                 else if (rand < 2) {
-                    m_charHPArray[1].innerHTML -= enemyPower;
+                    m_charHPArray[1].innerHTML -= enemyPower * (100 / DlimitDebuff[1]);
                 }
                 else if (rand < 3) {
-                    m_charHPArray[2].innerHTML -= enemyPower;
+                    m_charHPArray[2].innerHTML -= enemyPower * (100 / DlimitDebuff[2]);
                 }
                 else if (rand < 4) {
-                    m_charHPArray[3].innerHTML -= enemyPower;
+                    m_charHPArray[3].innerHTML -= enemyPower * (100 / DlimitDebuff[3]);
                 }
             }
 
@@ -253,34 +253,44 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         }
 
 		var AlimitBuff = [0,0,0,0];
-		var DlimitBuff = [0,0,0,0];
-		var AlimitDebuff = 0;
-		var DlimitDebuff = 0;
+		var DlimitBuff = [100,100,100,100];
+		var AlimitDebuff = 100;
+		var DlimitDebuff = 100;
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
 			CharNum -= 1;
             enemyHP.innerHTML -= parseFloat(Damege);
+			if (enemyHP.innerHTML <= 0) {
+                location.href = "./Result_Win.html";
+            }
 			AlimitBuff[CharNum] += parseFloat(attackBuff);
 			DlimitBuff[CharNum] += parseFloat(defenceBuff);
-            AlimitDebuff += parseFloat(attackDebuff);
-			DlimitDebuff += parseFloat(defenceDebuff);
-			if(AlimitDebuff > 50) AlimitDebuff = 50;
-			if(DlimitDebuff > 50) DlimitDebuff = 50;
-            console.log("キャラ:" + CharNum + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff[CharNum] + ", 防御力:" + DlimitBuff[CharNum] + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff)
+            AlimitDebuff -= parseFloat(attackDebuff);
+			DlimitDebuff -= parseFloat(defenceDebuff);
+			if(AlimitDebuff < 50) AlimitDebuff = 50;
+			if(DlimitDebuff < 50) DlimitDebuff = 50;
+			console.log(AlimitBuff);
+			console.log(DlimitBuff);
+            console.log("キャラ:" + CharNum + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff[CharNum] + ", 防御力:" + DlimitBuff[CharNum] + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
         }
         function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
             enemyHP.innerHTML -= parseFloat(Damege);
-            for (var i = 0; i < 4; i++) {
-                CharAttackArray[i].value = parseFloat(CharAttackArray[i].value) + (parseFloat(CharAttackArray[i].value) * parseFloat(attackBuff) / 100);
+			if (enemyHP.innerHTML <= 0) {
+                location.href = "./Result_Win.html";
             }
             for (var i = 0; i < 4; i++) {
-                CharDefenceArray[i].value = parseFloat(CharDefenceArray[i].value) + (parseFloat(CharDefenceArray[i].value) * parseFloat(defenceBuff) / 100);
+                AlimitBuff[i] += parseFloat(attackBuff);
+			}
+            for (var i = 0; i < 4; i++) {
+                DlimitBuff[i] += parseFloat(defenceBuff);
             }
-			AlimitDebuff += parseFloat(attackDebuff);
-			DlimitDebuff += parseFloat(defenceDebuff);
-			if(AlimitDebuff > 50) AlimitDebuff = 50;
-			if(DlimitDebuff > 50) DlimitDebuff = 50;
-            console.log("全体	" + ", ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff)
+			AlimitDebuff -= parseFloat(attackDebuff);
+			DlimitDebuff -= parseFloat(defenceDebuff);
+			if(AlimitDebuff < 50) AlimitDebuff = 50;
+			if(DlimitDebuff < 50) DlimitDebuff = 50;
+			console.log(AlimitBuff);
+			console.log(DlimitBuff);
+            console.log("全体	" + ", ダメージ:" + Damege + ", 攻撃力:" + Char1Attack.value + ", 防御力:" + Char1Defence.value + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
 		}
 
 		var push_1 = false;
@@ -328,21 +338,21 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 				case 5:
 				if(!push_5){
-					Char1SkillAll(0,30,0,0,0, CharNum);
+					Char1SkillAll(0,30,0,0,0);
 					push_5 = true;
 					return;
 				}
 					break;
 				case 6:
 				if(!push_6){
-					Char1SkillAll(0,0,30,0,0, CharNum);
+					Char1SkillAll(0,0,30,0,0);
 					push_6 = true;
 					return;
 				}
 					break;
 				case 7:
 				if(!push_7){
-					Char1Skill(1000,0,0,0,0);
+					Char1Skill(1000,0,0,0,0, CharNum);
 					push_7 = true;
 					return;
 				}
@@ -363,7 +373,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 				case 10:
 				if(!push_10){
-					Char1Skill(1000,15,0,0,0);
+					Char1Skill(1000,15,0,0,0, CharNum);
 					push_10 = true;
 					return;
 				}
