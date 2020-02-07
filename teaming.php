@@ -504,7 +504,7 @@ $warning = "4キャラ全員編成してください";
     </div>
 
     <br clear="left">
-    <div id="button-div" class="modal-syncer">
+    <div id="button-div">
         <button id="button" data-target="modal-11" onclick="Se(1)">戦闘開始</button>
     </div>
 
@@ -606,12 +606,10 @@ $warning = "4キャラ全員編成してください";
                 }
             }
             if (b == 4) {
-                buttonDiv.removeClass('modal-syncer');
                 location.href = `Buttle.php?id1=` + encodeURIComponent(id1) +"&id2="+ encodeURIComponent(id2)+"&id3="+ encodeURIComponent(id3)+"&id4="+ encodeURIComponent(id4);
             }
             else {
                 //alert("<?php echo $warning; ?>");
-                buttonDiv.addClass('modal-syncer');
             }
         });
 
