@@ -329,21 +329,21 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 				case 5:
 				if(!push_5){
-					Char1SkillAll(0,30,0,0,0, CharNum);
+					Char1SkillAll(0,30,0,0,0);
 					push_5 = true;
 					return;
 				}
 					break;
 				case 6:
 				if(!push_6){
-					Char1SkillAll(0,0,30,0,0, CharNum);
+					Char1SkillAll(0,0,30,0,0);
 					push_6 = true;
 					return;
 				}
 					break;
 				case 7:
 				if(!push_7){
-					Char1Skill(1000,0,0,0,0);
+					Char1Skill(1000,0,0,0,0, CharNum);
 					push_7 = true;
 					return;
 				}
@@ -364,7 +364,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 				case 10:
 				if(!push_10){
-					Char1Skill(1000,15,0,0,0);
+					Char1Skill(1000,15,0,0,0, CharNum);
 					push_10 = true;
 					return;
 				}
