@@ -308,7 +308,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
 			if(Damege != 0){
 				console.log(EnDamege);
-				EnDamege.visibility = 'visible';
+				EnDamege.style.visibility = 'visible';
 				EnDamege.innerHTML=Damege;
 			}
             enemyHP.innerHTML -= parseFloat(Damege);
