@@ -79,7 +79,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         </h1>
 		<div id="Debuff">
 		</div>
-		<input type="hidden" name="EnDamege" value="0" id="EnDamge" class="EnDamge">
+		<input type="hidden" name="EnDamege" value="0" id="EnDamege" class="EnDamege">
     </h1>
     <div id="texture" class="texture">
         <div id="EnemyImage" class="EnemyImage">
@@ -303,7 +303,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var IsABuffLimit = false;
 		var IsDBuffLimit = false;
 
-		var EnDamege = document.getElementById('EnDamege')
+		var EnDamege = document.getElementById('EnDamege');
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
 			if(Damege != 0){
