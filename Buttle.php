@@ -138,145 +138,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     <div id="Characters" class="Characters">
     </div>
 
-    <!--/////-->
-    <!--style-->
-    <!--/////-->
-    <style>
-        #EnenyName {
-            text-align: center;
-        }
-
-        #HPBar {
-			clear:both;
-            margin-top: 1%;
-            border: none;
-            height: 10px;
-            background: red;
-        }
-
-		#buffID{
-			position:absolute;
-			top:70px;
-			left: 290px;
-		}
-
-
-        #CharactersImage1 {
-            background-color: none;
-            opacity: 1;
-            display: block;
-            position: absolute;
-            top: 0px;
-            left: 600px;
-        }
-
-        .CharHPBar {
-            position: absolute;
-            left: 330px;
-        }
-
-        #Char1HP {
-            position: absolute;
-            left: 400px;
-        }
-
-        #CharactersImage2 {
-            position: absolute;
-            top: 180px;
-            left: 600px;
-        }
-
-        #Char2HP {
-            position: absolute;
-            left: 400px;
-        }
-
-        #CharactersImage3 {
-            position: absolute;
-            top: 360px;
-            left: 600px;
-        }
-
-        #Char3HP {
-            position: absolute;
-            left: 400px;
-        }
-
-        #CharactersImage4 {
-            position: absolute;
-            top: 540px;
-            left: 600px;
-        }
-
-        #Char4HP {
-            position: absolute;
-            left: 400px;
-        }
-
-        .CharactersImage {
-            position: relative;
-            padding: 0.25em 1em;
-            margin: 2em 0;
-            top: 0;
-            background: #efefef;
-        }
-
-            .CharactersImage:before, .CharactersImage:after {
-                position: absolute;
-                top: 0;
-                content: '';
-                width: 10px;
-                height: 100%;
-                display: inline-block;
-                box-sizing: border-box;
-            }
-
-            .CharactersImage:before {
-                border-left: dotted 2px #15adc1;
-                border-top: dotted 2px #15adc1;
-                border-bottom: dotted 2px #15adc1;
-                left: 0;
-            }
-
-            .CharactersImage:after {
-                border-top: dotted 2px #15adc1;
-                border-right: dotted 2px #15adc1;
-                border-bottom: dotted 2px #15adc1;
-                right: 0;
-            }
-
-            .CharactersImage p {
-                margin: 0;
-                padding: 0;
-            }
-
-        .HP {
-            float: left;
-        }
-
-        #Attack {
-			clear: both;
-            display: inline-block;
-            max-width: 180px;
-            text-align: left;
-            background-color: #ffa300;
-            font-size: 16px;
-            color: #FFF;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 24px;
-            border-radius: 4px;
-            border-bottom: 4px solid #d37800;
-            position: absolute;
-			top: 160px;
-            left: 800px;
-        }
-
-        #texture {
-            clear: both;
-            position: relative;
-        }
-    </style>
     <!--//////////-->
     <!--Javascript-->
     <!--//////////-->
@@ -479,13 +340,28 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 						 [false,false,false],
 						 [false,false,false]];
 
+		function BuffIcon(buffID, pngName){
+					var buff = document.createElement("img");
+					buff.src="assets/"+pngName+".png";
+					document.getElementById(buffID).appendChild(buff);
+		}
+		function AllBuffIcon(pngName){
+		console.log(pngName);
+					var buff = document.createElement("img");
+					buff.src="assets/"+pngName+".png";
+					document.getElementById(buffID1).appendChild(buff);
+					document.getElementById(buffID2).appendChild(buff);
+					document.getElementById(buffID3).appendChild(buff);
+					document.getElementById(buffID4).appendChild(buff);
+		}
+
 		function Skill(id, CharNum, SkillNum){
 			switch (id) {
 				case 1:
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1SkillAll(0,30,0,0,0);
 					CharSkill[CharNum][SkillNum] = true;
-					AllBuffIcon('AttackUp');
+					BuffIcon('buffID1', 'AttackUp');
 					return;
 				}
 					break;
@@ -572,22 +448,146 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 			}
 		}
-		function BuffIcon(buffID, pngName){
-					var buff = document.createElement("img");
-					buff.src="assets/"+pngName+".png";
-					document.getElementById(buffID).appendChild(buff);
-		}
-		function AllBuffIcon(pngName){
-		console.log(pngName);
-					var buff = document.createElement("img");
-					buff.src="assets/"+pngName+".png";
-					document.getElementById(buffID1).appendChild(buff);
-					document.getElementById(buffID2).appendChild(buff);
-					document.getElementById(buffID3).appendChild(buff);
-					document.getElementById(buffID4).appendChild(buff);
-		}
-
     </script>
 
+    <!--/////-->
+    <!--style-->
+    <!--/////-->
+    <style>
+        #EnenyName {
+            text-align: center;
+        }
+
+        #HPBar {
+			clear:both;
+            margin-top: 1%;
+            border: none;
+            height: 10px;
+            background: red;
+        }
+
+		#buffID{
+			position:absolute;
+			top:70px;
+			left: 290px;
+		}
+
+
+        #CharactersImage1 {
+            background-color: none;
+            opacity: 1;
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 600px;
+        }
+
+        .CharHPBar {
+            position: absolute;
+            left: 330px;
+        }
+
+        #Char1HP {
+            position: absolute;
+            left: 400px;
+        }
+
+        #CharactersImage2 {
+            position: absolute;
+            top: 180px;
+            left: 600px;
+        }
+
+        #Char2HP {
+            position: absolute;
+            left: 400px;
+        }
+
+        #CharactersImage3 {
+            position: absolute;
+            top: 360px;
+            left: 600px;
+        }
+
+        #Char3HP {
+            position: absolute;
+            left: 400px;
+        }
+
+        #CharactersImage4 {
+            position: absolute;
+            top: 540px;
+            left: 600px;
+        }
+
+        #Char4HP {
+            position: absolute;
+            left: 400px;
+        }
+
+        .CharactersImage {
+            position: relative;
+            padding: 0.25em 1em;
+            margin: 2em 0;
+            top: 0;
+            background: #efefef;
+        }
+
+            .CharactersImage:before, .CharactersImage:after {
+                position: absolute;
+                top: 0;
+                content: '';
+                width: 10px;
+                height: 100%;
+                display: inline-block;
+                box-sizing: border-box;
+            }
+
+            .CharactersImage:before {
+                border-left: dotted 2px #15adc1;
+                border-top: dotted 2px #15adc1;
+                border-bottom: dotted 2px #15adc1;
+                left: 0;
+            }
+
+            .CharactersImage:after {
+                border-top: dotted 2px #15adc1;
+                border-right: dotted 2px #15adc1;
+                border-bottom: dotted 2px #15adc1;
+                right: 0;
+            }
+
+            .CharactersImage p {
+                margin: 0;
+                padding: 0;
+            }
+
+        .HP {
+            float: left;
+        }
+
+        #Attack {
+			clear: both;
+            display: inline-block;
+            max-width: 180px;
+            text-align: left;
+            background-color: #ffa300;
+            font-size: 16px;
+            color: #FFF;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 24px;
+            border-radius: 4px;
+            border-bottom: 4px solid #d37800;
+            position: absolute;
+			top: 160px;
+            left: 800px;
+        }
+
+        #texture {
+            clear: both;
+            position: relative;
+        }
+    </style>
 </body>
 </html>
