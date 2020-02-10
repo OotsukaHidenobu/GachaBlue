@@ -85,10 +85,10 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char1Attack" value="<?= $power1['Power'] ?>" id="Char1Attack" class="CharAttack">
             <input type="hidden" name="Char1Defence" value="100" id="Char1Defence" class="CharDefence">
             <input type="Image" src="assets/<?= $image1['Image'] ?>">
-            <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID1['Skill1ID'] ?>, '1','1')">
-            <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID1['Skill2ID'] ?>, '1','2')">
-            <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID1['Skill3ID'] ?>, '1','3')">
-			<div id="buffID">
+            <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID1['Skill1ID'] ?>, '0','0')">
+            <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID1['Skill2ID'] ?>, '0','1')">
+            <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID1['Skill3ID'] ?>, '0','2')">
+			<div id="buffID1">
 
 			</div>
         </div>
@@ -98,9 +98,12 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char2Attack" value="<?= $power2['Power'] ?>" id="Char2Attack" class="CharAttack">
             <input type="hidden" name="Char2Defence" value="100" id="Char2Defence" class="CharDefence">
             <img src="assets/<?= $image2['Image'] ?>">
-            <img src="assets/<?= $Skill1Image2['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID2['Skill1ID'] ?>, '2','1')">
-            <img src="assets/<?= $Skill2Image2['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID2['Skill2ID'] ?>, '2','2')">
-            <img src="assets/<?= $Skill3Image2['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID2['Skill3ID'] ?>, '2','2')">
+            <img src="assets/<?= $Skill1Image2['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID2['Skill1ID'] ?>, '1','0')">
+            <img src="assets/<?= $Skill2Image2['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID2['Skill2ID'] ?>, '1','1')">
+            <img src="assets/<?= $Skill3Image2['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID2['Skill3ID'] ?>, '1','2')">
+			<div id="buffID2">
+
+			</div>
         </div>
         <div id="CharactersImage3" class="CharactersImage">
             <h1 id="Char3HPBar" class="CharHPBar">HP:</h1>
@@ -108,9 +111,12 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char3Attack" value="<?= $power3['Power'] ?>" id="Char3Attack" class="CharAttack">
             <input type="hidden" name="Char3Defence" value="100" id="Char3Defence" class="CharDefence">
             <img src="assets/<?= $image3['Image'] ?>">
-            <img src="assets/<?= $Skill1Image3['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID3['Skill1ID'] ?>, '3','1')">
-            <img src="assets/<?= $Skill2Image3['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID3['Skill2ID'] ?>, '3','2')">
-            <img src="assets/<?= $Skill3Image3['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID3['Skill3ID'] ?>, '3','3')">
+            <img src="assets/<?= $Skill1Image3['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID3['Skill1ID'] ?>, '2','0')">
+            <img src="assets/<?= $Skill2Image3['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID3['Skill2ID'] ?>, '2','1')">
+            <img src="assets/<?= $Skill3Image3['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID3['Skill3ID'] ?>, '2','2')">
+			<div id="buffID3">
+
+			</div>
         </div>
         <div id="CharactersImage4" class="CharactersImage">
             <h1 id="Char4HPBar" class="CharHPBar">HP:</h1>
@@ -118,9 +124,12 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <input type="hidden" name="Char4Attack" value="<?= $power4['Power'] ?>" id="Char4Attack" class="CharAttack">
             <input type="hidden" name="Char4Defence" value="100" id="Char4Defence" class="CharDefence">
             <img src="assets/<?= $image4['Image'] ?>">
-            <img src="assets/<?= $Skill1Image4['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID4['Skill1ID'] ?>, '4','1')">
-            <img src="assets/<?= $Skill2Image4['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID4['Skill2ID'] ?>, '4','2')">
-            <img src="assets/<?= $Skill3Image4['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID4['Skill3ID'] ?>, '4','3')">
+            <img src="assets/<?= $Skill1Image4['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID4['Skill1ID'] ?>, '3','0')">
+            <img src="assets/<?= $Skill2Image4['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID4['Skill2ID'] ?>, '3','1')">
+            <img src="assets/<?= $Skill3Image4['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID4['Skill3ID'] ?>, '3','2')">
+			<div id="buffID4">
+
+			</div>
         </div>
     </div>
     <div>
@@ -128,309 +137,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     </div>
     <div id="Characters" class="Characters">
     </div>
-
-    <!--//////////-->
-    <!--Javascript-->
-    <!--//////////-->
-    <script type="text/javascript">
-        var enemyHP = document.getElementById('HP')
-		var enemyMaxHP = 11000;
-        var enemyAttack = document.getElementById('EnemyAttack')
-        var EnemyDefence = document.getElementById('EnemyDefence')
-
-        var Char1Attack = document.getElementById('Char1Attack')
-        var Char2Attack = document.getElementById('Char2Attack')
-        var Char3Attack = document.getElementById('Char3Attack')
-        var Char4Attack = document.getElementById('Char4Attack')
-
-        var Char1HP = document.getElementById('Char1HP')
-        var Char2HP = document.getElementById('Char2HP')
-        var Char3HP = document.getElementById('Char3HP')
-        var Char4HP = document.getElementById('Char4HP')
-
-        var Char1Defence = document.getElementById('Char1Defence')
-        var Char2Defence = document.getElementById('Char2Defence')
-        var Char3Defence = document.getElementById('Char3Defence')
-        var Char4Defence = document.getElementById('Char4Defence')
-
-        var CharHPArray = [Char1HP, Char2HP, Char3HP, Char4HP];
-        var m_charHPArray = [Char1HP, Char2HP, Char3HP, Char4HP];
-        var CharAttackArray = [Char1Attack, Char2Attack, Char3Attack, Char4Attack]
-        var CharDefenceArray = [Char1Defence, Char2Defence, Char3Defence, Char4Defence] 
-        
-
-        function hp_down() {
-            var Char1Power = parseFloat((Char1Attack.value) * ((AlimitBuff[0])/100)+1) + Math.round(parseFloat(Char1Attack.value / 100) * (Math.random() * 2 - 1));
-            var Char2Power = parseFloat((Char2Attack.value) * ((AlimitBuff[1])/100)+1) + Math.round(parseFloat(Char2Attack.value / 100) * (Math.random() * 2 - 1));
-            var Char3Power = parseFloat((Char3Attack.value) * ((AlimitBuff[2])/100)+1) + Math.round(parseFloat(Char3Attack.value / 100) * (Math.random() * 2 - 1));
-            var Char4Power = parseFloat((Char4Attack.value) * ((AlimitBuff[3])/100)+1) + Math.round(parseFloat(Char4Attack.value / 100) * (Math.random() * 2 - 1));
-
-            var enemyPower = parseFloat(enemyAttack.value) + Math.round(parseFloat(enemyAttack.value / 100) * (Math.random() * 2 - 1));
-			enemyPower = enemyPower * Math.round(parseFloat(AlimitDebuff) / 100);
-            var allPower = 0;
-            for (var i = 0; i < 4; i++) {
-                if (CharHPArray[i].innerHTML > 0) {
-                    allPower += parseFloat(CharAttackArray[i].value) * ((AlimitBuff[i]/100)+1) + Math.round(parseFloat(CharAttackArray[i].value / 100) * (Math.random() * 2 - 1));
-                }
-            }
-
-            var fullpunch = Math.random() * 100;
-            if (fullpunch < 5) {
-                for (var i = 0; i < m_charHPArray.length; i++) {
-                    m_charHPArray[i].innerHTML -= Math.round((enemyPower / 2) * (DlimitBuff[i] / 100));
-                }
-            }
-            else {
-                var rand = Math.random() * m_charHPArray.length;
-				
-                if (rand < 1) {
-                    m_charHPArray[0].innerHTML -= Math.round(enemyPower * (DlimitBuff[0] / 100));
-                }
-                else if (rand < 2) {
-                    m_charHPArray[1].innerHTML -= Math.round(enemyPower * (DlimitBuff[1] / 100));
-                }
-                else if (rand < 3) {
-                    m_charHPArray[2].innerHTML -= Math.round(enemyPower * (DlimitBuff[2] / 100));
-                }
-                else if (rand < 4) {
-                    m_charHPArray[3].innerHTML -= Math.round(enemyPower * (DlimitBuff[3] / 100));
-                }
-            }
-
-            if (Char1HP.innerHTML <= 0) {
-                Char1HP.innerHTML = 0;
-                for (var i = 0; i < m_charHPArray.length; i++) {
-                    if (m_charHPArray[i] == Char1HP) {
-                        m_charHPArray.splice(i, 1);
-						DlimitBuff.splice(i, 1);
-                        break;
-                    }
-                }
-                var CharactersImage1 = document.getElementById('CharactersImage1');
-                CharactersImage1.style.backgroundColor = "#000";
-                CharactersImage1.style.opacity = 0.6;
-            }
-            if (Char2HP.innerHTML <= 0) {
-                Char2HP.innerHTML = 0;
-                for (var i = 0; i < m_charHPArray.length; i++) {
-                    if (m_charHPArray[i] == Char2HP) {
-                        m_charHPArray.splice(i, 1);
-						DlimitBuff.splice(i, 1);
-                        break;
-                    }
-                }
-                var CharactersImage2 = document.getElementById('CharactersImage2');
-                CharactersImage2.style.backgroundColor = "#000";
-                CharactersImage2.style.opacity = 0.6;
-            }
-            if (Char3HP.innerHTML <= 0) {
-                Char3HP.innerHTML = 0;
-                for (var i = 0; i < m_charHPArray.length; i++) {
-                    if (m_charHPArray[i] == Char3HP) {
-                        m_charHPArray.splice(i, 1);
-						DlimitBuff.splice(i, 1);
-                        break;
-                    }
-                }
-                var CharactersImage3 = document.getElementById('CharactersImage3');
-                CharactersImage3.style.backgroundColor = "#000";
-                CharactersImage3.style.opacity = 0.6;
-            }
-            if (Char4HP.innerHTML <= 0) {
-                Char4HP.innerHTML = 0;
-                for (var i = 0; i < m_charHPArray.length; i++) {
-                    if (m_charHPArray[i] == Char4HP) {
-                        m_charHPArray.splice(i, 1);
-						DlimitBuff.splice(i, 1);
-                        break;
-                    }
-                }
-                var CharactersImage4 = document.getElementById('CharactersImage4');
-                CharactersImage4.style.backgroundColor = "#000";
-                CharactersImage4.style.opacity = 0.6;
-            }
-
-            enemyHP.innerHTML -= Math.round(allPower * (100 / DlimitDebuff));
-			var HPBar = document.getElementById('HPBar');
-			console.log(enemyHP.innerHTML);
-			console.log(enemyMaxHP);
-			HPBar.width = (6 * Math.floor(parseFloat(enemyHP.innerHTML) / 110)) +"px";
-            console.log(allPower * (100 / DlimitDebuff));
-            if (enemyHP.innerHTML <= 0) {
-                location.href = "./Result_Win.html";
-            }
-            else if (m_charHPArray.length <= 0) {
-                location.href = "./Result_Lose.html";
-            }
-        }
-
-		var AlimitBuff = [0,0,0,0];
-		var DlimitBuff = [100,100,100,100];
-		var AlimitDebuff = 100;
-		var DlimitDebuff = 100;
-
-		var IsABuffLimit = false;
-		var IsDBuffLimit = false;
-
-        function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
-			CharNum -= 1;
-            enemyHP.innerHTML -= parseFloat(Damege);
-			if (enemyHP.innerHTML <= 0) {
-                location.href = "./Result_Win.html";
-            }
-			AlimitBuff[CharNum] += parseFloat(attackBuff);
-			DlimitBuff[CharNum] += parseFloat(defenceBuff);
-            AlimitDebuff -= parseFloat(attackDebuff);
-			DlimitDebuff -= parseFloat(defenceDebuff);
-			if(AlimitDebuff < 50){
-				AlimitDebuff = 50;
-				IsABuffLimit = true;
-			}
-			if(DlimitDebuff < 50){
-				DlimitDebuff = 50;
-				IsDBuffLimit = true;
-			}
-			console.log(AlimitBuff);
-			console.log(DlimitBuff);
-            console.log("キャラ:" + CharNum + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff[CharNum] + ", 防御力:" + DlimitBuff[CharNum] + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
-        }
-        function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
-            enemyHP.innerHTML -= parseFloat(Damege);
-			if (enemyHP.innerHTML <= 0) {
-                location.href = "./Result_Win.html";
-            }
-            for (var i = 0; i < 4; i++) {
-                AlimitBuff[i] += parseFloat(attackBuff);
-			}
-            for (var i = 0; i < 4; i++) {
-                DlimitBuff[i] += parseFloat(defenceBuff);
-            }
-			AlimitDebuff -= parseFloat(attackDebuff);
-			DlimitDebuff -= parseFloat(defenceDebuff);
-			if(AlimitDebuff < 50) AlimitDebuff = 50;
-			if(DlimitDebuff < 50) DlimitDebuff = 50;
-			console.log(AlimitBuff);
-			console.log(DlimitBuff);
-            console.log("全体	" + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff + ", 防御力:" + DlimitBuff + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
-		}
-
-		var push_1 = false;
-		var push_2 = false;
-		var push_3 = false;
-		var push_4 = false;
-		var push_5 = false;
-		var push_6 = false;
-		var push_7 = false;
-		var push_8 = false;
-		var push_9 = false;
-		var push_10 = false;
-		var push_11 = false;
-		var push_12 = false;
-
-		var CharSkill = [[false,false,false],
-						 [false,false,false],
-						 [false,false,false],
-						 [false,false,false]];
-
-		function Skill(id, CharNum, SkillNum){
-			switch (id) {
-				case 1:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1SkillAll(0,30,0,0,0);
-					var buff = document.createElement("img");
-					buff.src="assets/AttackUp.png";
-					document.getElementById('buffID').appendChild(buff);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 2:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1Skill(0,0,0,25,25, CharNum);
-					var buff1 = document.createElement("img");
-					buff1.src="assets/AttackDown.png";
-					document.getElementById('buffID').appendChild(buff1);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 3:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1Skill(800,0,0,0,20, CharNum);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 4:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1SkillAll(0,0,30,0,0);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 5:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1SkillAll(0,30,0,0,0);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 6:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1SkillAll(0,0,30,0,0);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 7:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1Skill(1000,0,0,0,0, CharNum);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 8:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1Skill(0,50,0,0,0, CharNum);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 9:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1Skill(1000,0,50,0,0, CharNum);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 10:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1Skill(1000,15,0,0,0, CharNum);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 11:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1Skill(0,0,0,25,25, CharNum);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-				case 12:
-				if(!CharSkill[CharNum][SkillNum]){
-					Char1Skill(0,0,50,0,0, CharNum);
-					CharSkill[CharNum][SkillNum] = true;
-					return;
-				}
-					break;
-	
-				default:
-					Char1Skill(0,0,0,0,0, CharNum);
-					break;
-			}
-		}
-    </script>
 
     <!--/////-->
     <!--style-->
@@ -571,5 +277,317 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             position: relative;
         }
     </style>
+    <!--//////////-->
+    <!--Javascript-->
+    <!--//////////-->
+    <script type="text/javascript">
+        var enemyHP = document.getElementById('HP')
+		var enemyMaxHP = 11000;
+        var enemyAttack = document.getElementById('EnemyAttack')
+        var EnemyDefence = document.getElementById('EnemyDefence')
+
+        var Char1Attack = document.getElementById('Char1Attack')
+        var Char2Attack = document.getElementById('Char2Attack')
+        var Char3Attack = document.getElementById('Char3Attack')
+        var Char4Attack = document.getElementById('Char4Attack')
+
+        var Char1HP = document.getElementById('Char1HP')
+        var Char2HP = document.getElementById('Char2HP')
+        var Char3HP = document.getElementById('Char3HP')
+        var Char4HP = document.getElementById('Char4HP')
+
+        var Char1Defence = document.getElementById('Char1Defence')
+        var Char2Defence = document.getElementById('Char2Defence')
+        var Char3Defence = document.getElementById('Char3Defence')
+        var Char4Defence = document.getElementById('Char4Defence')
+
+        var CharHPArray = [Char1HP, Char2HP, Char3HP, Char4HP];
+        var m_charHPArray = [Char1HP, Char2HP, Char3HP, Char4HP];
+        var CharAttackArray = [Char1Attack, Char2Attack, Char3Attack, Char4Attack]
+        var CharDefenceArray = [Char1Defence, Char2Defence, Char3Defence, Char4Defence] 
+        
+
+        function hp_down() {
+            var Char1Power = parseFloat((Char1Attack.value) * ((AlimitBuff[0])/100)+1) + Math.round(parseFloat(Char1Attack.value / 100) * (Math.random() * 2 - 1));
+            var Char2Power = parseFloat((Char2Attack.value) * ((AlimitBuff[1])/100)+1) + Math.round(parseFloat(Char2Attack.value / 100) * (Math.random() * 2 - 1));
+            var Char3Power = parseFloat((Char3Attack.value) * ((AlimitBuff[2])/100)+1) + Math.round(parseFloat(Char3Attack.value / 100) * (Math.random() * 2 - 1));
+            var Char4Power = parseFloat((Char4Attack.value) * ((AlimitBuff[3])/100)+1) + Math.round(parseFloat(Char4Attack.value / 100) * (Math.random() * 2 - 1));
+
+            var enemyPower = parseFloat(enemyAttack.value) + Math.round(parseFloat(enemyAttack.value / 100) * (Math.random() * 2 - 1));
+			enemyPower = enemyPower * Math.round(parseFloat(AlimitDebuff) / 100);
+            var allPower = 0;
+            for (var i = 0; i < 4; i++) {
+                if (CharHPArray[i].innerHTML > 0) {
+                    allPower += parseFloat(CharAttackArray[i].value) * ((AlimitBuff[i]/100)+1) + Math.round(parseFloat(CharAttackArray[i].value / 100) * (Math.random() * 2 - 1));
+                }
+            }
+
+            var fullpunch = Math.random() * 100;
+            if (fullpunch < 5) {
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    m_charHPArray[i].innerHTML -= Math.round((enemyPower / 2) / (DlimitBuff[i] / 100));
+                }
+            }
+            else {
+                var rand = Math.random() * m_charHPArray.length;
+				
+                if (rand < 1) {
+                    m_charHPArray[0].innerHTML -= Math.round(enemyPower / (DlimitBuff[0] / 100));
+                }
+                else if (rand < 2) {
+                    m_charHPArray[1].innerHTML -= Math.round(enemyPower / (DlimitBuff[1] / 100));
+                }
+                else if (rand < 3) {
+                    m_charHPArray[2].innerHTML -= Math.round(enemyPower / (DlimitBuff[2] / 100));
+                }
+                else if (rand < 4) {
+                    m_charHPArray[3].innerHTML -= Math.round(enemyPower / (DlimitBuff[3] / 100));
+                }
+            }
+
+            if (Char1HP.innerHTML <= 0) {
+                Char1HP.innerHTML = 0;
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    if (m_charHPArray[i] == Char1HP) {
+                        m_charHPArray.splice(i, 1);
+						DlimitBuff.splice(i, 1);
+                        break;
+                    }
+                }
+                var CharactersImage1 = document.getElementById('CharactersImage1');
+                CharactersImage1.style.backgroundColor = "#000";
+                CharactersImage1.style.opacity = 0.6;
+            }
+            if (Char2HP.innerHTML <= 0) {
+                Char2HP.innerHTML = 0;
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    if (m_charHPArray[i] == Char2HP) {
+                        m_charHPArray.splice(i, 1);
+						DlimitBuff.splice(i, 1);
+                        break;
+                    }
+                }
+                var CharactersImage2 = document.getElementById('CharactersImage2');
+                CharactersImage2.style.backgroundColor = "#000";
+                CharactersImage2.style.opacity = 0.6;
+            }
+            if (Char3HP.innerHTML <= 0) {
+                Char3HP.innerHTML = 0;
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    if (m_charHPArray[i] == Char3HP) {
+                        m_charHPArray.splice(i, 1);
+						DlimitBuff.splice(i, 1);
+                        break;
+                    }
+                }
+                var CharactersImage3 = document.getElementById('CharactersImage3');
+                CharactersImage3.style.backgroundColor = "#000";
+                CharactersImage3.style.opacity = 0.6;
+            }
+            if (Char4HP.innerHTML <= 0) {
+                Char4HP.innerHTML = 0;
+                for (var i = 0; i < m_charHPArray.length; i++) {
+                    if (m_charHPArray[i] == Char4HP) {
+                        m_charHPArray.splice(i, 1);
+						DlimitBuff.splice(i, 1);
+                        break;
+                    }
+                }
+                var CharactersImage4 = document.getElementById('CharactersImage4');
+                CharactersImage4.style.backgroundColor = "#000";
+                CharactersImage4.style.opacity = 0.6;
+            }
+
+            enemyHP.innerHTML -= Math.round(allPower * (100 / DlimitDebuff));
+			var HPBar = document.getElementById('HPBar');
+			HPBar.width = (6 * Math.floor(parseFloat(enemyHP.innerHTML) / 110)) +"px";
+            console.log((100 / DlimitDebuff));
+            console.log(enemyPower / (DlimitBuff[0] / 100));
+            if (enemyHP.innerHTML <= 0) {
+                location.href = "./Result_Win.html";
+            }
+            else if (m_charHPArray.length <= 0) {
+                location.href = "./Result_Lose.html";
+            }
+        }
+
+		var AlimitBuff = [0,0,0,0];
+		var DlimitBuff = [100,100,100,100];
+		var AlimitDebuff = 100;
+		var DlimitDebuff = 100;
+
+		var IsABuffLimit = false;
+		var IsDBuffLimit = false;
+
+        function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
+			CharNum -= 1;
+            enemyHP.innerHTML -= parseFloat(Damege);
+			if (enemyHP.innerHTML <= 0) {
+                location.href = "./Result_Win.html";
+            }
+			AlimitBuff[CharNum] += parseFloat(attackBuff);
+			DlimitBuff[CharNum] += parseFloat(defenceBuff);
+            AlimitDebuff -= parseFloat(attackDebuff);
+			DlimitDebuff -= parseFloat(defenceDebuff);
+			if(AlimitDebuff < 50){
+				AlimitDebuff = 50;
+				IsABuffLimit = true;
+			}
+			if(DlimitDebuff < 50){
+				DlimitDebuff = 50;
+				IsDBuffLimit = true;
+			}
+			console.log(AlimitBuff);
+			console.log(DlimitBuff);
+            console.log("キャラ:" + CharNum + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff[CharNum] + ", 防御力:" + DlimitBuff[CharNum] + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
+        }
+        function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
+            enemyHP.innerHTML -= parseFloat(Damege);
+			if (enemyHP.innerHTML <= 0) {
+                location.href = "./Result_Win.html";
+            }
+            for (var i = 0; i < 4; i++) {
+                AlimitBuff[i] += parseFloat(attackBuff);
+			}
+            for (var i = 0; i < 4; i++) {
+                DlimitBuff[i] += parseFloat(defenceBuff);
+            }
+			AlimitDebuff -= parseFloat(attackDebuff);
+			DlimitDebuff -= parseFloat(defenceDebuff);
+			if(AlimitDebuff < 50) AlimitDebuff = 50;
+			if(DlimitDebuff < 50) DlimitDebuff = 50;
+			console.log(AlimitBuff);
+			console.log(DlimitBuff);
+            console.log("全体	" + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff + ", 防御力:" + DlimitBuff + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
+		}
+
+		var push_1 = false;
+		var push_2 = false;
+		var push_3 = false;
+		var push_4 = false;
+		var push_5 = false;
+		var push_6 = false;
+		var push_7 = false;
+		var push_8 = false;
+		var push_9 = false;
+		var push_10 = false;
+		var push_11 = false;
+		var push_12 = false;
+
+		var CharSkill = [[false,false,false],
+						 [false,false,false],
+						 [false,false,false],
+						 [false,false,false]];
+
+		function Skill(id, CharNum, SkillNum){
+			switch (id) {
+				case 1:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1SkillAll(0,30,0,0,0);
+					CharSkill[CharNum][SkillNum] = true;
+					AllBuffIcon('AttackUp');
+					return;
+				}
+					break;
+				case 2:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1Skill(0,0,0,25,25, CharNum);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 3:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1Skill(800,0,0,0,20, CharNum);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 4:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1SkillAll(0,0,30,0,0);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 5:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1SkillAll(0,30,0,0,0);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 6:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1SkillAll(0,0,30,0,0);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 7:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1Skill(1000,0,0,0,0, CharNum);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 8:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1Skill(0,50,0,0,0, CharNum);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 9:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1Skill(1000,0,50,0,0, CharNum);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 10:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1Skill(1000,15,0,0,0, CharNum);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 11:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1Skill(0,0,0,25,25, CharNum);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+				case 12:
+				if(!CharSkill[CharNum][SkillNum]){
+					Char1Skill(0,0,50,0,0, CharNum);
+					CharSkill[CharNum][SkillNum] = true;
+					return;
+				}
+					break;
+	
+				default:
+					Char1Skill(0,0,0,0,0, CharNum);
+					break;
+			}
+		}
+		function BuffIcon(buffID, pngName){
+					var buff = document.createElement("img");
+					buff.src="assets/"+pngName+".png";
+					document.getElementById(buffID).appendChild(buff);
+		}
+		function AllBuffIcon(pngName){
+		console.log(pngName);
+					var buff = document.createElement("img");
+					buff.src="assets/"+pngName+".png";
+					document.getElementById(buffID1).appendChild(buff);
+					document.getElementById(buffID2).appendChild(buff);
+					document.getElementById(buffID3).appendChild(buff);
+					document.getElementById(buffID4).appendChild(buff);
+		}
+
+    </script>
+
 </body>
 </html>
