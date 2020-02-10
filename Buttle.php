@@ -79,7 +79,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         </h1>
 		<div id="Debuff">
 		</div>
-		<input type="hidden" name="EnDamege" value="0" id="EnDamege" class="EnDamege">
+		<h1 id="EnDamege" class="EnDamege">0</h1>
     </h1>
     <div id="texture" class="texture">
         <div id="EnemyImage" class="EnemyImage">
@@ -307,8 +307,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
 			if(Damege != 0){
-			console.log(EnDamege);
-				EnDamege.type='text';
+				console.log(EnDamege);
 				EnDamege.value=Damege;
 			}
             enemyHP.innerHTML -= parseFloat(Damege);
@@ -568,6 +567,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         #EnenyName {
             text-align: center;
         }
+		#EnDamege{
+			visibility:hidden;
+		}
 
         #HPBar {
 			clear:both;
