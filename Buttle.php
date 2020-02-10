@@ -385,7 +385,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		}
 
 		function Skill(id, CharNum, SkillNum){
-					console.log(CharNum+", "+SkillNum);
 			switch (id) {
 				case 1:
 				if(!CharSkill[CharNum][SkillNum]){
@@ -448,6 +447,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				}
 					break;
 				case 8:
+					console.log(CharNum+", "+SkillNum);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,50,0,0,0, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
