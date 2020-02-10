@@ -450,7 +450,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,50,0,0,0, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
-					console.log(CharNum+", "+SkillNum);
 					switch (CharNum) {
 						case 0:
 							BuffIcon('buffID1','AttackUp');
@@ -459,6 +458,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 							BuffIcon('buffID2','AttackUp');
 							break;
 						case 2:
+					console.log(CharNum+", "+SkillNum);
 							BuffIcon('buffID3','AttackUp');
 							break;
 						case 3:
