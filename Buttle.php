@@ -376,7 +376,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		function DebuffIcon(pngName){
 					var buff = document.createElement("img");
 					buff.src="assets/"+pngName+".png";
-					document.getElementById(Debuff).appendChild(buff);
+					document.getElementById('Debuff').appendChild(buff);
 		}
 
 		function Skill(id, CharNum, SkillNum){
