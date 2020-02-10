@@ -305,6 +305,13 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 
 		var EnDamege = document.getElementById('EnDamege');
 
+		fullpunch DamageHidden(){
+				EnDamege.style.visibility = 'hidden';
+				EnDamege.innerHTML=0;
+		}
+		
+		setTimeout(DamageHidden, 500);
+
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
 			if(Damege != 0){
 				console.log(EnDamege);
@@ -569,6 +576,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             text-align: center;
         }
 		#EnDamege{
+			color:red;
 			visibility:hidden;
 			position:absolute;
 			top:200px;
