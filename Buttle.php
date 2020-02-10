@@ -310,14 +310,14 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				EnDamege.style.visibility = 'hidden';
 				EnDamege.innerHTML=0;
 		}
-		
-		setTimeout("DamageHidden()", 500);
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
 			if(Damege != 0){
 				console.log(EnDamege);
 				EnDamege.style.visibility = 'visible';
 				EnDamege.innerHTML=Damege;
+		
+				setTimeout("DamageHidden()", 500);
 			}
             enemyHP.innerHTML -= parseFloat(Damege);
 			if (enemyHP.innerHTML <= 0) {
