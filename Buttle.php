@@ -88,7 +88,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <img src="assets/<?= $Skill1Image1['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID1['Skill1ID'] ?>, '0','0')">
             <img src="assets/<?= $Skill2Image1['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID1['Skill2ID'] ?>, '0','1')">
             <img src="assets/<?= $Skill3Image1['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID1['Skill3ID'] ?>, '0','2')">
-			<div id="buffID">
+			<div id="buffID1">
 
 			</div>
         </div>
@@ -101,6 +101,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <img src="assets/<?= $Skill1Image2['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID2['Skill1ID'] ?>, '1','0')">
             <img src="assets/<?= $Skill2Image2['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID2['Skill2ID'] ?>, '1','1')">
             <img src="assets/<?= $Skill3Image2['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID2['Skill3ID'] ?>, '1','2')">
+			<div id="buffID2">
         </div>
         <div id="CharactersImage3" class="CharactersImage">
             <h1 id="Char3HPBar" class="CharHPBar">HP:</h1>
@@ -111,6 +112,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <img src="assets/<?= $Skill1Image3['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID3['Skill1ID'] ?>, '2','0')">
             <img src="assets/<?= $Skill2Image3['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID3['Skill2ID'] ?>, '2','1')">
             <img src="assets/<?= $Skill3Image3['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID3['Skill3ID'] ?>, '2','2')">
+			<div id="buffID3">
         </div>
         <div id="CharactersImage4" class="CharactersImage">
             <h1 id="Char4HPBar" class="CharHPBar">HP:</h1>
@@ -121,6 +123,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             <img src="assets/<?= $Skill1Image4['Skill1Image'] ?>"onclick="Skill(<?=$Skill1ID4['Skill1ID'] ?>, '3','0')">
             <img src="assets/<?= $Skill2Image4['Skill2Image'] ?>"onclick="Skill(<?=$Skill2ID4['Skill2ID'] ?>, '3','1')">
             <img src="assets/<?= $Skill3Image4['Skill3Image'] ?>"onclick="Skill(<?=$Skill3ID4['Skill3ID'] ?>, '3','2')">
+			<div id="buffID4">
         </div>
     </div>
     <div>
@@ -331,24 +334,34 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 						 [false,false,false],
 						 [false,false,false]];
 
+		function BuffIcon(buffID, pngName){
+					var buff = document.createElement("img");
+					buff.src="assets/"+pngName+".png";
+					document.getElementById(buffID).appendChild(buff);
+		}
+		function AllBuffIcon(pngName){
+					var buff = document.createElement("img");
+					buff.src="assets/"+pngName+".png";
+					document.getElementById(buffID1).appendChild(buff);
+					document.getElementById(buffID2).appendChild(buff);
+					document.getElementById(buffID3).appendChild(buff);
+					document.getElementById(buffID4).appendChild(buff);
+		}
+
+
 		function Skill(id, CharNum, SkillNum){
 			switch (id) {
 				case 1:
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1SkillAll(0,30,0,0,0);
-					var buff = document.createElement("img");
-					buff.src="assets/AttackUp.png";
-					document.getElementById('buffID').appendChild(buff);
 					CharSkill[CharNum][SkillNum] = true;
+					AllBuffIcon('AttackUp');
 					return;
 				}
 					break;
 				case 2:
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,0,0,25,25, CharNum);
-					var buff1 = document.createElement("img");
-					buff1.src="assets/AttackDown.png";
-					document.getElementById('buffID').appendChild(buff1);
 					CharSkill[CharNum][SkillNum] = true;
 					return;
 				}
