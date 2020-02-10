@@ -23,9 +23,28 @@
         text-align: center;
         margin-top: 50px;
     }
+
+    .play .audio_button {
+        background-image: url(ガチャブル画像/♪surassyu.png);
+    }
+
+    .audio_button {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        margin-left: 20px;
+        margin-top: 20px;
+        background: url(ガチャブル画像/♪.png) no-repeat center center;
+        background-size: contain;
+    }
 </style>
 
 <body>
+    <div class="audio_wrap">
+        <div class="audio_button"></div>
+        <audio id="audio" src="./Music/game_maoudamashii_4_vehicle02.mp3" autoplay loop>
+        </audio>
+    </div>
     <div id="win-img"><img src="assets/win.jpg"></div>
 
     <div id="button-div">
@@ -35,6 +54,22 @@
     <script>
         $('#button').on("click", function () {
             location.href = 'http://hp1366.neecbox.net/GachaBlue/GachaResult.html';
+        });
+
+        $(function () {
+            var audioBtn = $('.audio_button'),
+                audioWrap = $('.audio_wrap'),
+                audio = document.getElementById('audio');
+
+            audioBtn.on('click', function () {
+                if (audioWrap.hasClass('play')) {
+                    audio.play();
+                    audioWrap.removeClass('play');
+                } else {
+                    audio.pause();
+                    audioWrap.addClass('play');
+                }
+            });
         });
     </script>
 </body>
