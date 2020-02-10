@@ -419,8 +419,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,0,0,25,25, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
-					if(!IsDBuffLimit){
+					if(!IsABuffLimit){
 						DebuffIcon('AttackDown');
+					}if(!IsDBuffLimit){
 						DebuffIcon('DefenceDown');
 					}
 					return;
@@ -540,8 +541,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,0,0,25,25, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
-					if(!IsDBuffLimit){
+					if(!IsABuffLimit){
 						DebuffIcon('AttackDown');
+					}if(!IsDBuffLimit){
 						DebuffIcon('DefenceDown');
 					}
 					return;
