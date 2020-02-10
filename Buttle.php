@@ -309,7 +309,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 			if(Damege != 0){
 				console.log(EnDamege);
 				EnDamege.visibility = 'visible';
-				EnDamege.value=Damege;
+				EnDamege.innerHTML=Damege;
 			}
             enemyHP.innerHTML -= parseFloat(Damege);
 			if (enemyHP.innerHTML <= 0) {
