@@ -303,7 +303,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var IsDBuffLimit = false;
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
-			CharNum -= 1;
             enemyHP.innerHTML -= parseFloat(Damege);
 			if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
