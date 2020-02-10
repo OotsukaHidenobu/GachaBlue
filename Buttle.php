@@ -345,15 +345,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					buff.src="assets/"+pngName+".png";
 					document.getElementById(buffID).appendChild(buff);
 		}
-		function AllBuffIcon(pngName){
-		console.log(pngName);
-					var buff = document.createElement("img");
-					buff.src="assets/"+pngName+".png";
-					document.getElementById(buffID1).appendChild(buff);
-					document.getElementById(buffID2).appendChild(buff);
-					document.getElementById(buffID3).appendChild(buff);
-					document.getElementById(buffID4).appendChild(buff);
-		}
 
 		function Skill(id, CharNum, SkillNum){
 			switch (id) {
@@ -362,6 +353,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					Char1SkillAll(0,30,0,0,0);
 					CharSkill[CharNum][SkillNum] = true;
 					BuffIcon('buffID1', 'AttackUp');
+					BuffIcon('buffID2', 'AttackUp');
+					BuffIcon('buffID3', 'AttackUp');
+					BuffIcon('buffID4', 'AttackUp');
 					return;
 				}
 					break;
