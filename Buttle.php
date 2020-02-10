@@ -456,13 +456,13 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 							BuffIcon('buffID1','AttackUp');
 							break;
 						case 1:
-							BuffIcon('buffID1','AttackUp');
+							BuffIcon('buffID2','AttackUp');
 							break;
 						case 2:
-							BuffIcon('buffID1','AttackUp');
+							BuffIcon('buffID3','AttackUp');
 							break;
 						case 3:
-							BuffIcon('buffID1','AttackUp');
+							BuffIcon('buffID4','AttackUp');
 							break;
 						default:
 							break;
