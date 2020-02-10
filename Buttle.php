@@ -484,8 +484,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 }
     .audio_button {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     margin-left:20px;
     margin-top:20px;
     background: url(ガチャブル画像/♪.png) no-repeat center center;
@@ -504,8 +504,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         }
 		#Debuff{
 			position:absolute;
-			top:200px;
-			left: 260px;
+			top:220px;
+			left: 240px;
 		}
 		#buffID1{
 			position:absolute;
