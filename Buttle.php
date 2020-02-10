@@ -346,6 +346,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					document.getElementById(buffID).appendChild(buff);
 		}
 		function AllBuffIcon(pngName){
+		console.log(pngName);
 					var buff = document.createElement("img");
 					buff.src="assets/"+pngName+".png";
 					document.getElementById(buffID1).appendChild(buff);
