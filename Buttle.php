@@ -429,7 +429,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					break;
 				case 3:
 				if(!CharSkill[CharNum][SkillNum]){
-					Char1Skill(800,0,0,0,20, CharNum);
+					Char1Skill(800,0,0,0,25, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
 					if(!IsDBuffLimit){
 						DebuffIcon('DefenceDown');
