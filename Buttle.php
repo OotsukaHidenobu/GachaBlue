@@ -306,6 +306,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var EnDamege = document.getElementById('EnDamege');
 
 		function DamageHidden(){
+		console.log("aaaaaaa");
 				EnDamege.style.visibility = 'hidden';
 				EnDamege.innerHTML=0;
 		}
