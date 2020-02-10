@@ -504,8 +504,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         }
 		#Debuff{
 			position:absolute;
-			top:70px;
-			left: 290px;
+			top:200px;
+			left: 260px;
 		}
 		#buffID1{
 			position:absolute;
