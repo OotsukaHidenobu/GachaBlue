@@ -466,9 +466,21 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             background: red;
         }
 
-		#buffID{
+		#buffID1{
 			position:absolute;
 			top:70px;
+			left: 290px;
+		}#buffID2{
+			position:absolute;
+			top:170px;
+			left: 290px;
+		}#buffID3{
+			position:absolute;
+			top:270px;
+			left: 290px;
+		}#buffID4{
+			position:absolute;
+			top:370px;
 			left: 290px;
 		}
 
