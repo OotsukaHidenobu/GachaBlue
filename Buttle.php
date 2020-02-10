@@ -252,10 +252,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 
             enemyHP.innerHTML -= Math.round(allPower * (100 / DlimitDebuff));
 			var HPBar = document.getElementById('HPBar');
-			console.log(enemyHP.innerHTML);
-			console.log(enemyMaxHP);
 			HPBar.width = (6 * Math.floor(parseFloat(enemyHP.innerHTML) / 110)) +"px";
-            console.log(allPower * (100 / DlimitDebuff));
+            console.log((100 / DlimitDebuff));
+            console.log((DlimitBuff[0] / 100));
             if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
             }
