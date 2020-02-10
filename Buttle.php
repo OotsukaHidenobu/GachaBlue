@@ -570,6 +570,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         }
 		#EnDamege{
 			visibility:hidden;
+			position:absolute;
+			top:200px;
+			left:200px;
 		}
 
         #HPBar {
