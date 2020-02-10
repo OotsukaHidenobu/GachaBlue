@@ -306,7 +306,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var EnDamege = document.getElementById('EnDamege');
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
-			if(Damege == 0){
+			if(Damege != 0){
 				EnDamege.type=text;
 				EnDamege.value=Damege;
 			}
