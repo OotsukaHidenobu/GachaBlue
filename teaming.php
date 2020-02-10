@@ -172,8 +172,8 @@ $warning = "4キャラ全員編成してください";
 }
     .audio_button {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     margin-left:20px;
     margin-top:20px;
     background: url(ガチャブル画像/♪.png) no-repeat center center;
