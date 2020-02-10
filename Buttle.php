@@ -473,14 +473,45 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				case 9:
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(1000,0,50,0,0, CharNum);
-					CharSkill[CharNum][SkillNum] = true;
+					CharSkill[CharNum][SkillNum] = true;switch (CharNum) {
+						case '0':
+							BuffIcon('buffID1','DefenceUp');
+							break;
+						case '1':
+							BuffIcon('buffID2','DefenceUp');
+							break;
+						case '2':
+							BuffIcon('buffID3','DefenceUp');
+							break;
+						case '3':
+							BuffIcon('buffID4','DefenceUp');
+							break;
+						default:
+							break;
+					}
 					return;
 				}
 					break;
 				case 10:
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(1000,15,0,0,0, CharNum);
-					CharSkill[CharNum][SkillNum] = true;
+					CharSkill[CharNum][SkillNum] = true;switch (CharNum) {
+						case '0':
+							BuffIcon('buffID1','AttackUp');
+							break;
+						case '1':
+							BuffIcon('buffID2','AttackUp');
+							break;
+						case '2':
+							console.log(CharNum+", "+SkillNum);
+							BuffIcon('buffID3','AttackUp');
+							break;
+						case '3':
+							BuffIcon('buffID4','AttackUp');
+							break;
+						default:
+							break;
+					}
 					return;
 				}
 					break;
@@ -488,6 +519,10 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,0,0,25,25, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
+					if(!IsDBuffLimit){
+						DebuffIcon('AttackDown');
+						DebuffIcon('DefenceDown');
+					}
 					return;
 				}
 					break;
@@ -495,6 +530,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,0,50,0,0, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
+					AllBuffIcon('DefenceUp');
 					return;
 				}
 					break;
