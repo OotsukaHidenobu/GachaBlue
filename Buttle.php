@@ -281,8 +281,10 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
                 CharactersImage4.style.backgroundColor = "#000";
                 CharactersImage4.style.opacity = 0.6;
             }
-
-            enemyHP.innerHTML -= Math.round(allPower * (100 / DlimitDebuff));
+			
+			var damage = Math.round(allPower * (100 / DlimitDebuff));
+			DamageDisplay(damage);
+            enemyHP.innerHTML -= damage;
 			var HPBar = document.getElementById('HPBar');
 			HPBar.width = (6 * Math.floor(parseFloat(enemyHP.innerHTML) / 110)) +"px";
             console.log((100 / DlimitDebuff));
@@ -306,19 +308,21 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var EnDamege = document.getElementById('EnDamege');
 
 		function DamageHidden(){
-		console.log("aaaaaaa");
 				EnDamege.style.visibility = 'hidden';
 				EnDamege.innerHTML=0;
 		}
-
-        function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
-			if(Damege != 0){
+		function DamageDisplay(Damage){
+			if(Damage != 0){
 				console.log(EnDamege);
 				EnDamege.style.visibility = 'visible';
-				EnDamege.innerHTML=Damege;
+				EnDamege.innerHTML=Damage;
 		
-				setTimeout("DamageHidden()", 500);
+				setTimeout("DamageHidden()", 350);
 			}
+		}
+
+        function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
+			DamageDisplay(Damege);
             enemyHP.innerHTML -= parseFloat(Damege);
 			if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
@@ -340,6 +344,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             console.log("キャラ:" + CharNum + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff[CharNum] + ", 防御力:" + DlimitBuff[CharNum] + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
         }
         function Char1SkillAll(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff) {
+			DamageDisplay(Damege);
             enemyHP.innerHTML -= parseFloat(Damege);
 			if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
@@ -580,8 +585,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 			color:red;
 			visibility:hidden;
 			position:absolute;
-			top:200px;
-			left:200px;
+			top:800px;
+			left:400px;
 		}
 
         #HPBar {
