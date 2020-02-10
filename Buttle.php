@@ -303,7 +303,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var IsABuffLimit = false;
 		var IsDBuffLimit = false;
 
-		var EnDamege = document.getElementById('EnDamege');
+		var EnDamege = document.getElementById('EnDamege')
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
 			if(Damege != 0){
