@@ -303,7 +303,6 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 		var IsDBuffLimit = false;
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
-			CharNum -= 1;
             enemyHP.innerHTML -= parseFloat(Damege);
 			if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
@@ -337,8 +336,14 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             }
 			AlimitDebuff -= parseFloat(attackDebuff);
 			DlimitDebuff -= parseFloat(defenceDebuff);
-			if(AlimitDebuff < 50) AlimitDebuff = 50;
-			if(DlimitDebuff < 50) DlimitDebuff = 50;
+			if(AlimitDebuff < 50){
+				AlimitDebuff = 50;
+				IsABuffLimit = true;
+			}
+			if(DlimitDebuff < 50){
+				DlimitDebuff = 50;
+				IsDBuffLimit = true;
+			}
 			console.log(AlimitBuff);
 			console.log(DlimitBuff);
             console.log("全体	" + ", ダメージ:" + Damege + ", 攻撃力:" + AlimitBuff + ", 防御力:" + DlimitBuff + ", 攻撃デバフ:" + AlimitDebuff + ", 防御デバフ:" + DlimitDebuff);
@@ -393,8 +398,10 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,0,0,25,25, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
-					DebuffIcon('AttackDown');
-					DebuffIcon('DefenceDown');
+					if(!IsDBuffLimit){
+						DebuffIcon('AttackDown');
+						DebuffIcon('DefenceDown');
+					}
 					return;
 				}
 					break;
@@ -402,6 +409,9 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(800,0,0,0,20, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
+					if(!IsDBuffLimit){
+						DebuffIcon('DefenceDown');
+					}
 					return;
 				}
 					break;
@@ -409,6 +419,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1SkillAll(0,0,30,0,0);
 					CharSkill[CharNum][SkillNum] = true;
+					AllBuffIcon('DefenceUp');
 					return;
 				}
 					break;
@@ -416,6 +427,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1SkillAll(0,30,0,0,0);
 					CharSkill[CharNum][SkillNum] = true;
+					AllBuffIcon('AttackUp');
 					return;
 				}
 					break;
@@ -423,6 +435,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1SkillAll(0,0,30,0,0);
 					CharSkill[CharNum][SkillNum] = true;
+					AllBuffIcon('DefenceUp');
 					return;
 				}
 					break;
@@ -437,6 +450,22 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,50,0,0,0, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
+					switch (CharNum) {
+						case 0:
+							BuffIcon('buffID1','AttackUp');
+							break;
+						case 1:
+							BuffIcon('buffID2','AttackUp');
+							break;
+						case 2:
+							BuffIcon('buffID3','AttackUp');
+							break;
+						case 3:
+							BuffIcon('buffID4','AttackUp');
+							break;
+						default:
+							break;
+					}
 					return;
 				}
 					break;
@@ -504,7 +533,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         }
 		#Debuff{
 			position:absolute;
-			top:220px;
+			top:210px;
 			left: 240px;
 		}
 		#buffID1{
