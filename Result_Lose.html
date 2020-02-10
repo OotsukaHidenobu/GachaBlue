@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>LOSE</title>
 
 </head>
+<style>
+    #button-div {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    #button {
+        width: 250px;
+        height: 60px;
+        padding: 10px;
+        font-size: 30px;
+    }
+
+    #lose-img {
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+
 <body>
-    <h1>LOSE</h1>
+    <div id="lose-img"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/f/funnyanimal/20180512/20180512170203.jpg"></div>
+
+    <div id="button-div">
+        <button id="button">ガチャに戻る</button>
+    </div>
+    <script src="script/jquery-3.1.1.min.js"></script>
+    <script>
+        $('#button').on("click", function () {
+            location.href = 'http://hp1366.neecbox.net/GachaBlue/GachaResult.html';
+        });
+    </script>
 </body>
+
 </html>

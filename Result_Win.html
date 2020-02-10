@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>aaaS</title>
 
 </head>
+<style>
+    #button-div {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    #button {
+        width: 250px;
+        height: 60px;
+        padding: 10px;
+        font-size: 30px;
+    }
+
+    #win-img {
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+
 <body>
-    <h1>Win</h1>
+    <div id="win-img"><img src="assets/win.jpg"></div>
+
+    <div id="button-div">
+        <button id="button">ガチャに戻る</button>
+    </div>
+    <script src="script/jquery-3.1.1.min.js"></script>
+    <script>
+        $('#button').on("click", function () {
+            location.href = 'http://hp1366.neecbox.net/GachaBlue/GachaResult.html';
+        });
+    </script>
 </body>
+
 </html>
