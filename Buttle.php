@@ -177,7 +177,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             var fullpunch = Math.random() * 100;
             if (fullpunch < 5) {
                 for (var i = 0; i < m_charHPArray.length; i++) {
-                    m_charHPArray[i].innerHTML -= Math.round((enemyPower / 2) * (DlimitBuff[i] / 100));
+                    m_charHPArray[i].innerHTML -= Math.round((enemyPower / 2) / (DlimitBuff[i] / 100));
                 }
             }
             else {
@@ -254,7 +254,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 			var HPBar = document.getElementById('HPBar');
 			HPBar.width = (6 * Math.floor(parseFloat(enemyHP.innerHTML) / 110)) +"px";
             console.log((100 / DlimitDebuff));
-            console.log((DlimitBuff[0] / 100));
+            console.log(enemyPower / (DlimitBuff[0] / 100));
             if (enemyHP.innerHTML <= 0) {
                 location.href = "./Result_Win.html";
             }
