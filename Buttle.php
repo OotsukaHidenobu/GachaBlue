@@ -61,8 +61,13 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     <title>バトル</title>
 
     <!--<link rel="stylesheet" href="./css/style.css">-->
+<script src="script/jquery-3.1.1.min.js"></script>
 </head>
-<body>
+<body><div class="audio_wrap">
+  <div class="audio_button"></div>
+  <audio id="audio" src="./Music/bgm_maoudamashii_fantasy14.mp3" autoplay loop>
+  </audio>
+</div>
     <div id="EnenyName" class="EnemyName">
         <h1>アルティメットバハムート</h1>
     </div>
@@ -141,7 +146,22 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     <!--//////////-->
     <!--Javascript-->
     <!--//////////-->
-    <script type="text/javascript">
+    <script type="text/javascript">    
+	$(function () {
+  var audioBtn = $('.audio_button'),
+  audioWrap = $('.audio_wrap'),
+  audio = document.getElementById('audio');
+
+  audioBtn.on('click', function () {
+    if( audioWrap.hasClass('play') ) {
+        audio.play();
+      audioWrap.removeClass('play');
+    } else {
+        audio.pause();
+      audioWrap.addClass('play');
+    }
+  });
+});
         var enemyHP = document.getElementById('HP')
 		var enemyMaxHP = 11000;
         var enemyAttack = document.getElementById('EnemyAttack')
@@ -447,7 +467,18 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
     <!--/////-->
     <!--style-->
     <!--/////-->
-    <style>
+    <style>    .play .audio_button {
+    background-image: url(ガチャブル画像/♪surassyu.png);
+}
+    .audio_button {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-left:20px;
+    margin-top:20px;
+    background: url(ガチャブル画像/♪.png) no-repeat center center;
+    background-size: contain;
+}
         #EnenyName {
             text-align: center;
         }
