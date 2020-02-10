@@ -172,8 +172,8 @@ $warning = "4キャラ全員編成してください";
 }
     .audio_button {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     margin-left:20px;
     margin-top:20px;
     background: url(ガチャブル画像/♪.png) no-repeat center center;
@@ -230,7 +230,7 @@ $warning = "4キャラ全員編成してください";
 <body>
 <div class="audio_wrap">
   <div class="audio_button"></div>
-  <audio id="audio" src="./Music/bgm_maoudamashii_fantasy14.mp3" autoplay loop>
+  <audio id="audio" src="./Music/bgm_maoudamashii_fantasy08.mp3" autoplay loop>
   </audio>
 </div>
     <h1>編成画面</h1>

@@ -65,7 +65,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 </head>
 <body><div class="audio_wrap">
   <div class="audio_button"></div>
-  <audio id="audio" src="./Music/bgm_maoudamashii_fantasy14.mp3" autoplay loop>
+  <audio id="audio" src="./Music/bgm_maoudamashii_fantasy12.mp3" autoplay loop>
   </audio>
 </div>
     <div id="EnenyName" class="EnemyName">
@@ -77,6 +77,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
         <h1 id="HP" class="HP">
             11000
         </h1>
+		<div id="Debuff">
+		</div>
     </h1>
     <div id="texture" class="texture">
         <div id="EnemyImage" class="EnemyImage">
@@ -365,6 +367,17 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 					buff.src="assets/"+pngName+".png";
 					document.getElementById(buffID).appendChild(buff);
 		}
+		function AllBuffIcon(pngName){
+					BuffIcon('buffID1', pngName);
+					BuffIcon('buffID2', pngName);
+					BuffIcon('buffID3', pngName);
+					BuffIcon('buffID4', pngName);
+		}
+		function DebuffIcon(pngName){
+					var buff = document.createElement("img");
+					buff.src="assets/"+pngName+".png";
+					document.getElementById('Debuff').appendChild(buff);
+		}
 
 		function Skill(id, CharNum, SkillNum){
 			switch (id) {
@@ -372,10 +385,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1SkillAll(0,30,0,0,0);
 					CharSkill[CharNum][SkillNum] = true;
-					BuffIcon('buffID1', 'AttackUp');
-					BuffIcon('buffID2', 'AttackUp');
-					BuffIcon('buffID3', 'AttackUp');
-					BuffIcon('buffID4', 'AttackUp');
+					AllBuffIcon('AttackUp');
 					return;
 				}
 					break;
@@ -383,6 +393,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				if(!CharSkill[CharNum][SkillNum]){
 					Char1Skill(0,0,0,25,25, CharNum);
 					CharSkill[CharNum][SkillNum] = true;
+					DebuffIcon('AttackDown');
+					DebuffIcon('DefenceDown');
 					return;
 				}
 					break;
@@ -472,8 +484,8 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 }
     .audio_button {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     margin-left:20px;
     margin-top:20px;
     background: url(ガチャブル画像/♪.png) no-repeat center center;
@@ -490,7 +502,11 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
             height: 10px;
             background: red;
         }
-
+		#Debuff{
+			position:absolute;
+			top:220px;
+			left: 240px;
+		}
 		#buffID1{
 			position:absolute;
 			top:70px;
