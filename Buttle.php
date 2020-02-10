@@ -310,7 +310,7 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 				EnDamege.innerHTML=0;
 		}
 		
-		setTimeout(DamageHidden, 500);
+		setTimeout("DamageHidden()", 500);
 
         function Char1Skill(Damege, attackBuff, defenceBuff, attackDebuff, defenceDebuff, CharNum) {
 			if(Damege != 0){
