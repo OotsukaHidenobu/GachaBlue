@@ -472,15 +472,15 @@ $Skill3Image4 = getDB1('select Skill3Image from Characters where id=?',[$id4]);
 			left: 290px;
 		}#buffID2{
 			position:absolute;
-			top:170px;
+			top:70px;
 			left: 290px;
 		}#buffID3{
 			position:absolute;
-			top:270px;
+			top:70px;
 			left: 290px;
 		}#buffID4{
 			position:absolute;
-			top:370px;
+			top:70px;
 			left: 290px;
 		}
 
